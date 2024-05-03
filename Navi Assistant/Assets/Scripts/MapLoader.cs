@@ -3,10 +3,12 @@ using UnityEngine;
 using UnityEngine.AI;
 using Unity.AI.Navigation;
 using MapDataModel;
+using Firebase.Firestore;
+using Firebase.Extensions;
 
 public class MapLoader : MonoBehaviour
 {
-    [SerializeField] private string mapFileName = "HouseTestMap";
+    [SerializeField] private string mapFileName = "ExampleMap";
 
     [Header("Map Render")]
     [SerializeField] private GameObject wallRenderPrefab;
@@ -18,16 +20,31 @@ public class MapLoader : MonoBehaviour
     private void Awake()
     {   // Load map data and generate floor map render
         _navMeshSurface = this.GetComponent<NavMeshSurface>();
-
         LoadMapData();
-        GenerateMapRender();
     }
 
-    public void LoadMapData()
+    public void LoadLocalMapData()
     {   // Load map data from local file
         string _path = Application.streamingAssetsPath + "/" + mapFileName + ".json";
         string jsonData = System.IO.File.ReadAllText(_path);
         mapData = JsonUtility.FromJson<MapData>(jsonData);
+    }
+
+    public void LoadMapData()
+    {   // Load map data from Firestore database
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        DocumentReference docRef = db.Collection("MapData").Document(mapFileName);
+        docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
+        {
+            DocumentSnapshot snapshot = task.Result;
+            if (snapshot.Exists)
+            {   // Load map data and generate map render
+                string jsonData = snapshot.ToDictionary()["MapData"].ToString();
+                mapData = JsonUtility.FromJson<MapData>(jsonData);
+                GenerateMapRender();
+            }
+            else Debug.LogError("Document does not exist!");
+        });
     }
 
     #region --- Map Render Generation ---

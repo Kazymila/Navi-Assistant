@@ -1,0 +1,4156 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp.csproj": {}
+  },
+  "projects": {
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp-firstpass.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp-firstpass.csproj",
+        "projectName": "Assembly-CSharp-firstpass",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp-firstpass.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Assembly-CSharp-firstpass\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\SimpleFolderIcon.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\SimpleFolderIcon.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Updater.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Updater.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.EditorCoroutines.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.EditorCoroutines.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.ForUI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.ForUI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Performance.Profile-Analyzer.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Performance.Profile-Analyzer.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.PlasticSCM.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.PlasticSCM.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Rider.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Rider.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.SettingsProvider.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.SettingsProvider.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Shared.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Shared.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualStudio.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualStudio.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VSCode.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VSCode.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.XR.LegacyInputHelpers.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.XR.LegacyInputHelpers.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp.csproj",
+        "projectName": "Assembly-CSharp",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Assembly-CSharp\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp-firstpass.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Assembly-CSharp-firstpass.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\SimpleFolderIcon.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\SimpleFolderIcon.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Updater.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Updater.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.EditorCoroutines.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.EditorCoroutines.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.ForUI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.ForUI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Performance.Profile-Analyzer.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Performance.Profile-Analyzer.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.PlasticSCM.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.PlasticSCM.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Rider.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Rider.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.SettingsProvider.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.SettingsProvider.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Shared.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Shared.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualStudio.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualStudio.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VSCode.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VSCode.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.XR.LegacyInputHelpers.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.XR.LegacyInputHelpers.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj",
+        "projectName": "Nobi.UiRoundedCorners",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Nobi.UiRoundedCorners\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.Editor.csproj",
+        "projectName": "Nobi.UiRoundedCorners.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Nobi.UiRoundedCorners.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Nobi.UiRoundedCorners.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj",
+        "projectName": "Plugins.Baedrick.ColoredHeaderCreator",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Plugins.Baedrick.ColoredHeaderCreator\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.Editor.csproj",
+        "projectName": "Plugins.Baedrick.ColoredHeaderCreator.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Plugins.Baedrick.ColoredHeaderCreator.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Plugins.Baedrick.ColoredHeaderCreator.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\SimpleFolderIcon.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\SimpleFolderIcon.csproj",
+        "projectName": "SimpleFolderIcon",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\SimpleFolderIcon.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\SimpleFolderIcon\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj",
+        "projectName": "Unity.AI.Navigation",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.AI.Navigation\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj",
+        "projectName": "Unity.AI.Navigation.Editor.ConversionSystem",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.AI.Navigation.Editor.ConversionSystem\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj",
+        "projectName": "Unity.AI.Navigation.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.AI.Navigation.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.csproj",
+        "projectName": "Unity.AI.Navigation.Samples",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.AI.Navigation.Samples\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj",
+        "projectName": "Unity.AI.Navigation.Samples.Initialization.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Samples.Initialization.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.AI.Navigation.Samples.Initialization.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Updater.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Updater.csproj",
+        "projectName": "Unity.AI.Navigation.Updater",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Updater.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.AI.Navigation.Updater\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.ConversionSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.AI.Navigation.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.EditorCoroutines.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.EditorCoroutines.Editor.csproj",
+        "projectName": "Unity.EditorCoroutines.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.EditorCoroutines.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.EditorCoroutines.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj",
+        "projectName": "Unity.InputSystem",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.InputSystem\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.ForUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.ForUI.csproj",
+        "projectName": "Unity.InputSystem.ForUI",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.ForUI.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.InputSystem.ForUI\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj",
+        "projectName": "Unity.Mathematics",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.Mathematics\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.Editor.csproj",
+        "projectName": "Unity.Mathematics.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.Mathematics.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Performance.Profile-Analyzer.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Performance.Profile-Analyzer.Editor.csproj",
+        "projectName": "Unity.Performance.Profile-Analyzer.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Performance.Profile-Analyzer.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.Performance.Profile-Analyzer.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.PlasticSCM.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.PlasticSCM.Editor.csproj",
+        "projectName": "Unity.PlasticSCM.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.PlasticSCM.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.PlasticSCM.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Rider.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Rider.Editor.csproj",
+        "projectName": "Unity.Rider.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Rider.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.Rider.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Settings.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Settings.Editor.csproj",
+        "projectName": "Unity.Settings.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Settings.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.Settings.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.csproj",
+        "projectName": "Unity.TestTools.CodeCoverage.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.TestTools.CodeCoverage.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Settings.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Settings.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj",
+        "projectName": "Unity.TestTools.CodeCoverage.Editor.OpenCover.Model",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj",
+        "projectName": "Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj",
+        "projectName": "Unity.TextMeshPro",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.TextMeshPro\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.Editor.csproj",
+        "projectName": "Unity.TextMeshPro.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.TextMeshPro.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.TextMeshPro.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj",
+        "projectName": "Unity.Timeline",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.Timeline\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.Editor.csproj",
+        "projectName": "Unity.Timeline.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.Timeline.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Timeline.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj",
+        "projectName": "Unity.VisualScripting.Core",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualScripting.Core\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Core.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualScripting.Core.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj",
+        "projectName": "Unity.VisualScripting.Flow",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualScripting.Flow\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Flow.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualScripting.Flow.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.SettingsProvider.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.SettingsProvider.Editor.csproj",
+        "projectName": "Unity.VisualScripting.SettingsProvider.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.SettingsProvider.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualScripting.SettingsProvider.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Shared.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Shared.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Shared.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Shared.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualScripting.Shared.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj",
+        "projectName": "Unity.VisualScripting.State",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualScripting.State\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj",
+        "projectName": "Unity.VisualScripting.State.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualScripting.State.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualScripting.State.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualStudio.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualStudio.Editor.csproj",
+        "projectName": "Unity.VisualStudio.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VisualStudio.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VisualStudio.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VSCode.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VSCode.Editor.csproj",
+        "projectName": "Unity.VSCode.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.VSCode.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.VSCode.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj",
+        "projectName": "Unity.XR.ARAnalytics.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.ARAnalytics.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj",
+        "projectName": "Unity.XR.ARCore",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.ARCore\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.Editor.csproj",
+        "projectName": "Unity.XR.ARCore.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.ARCore.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARCore.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj",
+        "projectName": "Unity.XR.ARFoundation",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.ARFoundation\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.Editor.csproj",
+        "projectName": "Unity.XR.ARFoundation.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.ARFoundation.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj",
+        "projectName": "Unity.XR.ARFoundation.InternalUtils",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.ARFoundation.InternalUtils\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj",
+        "projectName": "Unity.XR.ARSubsystems",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.ARSubsystems\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj",
+        "projectName": "Unity.XR.ARSubsystems.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.ARSubsystems.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj",
+        "projectName": "Unity.XR.CoreUtils",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.CoreUtils\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj",
+        "projectName": "Unity.XR.CoreUtils.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.CoreUtils.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj",
+        "projectName": "Unity.XR.Management",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.Management\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj",
+        "projectName": "Unity.XR.Management.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.Management.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj",
+        "projectName": "Unity.XR.Simulation",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.Simulation\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.Mathematics.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARSubsystems.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.Editor.csproj",
+        "projectName": "Unity.XR.Simulation.Editor",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.Editor.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\Unity.XR.Simulation.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARAnalytics.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.ARFoundation.InternalUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.CoreUtils.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Management.Editor.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.XR.Simulation.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.SpatialTracking.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.SpatialTracking.csproj",
+        "projectName": "UnityEditor.SpatialTracking",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.SpatialTracking.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\UnityEditor.SpatialTracking\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj",
+        "projectName": "UnityEditor.TestRunner",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\UnityEditor.TestRunner\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj",
+        "projectName": "UnityEditor.UI",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\UnityEditor.UI\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.XR.LegacyInputHelpers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.XR.LegacyInputHelpers.csproj",
+        "projectName": "UnityEditor.XR.LegacyInputHelpers",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.XR.LegacyInputHelpers.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\UnityEditor.XR.LegacyInputHelpers\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Unity.InputSystem.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj",
+        "projectName": "UnityEngine.SpatialTracking",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\UnityEngine.SpatialTracking\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj",
+        "projectName": "UnityEngine.TestRunner",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.TestRunner.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\UnityEngine.TestRunner\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj",
+        "projectName": "UnityEngine.UI",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\UnityEngine.UI\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj",
+        "projectName": "UnityEngine.XR.LegacyInputHelpers",
+        "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.XR.LegacyInputHelpers.csproj",
+        "packagesPath": "C:\\Users\\KazyPC\\.nuget\\packages\\",
+        "outputPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\Temp\\obj\\Debug\\UnityEngine.XR.LegacyInputHelpers\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KazyPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEditor.UI.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.SpatialTracking.csproj"
+              },
+              "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj": {
+                "projectPath": "D:\\UOH\\Tesis\\Navi-Assistant\\Navi Assistant\\UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

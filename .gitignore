@@ -1,0 +1,35 @@
+# iOS system files
+.DS_Store
+
+# Credential files
+**/GoogleService-Info*.plist*
+**/google-services*.json*
+/Navi Assistant/Assets/StreamingAssets*
+/Navi Assistant/Assets/StreamingAssets/
+
+# Firebase stuff
+/Navi Assistant/Assets/Firebase/
+/Navi Assistant/Assets/PlayServicesResolver/
+/Navi Assistant/Assets/Editor\ Default\ Resources/
+/Navi Assistant/Assets/Firebase.meta
+/Navi Assistant/Assets/PlayServicesResolver.meta
+/Navi Assistant/Assets/Editor\ Default\ Resources.meta
+/Navi Assistant/Assets/Plugins/x86_64/Firebase/
+/Navi Assistant/Assets/Plugins/x86_64/Firebase*
+/Navi Assistant/Assets/Plugins/Android/
+/Navi Assistant/Assets/Plugins/iOS/
+/Navi Assistant/Assets/Plugins/tvOS/
+/Navi Assistant/Assets/Plugins/iOS.meta
+/Navi Assistant/Assets/Plugins/tvOS.meta
+/Navi Assistant/Assets/Plugins/Android.meta
+/Navi Assistant/Assets/Parse/
+/Navi Assistant/Assets/Parse.meta
+/Navi Assistant/remote_config_data
+
+# External dependency manager
+/Navi Assistant/Assets/ExternalDependencyManager/
+/Navi Assistant/Assets/ExternalDependencyManager*
+
+# Generated Local
+/Navi Assistant/Assets/GeneratedLocalRepo.meta
+/Navi Assistant/Assets/GeneratedLocalRepo/
