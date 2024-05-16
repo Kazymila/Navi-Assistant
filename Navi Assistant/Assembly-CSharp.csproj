@@ -65,9 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MapLoader.cs" />
-    <Compile Include="Assets\Scripts\AgentNavigation.cs" />
+    <Compile Include="Assets\Scripts\PathLineController.cs" />
     <Compile Include="Assets\Scripts\MapDataModel.cs" />
     <Compile Include="Assets\Scripts\DebugMenuManager.cs" />
+    <Compile Include="Assets\Scripts\NavigationManager.cs" />
+    <Compile Include="Assets\Scripts\PathArrowController.cs" />
     <Compile Include="Assets\Scripts\JsonDataService.cs" />
   </ItemGroup>
   <ItemGroup>

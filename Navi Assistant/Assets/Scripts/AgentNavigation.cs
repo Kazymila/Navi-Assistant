@@ -27,9 +27,6 @@ public class AgentNavigation : MonoBehaviour
         NavMesh.CalculatePath(transform.position, _navTarget.transform.position, NavMesh.AllAreas, _navPath);
         if (showLinePath) DrawPathLine();
         else _lineRenderer.enabled = false;
-
-        if (showPathPoints) DrawPathPoints();
-        else DestroyPathPoints();
     }
 
     private void DrawPathLine()

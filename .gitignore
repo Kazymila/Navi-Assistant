@@ -1,5 +1,23 @@
+# Standard Unity Gitignore: https://github.com/github/gitignore/blob/main/Unity.gitignore
+/Navi Assistant/[Ll]ibrary/
+/Navi Assistant/[Tt]emp/
+/Navi Assistant/[Oo]bj/
+/Navi Assistant/[Bb]uild/
+/Navi Assistant/[Bb]uilds/
+/Navi Assistant/[Ll]ogs/
+/Navi Assistant/[Uu]ser[Ss]ettings/
+
+# Visual Studio cache directory
+.vscode/
+
+# Gradle cache directory
+.gradle/
+
 # iOS system files
 .DS_Store
+
+# Dist
+.dist
 
 # Credential files
 **/GoogleService-Info*.plist*
