@@ -485,6 +485,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="zxing.unity">
+      <HintPath>Assets\Plugins\Zxing\zxing.unity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Google.JarResolver">
       <HintPath>Assets\ExternalDependencyManager\Editor\1.2.179\Google.JarResolver.dll</HintPath>
       <Private>False</Private>

@@ -66,11 +66,13 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MapLoader.cs" />
     <Compile Include="Assets\Scripts\PathLineController.cs" />
+    <Compile Include="Assets\Scripts\AgentNavigation.cs" />
     <Compile Include="Assets\Scripts\MapDataModel.cs" />
     <Compile Include="Assets\Scripts\DebugMenuManager.cs" />
     <Compile Include="Assets\Scripts\NavigationManager.cs" />
     <Compile Include="Assets\Scripts\PathArrowController.cs" />
     <Compile Include="Assets\Scripts\JsonDataService.cs" />
+    <Compile Include="Assets\Scripts\QRCodeLocalization.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -441,6 +443,10 @@
     </Reference>
     <Reference Include="Firebase.TaskExtension">
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="zxing.unity">
+      <HintPath>Assets\Plugins\Zxing\zxing.unity.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
@@ -975,6 +981,7 @@
     <ProjectReference Include="Unity.Rider.Editor.csproj" />
     <ProjectReference Include="Unity.XR.ARSubsystems.Editor.csproj" />
     <ProjectReference Include="Unity.XR.ARCore.csproj" />
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj" />
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj" />
     <ProjectReference Include="Unity.Mathematics.Editor.csproj" />
     <ProjectReference Include="Unity.XR.ARAnalytics.Editor.csproj" />

@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VSCode.Editor", "Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection", "Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj", "{B21E1261-24B8-2312-3C01-539FDC3A3185}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Sprite.Editor", "Unity.2D.Sprite.Editor.csproj", "{361930B6-47F5-1E7C-AE1C-5D2A7F6C84F0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AI.Navigation.Updater", "Unity.AI.Navigation.Updater.csproj", "{73D2AA92-E567-45C9-233A-C0579C2B3632}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.SpatialTracking", "UnityEditor.SpatialTracking.csproj", "{DF9A76FC-918A-7798-BC56-8608B3B307ED}"
@@ -305,6 +307,10 @@ Global
 		{B21E1261-24B8-2312-3C01-539FDC3A3185}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B21E1261-24B8-2312-3C01-539FDC3A3185}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B21E1261-24B8-2312-3C01-539FDC3A3185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361930B6-47F5-1E7C-AE1C-5D2A7F6C84F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361930B6-47F5-1E7C-AE1C-5D2A7F6C84F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361930B6-47F5-1E7C-AE1C-5D2A7F6C84F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361930B6-47F5-1E7C-AE1C-5D2A7F6C84F0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73D2AA92-E567-45C9-233A-C0579C2B3632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73D2AA92-E567-45C9-233A-C0579C2B3632}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73D2AA92-E567-45C9-233A-C0579C2B3632}.Release|Any CPU.ActiveCfg = Release|Any CPU
