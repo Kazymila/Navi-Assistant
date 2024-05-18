@@ -1,11 +1,11 @@
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using Unity.XR.CoreUtils;
+using UnityEngine.Events;
 using Unity.Collections;
 using UnityEngine;
 using ZXing;
 using TMPro;
-using Unity.VisualScripting;
 
 public class QRCodeLocalization : MonoBehaviour
 {
@@ -19,6 +19,9 @@ public class QRCodeLocalization : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _qrCodeText;
     [SerializeField] private RectTransform _scanZone;
 
+    [Header("Actions")]
+    [SerializeField] private UnityEvent _onCodeLocalized;
+
     private IBarcodeReader _reader = new BarcodeReader(); // create a barcode reader instance
     private Texture2D _cameraImageTexture;
     private bool _scanningEnabled = true;
@@ -27,7 +30,10 @@ public class QRCodeLocalization : MonoBehaviour
     {
         _scanningEnabled = true;
         _cameraManager.frameReceived += OnCameraFrameReceived;
+        //Invoke("TestLocalization", 1f);
     }
+
+    private void TestLocalization() => GetQrCodeLocalization("(-1.47,0,-3.66)pos:dir(1.00,0.00,0.00)");
 
     private void OnDisable()
     {
@@ -68,40 +74,56 @@ public class QRCodeLocalization : MonoBehaviour
         buffer.Dispose(); // Dispose the buffer to avoid memory leaks
 
         // Detect and decode the barcode inside the bitmap
-        var result = _reader.Decode(_cameraImageTexture.GetPixels32(), _cameraImageTexture.width, _cameraImageTexture.height);
+        var result = _reader.Decode(
+            _cameraImageTexture.GetPixels32(),
+            _cameraImageTexture.width,
+            _cameraImageTexture.height
+            );
 
         if (result != null)
         {   // Display the QR code text and localize the device
             _qrCodeText.text = result.Text;
             GetQrCodeLocalization(result.Text);
-            //_qrCodeScanningPanel.SetActive(false);
         }
     }
 
     private void GetQrCodeLocalization(string _qrCodeText)
     {   // Get the localization of user's device based on QR code
 
-        if (_qrCodeText.Contains(":pos:") && _qrCodeText.Contains(":rot:"))
+        if (_qrCodeText.Contains("pos:dir"))
         {   // Split the QR code text to get position and rotation
-            string[] _QRSplit = _qrCodeText.Split(":pos:");
-            string _QRSplitPosition = _QRSplit[1].Split(":rot:")[0];
-            string _QRSplitRotation = _QRSplit[1].Split(":rot:")[1];
-            string _QRLabel = _QRSplit[0];
+            string[] _QRSplit = _qrCodeText.Split(")pos:dir(");
+            string _QRSplitPosition = _QRSplit[0].Replace("(", "");
+            string _QRSplitDirection = _QRSplit[1].Replace(")", "");
+
+            string[] _QRpos = _QRSplitPosition.Split(',');
+            string[] _QRdir = _QRSplitDirection.Split(',');
 
             // Split the position and rotation to get x, y, z values
-            string[] _QRpos = _QRSplitPosition.Split(',');
-            string[] _QRrot = _QRSplitRotation.Split(',');
+            if (_QRpos.Length != 3 || _QRdir.Length != 3) return;
 
-            if (_QRpos.Length != 3 || _QRrot.Length != 3) return;
-            Vector3 QRPosition = new Vector3(float.Parse(_QRpos[0]), float.Parse(_QRpos[1]), float.Parse(_QRpos[2]));
-            Vector3 QRRotation = new Vector3(float.Parse(_QRrot[0]), float.Parse(_QRrot[1]), float.Parse(_QRrot[2]));
+            Vector3 QRPosition = new Vector3(
+                float.Parse(_QRpos[0], System.Globalization.CultureInfo.InvariantCulture),
+                float.Parse(_QRpos[1], System.Globalization.CultureInfo.InvariantCulture),
+                float.Parse(_QRpos[2], System.Globalization.CultureInfo.InvariantCulture));
+            Vector3 QRDirection = new Vector3(
+                float.Parse(_QRdir[0], System.Globalization.CultureInfo.InvariantCulture),
+                float.Parse(_QRdir[1], System.Globalization.CultureInfo.InvariantCulture),
+                float.Parse(_QRdir[2], System.Globalization.CultureInfo.InvariantCulture));
 
             // Reset position and rotation of ARSession
             _session.Reset();
 
             // Add offset for recentering
             _sessionOrigin.transform.position = QRPosition;
-            _sessionOrigin.transform.rotation = Quaternion.Euler(QRRotation);
+            _sessionOrigin.transform.rotation = Quaternion.LookRotation(
+                QRDirection, _sessionOrigin.transform.up);
+
+            _onCodeLocalized.Invoke();
+        }
+        else
+        {
+            Debug.Log("Invalid QR code format");
         }
     }
 
