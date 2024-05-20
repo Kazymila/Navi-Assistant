@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Navigation\MiniMapPathVisualization.cs" />
     <Compile Include="Assets\Scripts\Navigation\QRCodeLocalization.cs" />
+    <Compile Include="Assets\Scripts\Navigation\TargetCollision.cs" />
     <Compile Include="Assets\Scripts\DebugMenuManager.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavArrowController.cs" />
     <Compile Include="Assets\Scripts\MapLoader.cs" />

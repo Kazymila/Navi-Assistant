@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,7 +7,7 @@ public class NavArrowController : MonoBehaviour
 {
     [Header("Path Arrow Settings")]
     public bool showPathArrow = false;
-    public float ArrowYOffset = -0.3f;
+    public float arrowYOffset = -0.3f;
     [SerializeField] private float _moveOnDistance;
 
     private GameObject _arrow;
@@ -17,6 +16,11 @@ public class NavArrowController : MonoBehaviour
     void Awake()
     {
         _arrow = this.transform.GetChild(0).gameObject;
+
+#if UNITY_EDITOR
+        // Set a offset for testing in the editor
+        arrowYOffset = -0.15f;
+#endif
     }
 
     public void EnableNavArrow(bool _enable)
@@ -40,6 +44,8 @@ public class NavArrowController : MonoBehaviour
         AddOffsetToArrow();
 
         _arrow.transform.LookAt(_nextPoint);
+        _arrow.transform.rotation = Quaternion.Euler(0,
+            _arrow.transform.rotation.eulerAngles.y, 0);
         EnableNavArrow(true);
     }
 
@@ -54,9 +60,9 @@ public class NavArrowController : MonoBehaviour
 
     private void AddOffsetToArrow()
     {   // Add height offset to arrow
-        if (ArrowYOffset != 0)
+        if (arrowYOffset != 0)
             _arrow.transform.position = new Vector3(
-                _arrow.transform.position.x, ArrowYOffset, _arrow.transform.position.z);
+                _arrow.transform.position.x, arrowYOffset, _arrow.transform.position.z);
     }
 
     private Vector3 SelectNextNavigationPoint(Vector3[] _points)
