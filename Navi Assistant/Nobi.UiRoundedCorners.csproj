@@ -64,9 +64,9 @@
     <Analyzer Include="D:\unityeditorfolder\2022.3.1f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.nobi.roundedcorners@8862398817\UiRoundedCorners\DestroyHelper.cs" />
     <Compile Include="Library\PackageCache\com.nobi.roundedcorners@8862398817\UiRoundedCorners\ImageWithIndependentRoundedCorners.cs" />
     <Compile Include="Library\PackageCache\com.nobi.roundedcorners@8862398817\UiRoundedCorners\ImageWithRoundedCorners.cs" />
+    <Compile Include="Library\PackageCache\com.nobi.roundedcorners@8862398817\UiRoundedCorners\DestroyHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.nobi.roundedcorners@8862398817\UiRoundedCorners\SDFUtils.cginc" />

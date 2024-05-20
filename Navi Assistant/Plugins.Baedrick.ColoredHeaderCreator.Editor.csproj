@@ -64,9 +64,9 @@
     <Analyzer Include="D:\unityeditorfolder\2022.3.1f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Plugins\Baedrick\ColoredHeaderCreator\Editor\OnPostProcessScene.cs" />
     <Compile Include="Assets\Plugins\Baedrick\ColoredHeaderCreator\Editor\EditorHelper.cs" />
     <Compile Include="Assets\Plugins\Baedrick\ColoredHeaderCreator\Editor\ColoredHeaderRenderer.cs" />
-    <Compile Include="Assets\Plugins\Baedrick\ColoredHeaderCreator\Editor\OnPostProcessScene.cs" />
     <Compile Include="Assets\Plugins\Baedrick\ColoredHeaderCreator\Editor\ColoredHeaderGUI.cs" />
   </ItemGroup>
   <ItemGroup>

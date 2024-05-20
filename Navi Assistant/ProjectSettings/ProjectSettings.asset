@@ -156,6 +156,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.KazyDev.NaviAssistant
     Standalone: com.KazyDev.NaviAssistant
+    iPhone: com.KazyDev.NaviAssistant
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -241,10 +242,10 @@ PlayerSettings:
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
-  useCustomMainGradleTemplate: 0
+  useCustomMainGradleTemplate: 1
   useCustomLauncherGradleManifest: 0
   useCustomBaseGradleTemplate: 0
-  useCustomGradlePropertiesTemplate: 0
+  useCustomGradlePropertiesTemplate: 1
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 3
@@ -572,7 +573,7 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: 
+  cameraUsageDescription: Augmented Reality requires the camera
   locationUsageDescription: 
   microphoneUsageDescription: 
   bluetoothUsageDescription: 
@@ -824,7 +825,8 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    iPhone: UNITY_XR_ARKIT_LOADER_ENABLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

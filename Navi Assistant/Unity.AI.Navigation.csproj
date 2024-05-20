@@ -64,10 +64,10 @@
     <Analyzer Include="D:\unityeditorfolder\2022.3.1f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Runtime\NavMeshSurface.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Runtime\NavMeshModifier.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Runtime\HelpUrls.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Runtime\NavMeshLink.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Runtime\NavMeshSurface.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Runtime\HelpUrls.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Runtime\NavMeshModifierVolume.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,8 +12,9 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] private GameObject _navTarget;
 
     [Header("Path Visualization")]
-    [SerializeField] private PathLineController _pathLineController;
-    [SerializeField] private PathArrowController _pathArrowController;
+    [SerializeField] private PathVisualization _pathVisualizer;
+    [SerializeField] private NavArrowController _navArrowController;
+    [SerializeField] private MiniMapPathVisualization _miniMapLineVisualizer;
 
     private NavMeshPath _navPath;
     void Start()
@@ -27,19 +28,14 @@ public class NavigationManager : MonoBehaviour
 
         if (_navPath.status == NavMeshPathStatus.PathComplete)
         {
-            if (_pathLineController.showPathLine)
-            {   // Draw path line if enabled
-                _MiniMapCanvas.SetActive(true);
-                _pathLineController.DrawPathLine(_navPath);
-            }
-            else _pathLineController.EnablePathLine(false);
+            _pathVisualizer.DrawPath(_navPath);
+            _miniMapLineVisualizer.DrawPathLine(_navPath);
 
-            if (_pathArrowController.showPathArrow)
+            if (_navArrowController.showPathArrow)
             {   // Show path arrow if enabled
-                //_MiniMapCanvas.SetActive(false);
-                _pathArrowController.UpdatePathArrow(_navPath);
+                _navArrowController.UpdateNavArrow(_navPath);
             }
-            else _pathArrowController.EnablePathArrow(false);
+            else _navArrowController.EnableNavArrow(false);
         }
         else Debug.Log("Path not reachable!");
     }

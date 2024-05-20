@@ -1,28 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PathLineController : MonoBehaviour
+public class MiniMapPathVisualization : MonoBehaviour
 {
     [Header("Path Line Settings")]
-    public bool showPathLine = false;
-    public float pathYOffset = -0.5f;
-
+    public bool showPathLine = true;
+    public float pathYOffset = 0.0f;
     private LineRenderer _lineRenderer;
 
     void Awake()
-    {
+    {   // Get the LineRenderer component
         _lineRenderer = GetComponent<LineRenderer>();
-    }
-
-    public void EnablePathLine(bool _enable)
-    {   // Enable or disable the path line
-        _lineRenderer.enabled = _enable;
     }
 
     public void DrawPathLine(NavMeshPath _navPath)
     {   // Draw the line path from agent to target
+        if (!showPathLine || _navPath.corners.Length < 2)
+        {   // Hide the line if path is not reachable
+            _lineRenderer.enabled = false;
+            return;
+        }
         Vector3[] _pathPoints = AddHeightOffset(_navPath.corners);
         _lineRenderer.positionCount = _pathPoints.Length;
         _lineRenderer.SetPositions(_pathPoints);

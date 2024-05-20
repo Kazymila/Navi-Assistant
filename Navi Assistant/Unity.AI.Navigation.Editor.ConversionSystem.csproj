@@ -65,12 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\ConverterItemInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\SystemConverter.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\ConverterItemDescriptor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\SystemConverterContainer.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\RunItemContext.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\InitializeConverterContext.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\SystemConvertersEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\SystemConverter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\SystemConverterContainer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\InitializeConverterContext.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\EditorStyles.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ConversionSystem\AssemblyInfo.cs" />
   </ItemGroup>

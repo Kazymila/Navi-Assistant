@@ -66,10 +66,10 @@
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.1\Runtime\XRManagerSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.1\Runtime\XRLoader.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.1\Runtime\IXRLoaderPreInit.cs" />
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.1\Runtime\XRConfigurationData.cs" />
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.1\Runtime\XRGeneralSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.1\Runtime\XRLoaderHelper.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.1\Runtime\IXRLoaderPreInit.cs" />
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.1\Runtime\XRManagementAnalytics.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PathArrowController : MonoBehaviour
+public class NavArrowController : MonoBehaviour
 {
     [Header("Path Arrow Settings")]
     public bool showPathArrow = false;
-    public float ArrowYOffset = -0.27f;
+    public float ArrowYOffset = -0.3f;
     [SerializeField] private float _moveOnDistance;
 
     private GameObject _arrow;
@@ -18,18 +19,28 @@ public class PathArrowController : MonoBehaviour
         _arrow = this.transform.GetChild(0).gameObject;
     }
 
-    public void EnablePathArrow(bool _enable)
+    public void EnableNavArrow(bool _enable)
     {   // Enable or disable the path arrow
         _arrow.SetActive(_enable);
     }
 
-    public void UpdatePathArrow(NavMeshPath _navPath)
+    public void UpdateNavArrow(NavMeshPath _navPath)
     {   // Update the path arrow position and rotation
+        RaycastHit _hit;
+
+        if (Physics.Raycast(_arrow.transform.position, Vector3.down, out _hit, Mathf.Infinity,
+            LayerMask.GetMask("Navigation")) && _hit.collider.CompareTag("PathArrow"))
+        {   // If the arrow is over the navigation path, disable the arrow
+            EnableNavArrow(false);
+            return;
+        }
+        // Draw inidicator arrow if the user is not looking the path
         Vector3[] _pathPoints = AddOffsetToPath(_navPath.corners);
         _nextPoint = SelectNextNavigationPoint(_pathPoints);
         AddOffsetToArrow();
 
         _arrow.transform.LookAt(_nextPoint);
+        EnableNavArrow(true);
     }
 
     private Vector3[] AddOffsetToPath(Vector3[] _points)

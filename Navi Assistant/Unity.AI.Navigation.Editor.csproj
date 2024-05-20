@@ -65,14 +65,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavMeshModifierEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavMeshComponentsGUIUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavigationPreferences.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavMeshLinkEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavMeshAssetManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavMeshModifierVolumeEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\ObsoleteNavigationWindowMenuEntry.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavMeshSurfaceEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavigationWindow.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavMeshComponentsGUIUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavMeshModifierVolumeEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.1.5\Editor\NavigationOverlay.cs" />
   </ItemGroup>
   <ItemGroup>
