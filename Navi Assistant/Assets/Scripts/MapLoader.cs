@@ -66,6 +66,7 @@ public class MapLoader : MonoBehaviour
 
         _wallRender.GetComponent<MeshFilter>().mesh.vertices = vertices;
         _wallRender.GetComponent<MeshFilter>().mesh.triangles = triangles;
+        _wallRender.GetComponent<MeshCollider>().sharedMesh = _wallRender.GetComponent<MeshFilter>().mesh;
         _wallRender.name = "Wall_" + _wallData.wallID.ToString();
     }
 

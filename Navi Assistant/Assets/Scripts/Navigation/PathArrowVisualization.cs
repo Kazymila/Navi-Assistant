@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PathVisualization : MonoBehaviour
+public class PathArrowVisualization : MonoBehaviour
 {
     [Header("Path Settings")]
     public bool showPath = false;

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MiniMapPathVisualization : MonoBehaviour
+public class PathLineVisualization : MonoBehaviour
 {
     [Header("Path Line Settings")]
     public bool showPathLine = true;

@@ -7,33 +7,41 @@ using TMPro;
 public class DebugMenuManager : MonoBehaviour
 {
     [Header("External References")]
-    [SerializeField] private PathVisualization _pathVisualizer;
+    [SerializeField] private PathArrowVisualization _pathArrowVisualizer;
+    [SerializeField] private PathLineVisualization _pathLineVisualizer;
     [SerializeField] private NavArrowController _navArrowController;
 
     [Header("UI Elements")]
     [SerializeField] private Slider _pathArrowsCountSlider;
-    [SerializeField] private Slider _pathHeightSlider;
+    [SerializeField] private Slider _pathArrowsHeightSlider;
+    [SerializeField] private Slider _showPathArrowToggle;
+    [SerializeField] private Slider _pathLineHeightSlider;
+    [SerializeField] private Slider _showPathLineToggle;
     [SerializeField] private Slider _arrowHeightSlider;
-    [SerializeField] private Slider _showPathToggle;
     [SerializeField] private Slider _showArrowToggle;
-    private TextMeshProUGUI _arrowCountText;
-    private TextMeshProUGUI _pathHeightText;
+    private TextMeshProUGUI _pathArrowsCountText;
+    private TextMeshProUGUI _pathArrowHeightText;
+    private TextMeshProUGUI _pathLineHeightText;
     private TextMeshProUGUI _arrowHeightText;
     private GameObject _debugMenu;
 
     void Start()
     {   // Get references to UI elements
-        _pathHeightText = _pathHeightSlider.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        _pathArrowsCountText = _pathArrowsCountSlider.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        _pathArrowHeightText = _pathArrowsHeightSlider.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        _pathLineHeightText = _pathLineHeightSlider.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         _arrowHeightText = _arrowHeightSlider.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        _arrowCountText = _pathArrowsCountSlider.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         _debugMenu = this.transform.GetChild(1).gameObject;
         _debugMenu.SetActive(false);
 
         // Set initial values to UI elements
-        _pathArrowsCountSlider.value = _pathVisualizer.maxArrowCount;
-        _pathHeightSlider.value = _pathVisualizer.pathYOffset;
+        _pathArrowsCountSlider.value = _pathArrowVisualizer.maxArrowCount;
+        _pathArrowsHeightSlider.value = _pathArrowVisualizer.pathYOffset;
+        _pathLineHeightSlider.value = _pathLineVisualizer.pathYOffset;
         _arrowHeightSlider.value = _navArrowController.arrowYOffset;
-        _showPathToggle.value = _pathVisualizer.showPath ? 1 : 0;
+
+        _showPathLineToggle.value = _pathLineVisualizer.showPathLine ? 1 : 0;
+        _showPathArrowToggle.value = _pathArrowVisualizer.showPath ? 1 : 0;
         _showArrowToggle.value = _navArrowController.showPathArrow ? 1 : 0;
     }
 
@@ -44,20 +52,32 @@ public class DebugMenuManager : MonoBehaviour
 
     public void SetPathArrowsCount()
     {   // Set path arrows count to slider value
-        _pathVisualizer.maxArrowCount = (int)_pathArrowsCountSlider.value;
-        _arrowCountText.text = _pathArrowsCountSlider.value.ToString();
+        _pathArrowVisualizer.maxArrowCount = (int)_pathArrowsCountSlider.value;
+        _pathArrowsCountText.text = _pathArrowsCountSlider.value.ToString();
     }
 
-    public void SetPathHeight()
+    public void SetPathArrowHeight()
     {   // Set path height to slider value
-        _pathVisualizer.pathYOffset = _pathHeightSlider.value;
-        _pathHeightText.text = _pathHeightSlider.value.ToString("F2");
+        _pathArrowVisualizer.pathYOffset = _pathArrowsHeightSlider.value;
+        _pathArrowHeightText.text = _pathArrowsHeightSlider.value.ToString("F2");
+    }
+
+    public void TogglePathArrows()
+    {   // Toggle path visibility
+        bool _showPath = _showPathArrowToggle.value == 1;
+        _pathArrowVisualizer.showPath = _showPath;
+    }
+
+    public void SetPathLineHeight()
+    {   // Set path line height to slider value
+        _pathLineVisualizer.pathYOffset = _pathLineHeightSlider.value;
+        _pathLineHeightText.text = _pathLineHeightSlider.value.ToString("F2");
     }
 
     public void TogglePathLine()
-    {   // Toggle path visibility
-        bool _showPathLine = _showPathToggle.value == 1;
-        _pathVisualizer.showPath = _showPathLine;
+    {   // Toggle path line visibility
+        bool _showPathLine = _showPathLineToggle.value == 1;
+        _pathLineVisualizer.showPathLine = _showPathLine;
     }
 
     public void SetArrowHeight()
@@ -66,7 +86,7 @@ public class DebugMenuManager : MonoBehaviour
         _arrowHeightText.text = _arrowHeightSlider.value.ToString("F2");
     }
 
-    public void TogglePathArrow()
+    public void ToggleIndicatorArrow()
     {   // Toggle path arrow visibility
         bool _showPathArrow = _showArrowToggle.value == 1;
         _navArrowController.showPathArrow = _showPathArrow;

@@ -75,4 +75,20 @@ public class NavArrowController : MonoBehaviour
         }
         return _points[_points.Length - 1];
     }
+
+    private void OnTriggerEnter(Collider _collision)
+    {   // Disable the wall when the arrow collides with it
+        if (_collision.CompareTag("Wall"))
+        {
+            _collision.GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider _collision)
+    {   // Enable the wall when the arrow exits the collision
+        if (_collision.CompareTag("Wall"))
+        {
+            _collision.GetComponent<MeshRenderer>().enabled = true;
+        }
+    }
 }

@@ -12,9 +12,10 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] private GameObject _navTarget;
 
     [Header("Path Visualization")]
-    [SerializeField] private PathVisualization _pathVisualizer;
+    [SerializeField] private PathArrowVisualization _pathVisualizer;
     [SerializeField] private NavArrowController _navArrowController;
-    [SerializeField] private MiniMapPathVisualization _miniMapLineVisualizer;
+    [SerializeField] private PathLineVisualization _pathLineVisualizer;
+    [SerializeField] private PathLineVisualization _miniMapLineVisualizer;
 
     private NavMeshPath _navPath;
     void Start()
@@ -29,6 +30,7 @@ public class NavigationManager : MonoBehaviour
         if (_navPath.status == NavMeshPathStatus.PathComplete)
         {
             _pathVisualizer.DrawPath(_navPath);
+            _pathLineVisualizer.DrawPathLine(_navPath);
             _miniMapLineVisualizer.DrawPathLine(_navPath);
 
             if (_navArrowController.showPathArrow)

@@ -64,14 +64,15 @@
     <Analyzer Include="D:\unityeditorfolder\2022.3.1f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Navigation\MiniMapPathVisualization.cs" />
     <Compile Include="Assets\Scripts\Navigation\QRCodeLocalization.cs" />
+    <Compile Include="Assets\Scripts\Navigation\PathArrowVisualization.cs" />
     <Compile Include="Assets\Scripts\Navigation\TargetCollision.cs" />
     <Compile Include="Assets\Scripts\DebugMenuManager.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavArrowController.cs" />
     <Compile Include="Assets\Scripts\MapLoader.cs" />
     <Compile Include="Assets\Scripts\MapDataModel.cs" />
-    <Compile Include="Assets\Scripts\Navigation\PathVisualization.cs" />
+    <Compile Include="Assets\Scripts\Navigation\PathLineVisualization.cs" />
+    <Compile Include="Assets\Scripts\DebugController.cs" />
     <Compile Include="Assets\Scripts\JsonDataService.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavigationManager.cs" />
   </ItemGroup>

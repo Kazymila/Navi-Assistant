@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PathArrow
+  - Wall
   layers:
   - Default
   - TransparentFX
