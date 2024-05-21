@@ -77,18 +77,18 @@ public class NavArrowController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider _collision)
-    {   // Disable the wall when the arrow collides with it
+    {   // Disable the wall when the arrow is inside the collision
         if (_collision.CompareTag("Wall"))
-        {
-            _collision.GetComponent<MeshRenderer>().enabled = false;
+        {   // Change the layer to only view in minimap, to avoid collision with the arrow
+            _collision.gameObject.layer = LayerMask.NameToLayer("MiniMapIndicators");
         }
     }
 
     private void OnTriggerExit(Collider _collision)
     {   // Enable the wall when the arrow exits the collision
         if (_collision.CompareTag("Wall"))
-        {
-            _collision.GetComponent<MeshRenderer>().enabled = true;
+        {   // Change the layer to wall again to render it in camera
+            _collision.gameObject.layer = LayerMask.NameToLayer("Wall");
         }
     }
 }

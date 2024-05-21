@@ -70,7 +70,7 @@ public class PathArrowVisualization : MonoBehaviour
         return _pathArrow;
     }
 
-    private void ClearPath()
+    public void ClearPath()
     {   // Clear the path visualization
         foreach (GameObject _pathArrow in _pathArrows)
             Destroy(_pathArrow);

@@ -34,4 +34,9 @@ public class PathLineVisualization : MonoBehaviour
             _newPoints[i] = new Vector3(_points[i].x, pathYOffset, _points[i].z);
         return _newPoints;
     }
+
+    public void ClearPathLine()
+    {   // Clear the line path
+        _lineRenderer.enabled = false;
+    }
 }

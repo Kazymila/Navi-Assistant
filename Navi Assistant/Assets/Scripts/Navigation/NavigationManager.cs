@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using TMPro;
 
 public class NavigationManager : MonoBehaviour
 {
@@ -10,9 +12,10 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] private Camera _topDownCamera;
     [SerializeField] private Camera _ARCamera;
     [SerializeField] private GameObject _navTarget;
+    [SerializeField] private GameObject _errorPanel;
 
     [Header("Path Visualization")]
-    [SerializeField] private PathArrowVisualization _pathVisualizer;
+    [SerializeField] private PathArrowVisualization _pathArrowVisualizer;
     [SerializeField] private NavArrowController _navArrowController;
     [SerializeField] private PathLineVisualization _pathLineVisualizer;
     [SerializeField] private PathLineVisualization _miniMapLineVisualizer;
@@ -29,7 +32,8 @@ public class NavigationManager : MonoBehaviour
 
         if (_navPath.status == NavMeshPathStatus.PathComplete)
         {
-            _pathVisualizer.DrawPath(_navPath);
+            _errorPanel.SetActive(false);
+            _pathArrowVisualizer.DrawPath(_navPath);
             _pathLineVisualizer.DrawPathLine(_navPath);
             _miniMapLineVisualizer.DrawPathLine(_navPath);
 
@@ -39,6 +43,20 @@ public class NavigationManager : MonoBehaviour
             }
             else _navArrowController.EnableNavArrow(false);
         }
-        else Debug.Log("Path not reachable!");
+        else
+        {   // Clear path if not reachable
+            _pathArrowVisualizer.ClearPath();
+            _pathLineVisualizer.ClearPathLine();
+            _miniMapLineVisualizer.ClearPathLine();
+            _navArrowController.EnableNavArrow(false);
+            Debug.Log("Path is not reachable");
+
+            // Show an alert message to the user
+            _errorPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "No es posible llegar al destino";
+            _errorPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text =
+                "Asegurese de encontrarse dentro del camino, puede verificar su posición en el minimapa de su izquierda.\n\n" +
+                " Si el problema persiste, intente reiniciar su ubicación leyendo un código QR cercano.";
+            _errorPanel.SetActive(true);
+        }
     }
 }
