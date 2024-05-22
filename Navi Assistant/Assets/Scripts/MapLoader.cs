@@ -8,7 +8,9 @@ using Firebase.Extensions;
 
 public class MapLoader : MonoBehaviour
 {
+    [Header("Map Data")]
     [SerializeField] private string mapFileName = "ExampleMap";
+    [SerializeField] private DestinationManager _destinationManager;
 
     [Header("Map Render")]
     [SerializeField] private GameObject wallRenderPrefab;
@@ -41,6 +43,7 @@ public class MapLoader : MonoBehaviour
             {   // Load map data and generate map render
                 string jsonData = snapshot.ToDictionary()["MapData"].ToString();
                 mapData = JsonUtility.FromJson<MapData>(jsonData);
+                _destinationManager.GenerateDestinationPoints();
                 GenerateMapRender();
             }
             else Debug.LogError("Document does not exist!");

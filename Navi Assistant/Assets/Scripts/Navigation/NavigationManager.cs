@@ -7,6 +7,8 @@ using TMPro;
 
 public class NavigationManager : MonoBehaviour
 {
+    public Transform destinationPoint;
+
     [Header("External References")]
     [SerializeField] private GameObject _MiniMapCanvas;
     [SerializeField] private Camera _topDownCamera;
@@ -28,7 +30,8 @@ public class NavigationManager : MonoBehaviour
 
     void Update()
     {   // Calculate path from agent to target
-        NavMesh.CalculatePath(transform.position, _navTarget.transform.position, NavMesh.AllAreas, _navPath);
+        if (destinationPoint == null) return;
+        NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
 
         if (_navPath.status == NavMeshPathStatus.PathComplete)
         {
@@ -54,8 +57,7 @@ public class NavigationManager : MonoBehaviour
             // Show an alert message to the user
             _errorPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "No es posible llegar al destino";
             _errorPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text =
-                "Asegurese de encontrarse dentro del camino, puede verificar su posición en el minimapa de su izquierda.\n\n" +
-                " Si el problema persiste, intente reiniciar su ubicación leyendo un código QR cercano.";
+                "Asegurese de encontrarse dentro del camino, puede reiniciar su ubicación leyendo un código QR cercano.";
             _errorPanel.SetActive(true);
         }
     }
