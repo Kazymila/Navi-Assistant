@@ -15,9 +15,12 @@ public class DebugController : MonoBehaviour
 
     private void Update()
     {
-        Vector2 move = _input.actions["Move"].ReadValue<Vector2>();
+        // Move camera
+        //Vector2 move = _input.actions["Move"].ReadValue<Vector2>();
+        //this.transform.position += new Vector3(move.x, 0, move.y) * _movingSpeed * Time.deltaTime;
+
+        // Rotate camera
         Vector2 look = _input.actions["Rotate"].ReadValue<Vector2>();
-        this.transform.position += new Vector3(move.x, 0, move.y) * _movingSpeed * Time.deltaTime;
         this.transform.Rotate(new Vector3(look.y, look.x, 0) * _rotationSpeed * Time.deltaTime);
     }
 }

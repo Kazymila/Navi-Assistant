@@ -43,7 +43,7 @@ public class MapLoader : MonoBehaviour
             {   // Load map data and generate map render
                 string jsonData = snapshot.ToDictionary()["MapData"].ToString();
                 mapData = JsonUtility.FromJson<MapData>(jsonData);
-                _destinationManager.GenerateDestinationPoints();
+                _destinationManager.StartDestinationManager();
                 GenerateMapRender();
             }
             else Debug.LogError("Document does not exist!");

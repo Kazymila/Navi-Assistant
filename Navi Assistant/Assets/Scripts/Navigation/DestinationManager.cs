@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
 using MapDataModel;
-using Unity.VisualScripting;
+using TMPro;
+using System.Runtime.CompilerServices;
+using UnityEngine.EventSystems;
 
 public class DestinationManager : MonoBehaviour
 {
@@ -11,23 +13,87 @@ public class DestinationManager : MonoBehaviour
     [SerializeField] private string _roomDestination;
     [SerializeField] private string _floorDestination;
 
+    [Header("Destination Settings")]
+    [SerializeField] private GameObject _destinationPrefab;
+    [SerializeField] private GameObject _navTarget;
+
     [Header("External References")]
     [SerializeField] private MapLoader _mapLoader;
     [SerializeField] private NavigationManager _navManager;
 
-    [Header("Destination Settings")]
-    [SerializeField] private GameObject _destinationPrefab;
+    [Header("UI Settings")]
+    [SerializeField] private TMP_InputField _locationsInputField;
+    [SerializeField] private TMP_Dropdown _locationsDropdown;
+    private List<TMP_Dropdown.OptionData> _dropdownOptions;
 
-    public void SetDestinationPoint(string _roomName, string _floorLevel)
+    public void StartDestinationManager()
+    {   // Start destination manager
+        GenerateDestinationPoints();
+        SetDropdownOptions();
+    }
+
+    #region --- Dropdown Options ---
+    private void SetDropdownOptions()
+    {   // Set dropdown options from destination points
+        _dropdownOptions = new List<TMP_Dropdown.OptionData>();
+
+        foreach (Transform _floor in this.transform)
+        {   // Add floor name to dropdown options
+            foreach (Transform _room in _floor)
+            {   // Add room name to dropdown options
+                TMP_Dropdown.OptionData _option = new TMP_Dropdown.OptionData(_room.name);
+                _dropdownOptions.Add(_option);
+            }
+        }
+        _locationsDropdown.options = _dropdownOptions;
+    }
+
+    public void FilterDropdown(string _input)
+    {   // Filter dropdown options based on input text
+        string _inputText = _input.ToLower();
+        _locationsDropdown.Hide();
+
+        if (_inputText == "")
+        {   // Show all options if input is empty
+            _locationsDropdown.options = _dropdownOptions;
+        }
+        else
+        {   // Show filtered options based on input text
+            _locationsDropdown.options = _dropdownOptions.FindAll(
+                option => option.text.ToLower().IndexOf(_inputText) >= 0);
+        }
+        _locationsDropdown.RefreshShownValue();
+        _locationsDropdown.Show();
+
+        _locationsInputField.ActivateInputField();
+        _locationsInputField.Select();
+    }
+
+    public void SetDestinationFromDropdown()
+    {   // Set destination point from dropdown selection
+        string _roomName = _locationsDropdown.options[_locationsDropdown.value].text;
+        int _floorLevel = 0; // Set floor level to 0 for now (single floor map)
+
+        _locationsInputField.text = _roomName;
+        _locationsInputField.DeactivateInputField();
+        _locationsDropdown.Hide();
+
+        SetDestinationPoint(_roomName, _floorLevel);
+    }
+    #endregion
+
+    #region --- Set Navigation Destination ---
+    public void SetDestinationPoint(string _roomName, int _floorLevel)
     {   // Set destination point to navigation manager
         Vector3 _startPos = _navManager.transform.position;
         Transform _destination = GetEntrancePoint(_roomName, _floorLevel, _startPos);
         _navManager.destinationPoint = _destination;
+        _navTarget.transform.position = _destination.position;
     }
 
-    private Transform GetEntrancePoint(string _roomName, string _floorLevel, Vector3 _startPos)
+    private Transform GetEntrancePoint(string _roomName, int _floorLevel, Vector3 _startPos)
     {   // Get entrance point for a room, to set as destination point
-        Transform _room = this.transform.Find(_floorLevel).Find(_roomName);
+        Transform _room = this.transform.GetChild(_floorLevel).Find(_roomName);
 
         if (_room.childCount == 0) return null;
         if (_room.childCount == 1) return _room.GetChild(0);
@@ -59,6 +125,7 @@ public class DestinationManager : MonoBehaviour
         }
         return _distance;
     }
+    #endregion
 
     #region --- Load Destination Data ---
     public void GenerateDestinationPoints()
@@ -76,8 +143,6 @@ public class DestinationManager : MonoBehaviour
                 CreateEntrancesFromRoom(_room, _roomObj);
             }
         }
-        // TESTING
-        SetDestinationPoint(_roomDestination, _floorDestination);
     }
 
     private void CreateEntrancesFromRoom(RoomData _roomData, GameObject _roomObj)
