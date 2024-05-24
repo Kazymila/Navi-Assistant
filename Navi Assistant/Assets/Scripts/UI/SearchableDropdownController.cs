@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class SearchableDropdownController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SearchableDropdownController : MonoBehaviour
     [SerializeField] private int _selectedOptionIndex = -1;
     [SerializeField] private List<string> _dropdownOptions;
     [SerializeField] private List<string> _filteredOptions;
+    [SerializeField] private UnityEvent _onOptionSelected;
 
     private void Awake()
     {
@@ -26,7 +28,9 @@ public class SearchableDropdownController : MonoBehaviour
         _itemTemplate.SetActive(false);
         _itemsDisplay.SetActive(false);
 
-        List<string> _options = new List<string> { "Option 1", "Option 2", "Option 3", "Option 4", "Option 5" };
+        // Test dropdown options
+        List<string> _options = new List<string> {
+            "Option 1", "Option 2", "Option 3", "Option 4", "Option 5" };
         SetDropdownOptions(_options);
     }
 
@@ -50,11 +54,6 @@ public class SearchableDropdownController : MonoBehaviour
         else ShowDropdown();
     }
 
-    public void CloseDropdown()
-    {   // Close dropdown on input field focus lost
-        Invoke("HideDropdown", 0.1f);
-    }
-
     public void AdjustItemDisplaySize()
     {   // Adjust dropdown items display size
         RectTransform _itemsRect = _itemsDisplay.GetComponent<RectTransform>();
@@ -68,11 +67,29 @@ public class SearchableDropdownController : MonoBehaviour
 
     public void SetDropdownOptions(List<string> _options)
     {   // Set dropdown options from a list
+        _dropdownOptions.Clear();
+        _filteredOptions.Clear();
         _dropdownOptions = _options;
         _filteredOptions = _options;
 
+        // Clear existing dropdown items
+        if (_itemsContainer.transform.childCount > 1)
+            foreach (Transform _child in _itemsContainer.transform)
+                if (_child != _itemTemplate.transform)
+                    Destroy(_child.gameObject);
+
+        // Instantiate dropdown items
         foreach (string _option in _options)
             InstantiateItem(_option);
+
+        _selectedOptionIndex = -1;
+        _inputField.text = "";
+    }
+
+    public string GetSelectedOption()
+    {   // Get selected option from dropdown
+        if (_selectedOptionIndex < 0) return "";
+        return _dropdownOptions[_selectedOptionIndex];
     }
 
     public void FilterDropdown(string _input)
@@ -109,13 +126,13 @@ public class SearchableDropdownController : MonoBehaviour
     #region --- Dropdown Items ---
     public void SelectOption(int _index)
     {   // Select an option from dropdown
-        if (_index < 0 || _index >= _dropdownOptions.Count) return;
+        if (_index < 0 || _index > _dropdownOptions.Count) return;
 
         _selectedOptionIndex = _index;
         _inputField.text = _dropdownOptions[_selectedOptionIndex];
-        HideDropdown();
 
-        print("Selected option: " + _dropdownOptions[_selectedOptionIndex]);
+        _onOptionSelected.Invoke();
+        HideDropdown();
     }
 
     private void InstantiateItem(string _itemText)
@@ -129,8 +146,8 @@ public class SearchableDropdownController : MonoBehaviour
             (value) => SelectOption(_dropdownOptions.IndexOf(_itemText)));
 
         // Set item text and toggle state
-        _itemToggle.isOn = _dropdownOptions.IndexOf(_itemText) == _selectedOptionIndex;
         _item.GetComponentInChildren<TextMeshProUGUI>().text = _itemText;
+        _itemToggle.isOn = false;
         _item.SetActive(true);
     }
     #endregion

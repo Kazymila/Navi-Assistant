@@ -18,11 +18,7 @@ public class DestinationManager : MonoBehaviour
     [Header("External References")]
     [SerializeField] private MapLoader _mapLoader;
     [SerializeField] private NavigationManager _navManager;
-
-    [Header("UI Settings")]
-    [SerializeField] private TMP_InputField _locationsInputField;
-    [SerializeField] private TMP_Dropdown _locationsDropdown;
-    private List<TMP_Dropdown.OptionData> _dropdownOptions;
+    [SerializeField] private SearchableDropdownController _dropdownController;
 
     public void StartDestinationManager()
     {   // Start destination manager
@@ -33,47 +29,24 @@ public class DestinationManager : MonoBehaviour
     #region --- Dropdown Options ---
     private void SetDropdownOptions()
     {   // Set dropdown options from destination points
-        _dropdownOptions = new List<TMP_Dropdown.OptionData>();
+        List<string> _dropdownOptions = new List<string>();
 
         foreach (Transform _floor in this.transform)
         {   // Add floor name to dropdown options
             foreach (Transform _room in _floor)
             {   // Add room name to dropdown options
-                TMP_Dropdown.OptionData _option = new TMP_Dropdown.OptionData(_room.name);
-                _dropdownOptions.Add(_option);
+                _dropdownOptions.Add(_room.name);
             }
         }
-        _locationsDropdown.options = _dropdownOptions;
-    }
-
-    public void FilterDropdown(string _input)
-    {   // Filter dropdown options based on input text
-        string _inputText = _input.ToLower();
-        _locationsDropdown.Hide();
-
-        if (_inputText == "")
-        {   // Show all options if input is empty
-            _locationsDropdown.options = _dropdownOptions;
-        }
-        else
-        {   // Show filtered options based on input text
-            _locationsDropdown.options = _dropdownOptions.FindAll(
-                option => option.text.ToLower().IndexOf(_inputText) >= 0);
-        }
-        _locationsDropdown.RefreshShownValue();
-        _locationsDropdown.Show();
-
-        _locationsInputField.ActivateInputField();
+        _dropdownController.SetDropdownOptions(_dropdownOptions);
     }
 
     public void SetDestinationFromDropdown()
     {   // Set destination point from dropdown selection
-        string _roomName = _locationsDropdown.options[_locationsDropdown.value].text;
-        int _floorLevel = 0; // Set floor level to 0 for now (single floor map)
+        string _roomName = _dropdownController.GetSelectedOption();
+        int _floorLevel = 0; // Set floor level to 0 for now
 
-        _locationsInputField.text = _roomName;
         SetDestinationPoint(_roomName, _floorLevel);
-        _locationsDropdown.Hide();
     }
     #endregion
 
