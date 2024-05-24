@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 #if UNITY_EDITOR
 public class DebugController : MonoBehaviour
 {
-    [SerializeField] private float _movingSpeed = 1.0f;
+    //[SerializeField] private float _movingSpeed = 1.0f;
     [SerializeField] private float _rotationSpeed = 1.0f;
     private PlayerInput _input;
 

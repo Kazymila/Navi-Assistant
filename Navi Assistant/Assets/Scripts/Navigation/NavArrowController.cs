@@ -13,9 +13,10 @@ public class NavArrowController : MonoBehaviour
     private GameObject _arrow;
     private Vector3 _nextPoint = Vector3.zero;
 
-    void Awake()
+    private void Start()
     {
         _arrow = this.transform.GetChild(0).gameObject;
+        EnableNavArrow(false);
 
 #if UNITY_EDITOR
         // Set a offset for testing in the editor

@@ -42,7 +42,7 @@ public class DebugMenuManager : MonoBehaviour
 
         _showPathLineToggle.value = _pathLineVisualizer.showPathLine ? 1 : 0;
         _showPathArrowToggle.value = _pathArrowVisualizer.showPath ? 1 : 0;
-        _showArrowToggle.value = _navArrowController.showPathArrow ? 1 : 0;
+        // _showArrowToggle.value = _navArrowController.showPathArrow ? 1 : 0;
     }
 
     public void ShowDebugMenu()

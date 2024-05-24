@@ -4,8 +4,6 @@ using UnityEngine.AI;
 using UnityEngine;
 using MapDataModel;
 using TMPro;
-using System.Runtime.CompilerServices;
-using UnityEngine.EventSystems;
 
 public class DestinationManager : MonoBehaviour
 {
@@ -66,7 +64,6 @@ public class DestinationManager : MonoBehaviour
         _locationsDropdown.Show();
 
         _locationsInputField.ActivateInputField();
-        _locationsInputField.Select();
     }
 
     public void SetDestinationFromDropdown()
@@ -75,10 +72,8 @@ public class DestinationManager : MonoBehaviour
         int _floorLevel = 0; // Set floor level to 0 for now (single floor map)
 
         _locationsInputField.text = _roomName;
-        _locationsInputField.DeactivateInputField();
-        _locationsDropdown.Hide();
-
         SetDestinationPoint(_roomName, _floorLevel);
+        _locationsDropdown.Hide();
     }
     #endregion
 

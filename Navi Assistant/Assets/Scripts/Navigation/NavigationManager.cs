@@ -39,12 +39,7 @@ public class NavigationManager : MonoBehaviour
             _pathArrowVisualizer.DrawPath(_navPath);
             _pathLineVisualizer.DrawPathLine(_navPath);
             _miniMapLineVisualizer.DrawPathLine(_navPath);
-
-            if (_navArrowController.showPathArrow)
-            {   // Show path arrow if enabled
-                _navArrowController.UpdateNavArrow(_navPath);
-            }
-            else _navArrowController.EnableNavArrow(false);
+            _navArrowController.UpdateNavArrow(_navPath);
         }
         else
         {   // Clear path if not reachable

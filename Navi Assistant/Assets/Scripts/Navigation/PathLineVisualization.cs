@@ -11,6 +11,7 @@ public class PathLineVisualization : MonoBehaviour
     void Awake()
     {   // Get the LineRenderer component
         _lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer.enabled = false;
     }
 
     public void DrawPathLine(NavMeshPath _navPath)

@@ -66,16 +66,17 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Navigation\DestinationManager.cs" />
     <Compile Include="Assets\Scripts\Navigation\QRCodeLocalization.cs" />
+    <Compile Include="Assets\Scripts\Data\MapDataModel.cs" />
     <Compile Include="Assets\Scripts\Navigation\PathArrowVisualization.cs" />
+    <Compile Include="Assets\Scripts\UI\SearchableDropdownController.cs" />
     <Compile Include="Assets\Scripts\Navigation\TargetCollision.cs" />
-    <Compile Include="Assets\Scripts\DebugMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Data\JsonDataService.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavArrowController.cs" />
-    <Compile Include="Assets\Scripts\MapLoader.cs" />
-    <Compile Include="Assets\Scripts\MapDataModel.cs" />
+    <Compile Include="Assets\Scripts\UI\DebugMenuManager.cs" />
     <Compile Include="Assets\Scripts\Navigation\PathLineVisualization.cs" />
     <Compile Include="Assets\Scripts\DebugController.cs" />
-    <Compile Include="Assets\Scripts\JsonDataService.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavigationManager.cs" />
+    <Compile Include="Assets\Scripts\Data\MapLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
