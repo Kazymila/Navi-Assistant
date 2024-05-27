@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using MapDataModel;
 using UnityEngine.Localization.Settings;
+using System.Linq;
 
 public class OptionsButtonsController : MonoBehaviour
 {
@@ -54,11 +55,12 @@ public class OptionsButtonsController : MonoBehaviour
                 }
             }
         }
+        // Clean null values from the array
+        _optionsShowGroups = _optionsShowGroups.Where(_group => _group.Count > 0).ToArray();
+
         // Show the first group of options buttons
         foreach (GameObject _optionButton in _optionsShowGroups[0])
             _optionButton.SetActive(true);
-
-        print(_optionsShowGroups.Length);
 
         _moreOptionsButton.transform.SetAsLastSibling();
         _moreOptionsButton.SetActive(_optionsShowGroups.Length > 1);
@@ -104,7 +106,16 @@ public class OptionsButtonsController : MonoBehaviour
                     foreach (GameObject _optionButton in _optionsShowGroups[i + 1])
                         _optionButton.SetActive(true);
                 }
-                _backOptionsButton.SetActive(true);
+                if (i + 1 == _optionsShowGroups.Length - 1)
+                {   // Only show the back button if is the last group
+                    _backOptionsButton.SetActive(true);
+                    _moreOptionsButton.SetActive(false);
+                }
+                else
+                {   // Show the more options button if is not the last group
+                    _backOptionsButton.SetActive(true);
+                    _moreOptionsButton.SetActive(true);
+                }
                 break;
             }
         }
@@ -124,6 +135,16 @@ public class OptionsButtonsController : MonoBehaviour
                     foreach (GameObject _optionButton in _optionsShowGroups[i - 1])
                         _optionButton.SetActive(true);
                     _backOptionsButton.SetActive(i - 1 > 0);
+                }
+                if (i - 1 == 0)
+                {   // Only show the more options button if is the first group
+                    _backOptionsButton.SetActive(false);
+                    _moreOptionsButton.SetActive(true);
+                }
+                else
+                {   // Show the more options button if is not the first group
+                    _backOptionsButton.SetActive(true);
+                    _moreOptionsButton.SetActive(true);
                 }
                 break;
             }

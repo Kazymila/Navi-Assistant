@@ -56,14 +56,18 @@ public class DestinationManager : MonoBehaviour
         _dropdownController.SetDropdownOptions(_dropdownOptions);
     }
 
-    private void SetDestinationsOnDropdown(List<string> _destionationName)
-    {   // Set destination types buttons from destination classes
+    private void SetDestinationsOnDropdown(List<string> _destionations)
+    {   // Set destination options on dropdown from a list of room names
         string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
+        List<string> _dropdownOptions = new List<string>();
 
-        // TODO: Search _destinationName in _destinationFilterOptions
-
-        List<string> _options = new List<string>();
-        _dropdownController.SetDropdownOptions(_options);
+        foreach (FloorData _floor in _mapLoader.mapData.floors)
+            foreach (RoomData _room in _floor.rooms)
+            {   // Add translated room name to dropdown options
+                if (_destionations.Contains(_room.roomName.key))
+                    _dropdownOptions.Add(_room.roomName.GetTranslationByCode(_languageCode));
+            }
+        _dropdownController.SetDropdownOptions(_dropdownOptions);
     }
 
     public void SelectDestinationFromDropdown()
