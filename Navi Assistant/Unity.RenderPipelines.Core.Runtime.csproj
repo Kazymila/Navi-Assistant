@@ -117,9 +117,9 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\RenderGraph\RenderGraphPass.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\RenderPipeline\IVolumetricCloud.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Lighting\ProbeVolume\ProbeReferenceVolumeProfile.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerFoldout.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Textures\Texture2DAtlasDynamic.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Utilities\ColorUtils.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerFoldout.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerObjectPopupField.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Lighting\ProbeVolume\ProbeVolume.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerMessageBox.cs" />
@@ -157,8 +157,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerObject.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Debugging\IDebugDisplaySettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\PostProcessing\LensFlareDataSRP.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Lighting\ProbeVolume\ProbeReferenceVolume.Debug.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\XR\XRLayout.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Lighting\ProbeVolume\ProbeReferenceVolume.Debug.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Common\CommonStructs.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\Utilities\DelegateUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Runtime\XR\XRSystem.cs" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
 using MapDataModel;
-using TMPro;
+using UnityEngine.Localization.Settings;
 
 public class DestinationManager : MonoBehaviour
 {
@@ -18,16 +18,31 @@ public class DestinationManager : MonoBehaviour
     [Header("External References")]
     [SerializeField] private MapLoader _mapLoader;
     [SerializeField] private NavigationManager _navManager;
+
+    [Header("UI References")]
     [SerializeField] private SearchableDropdownController _dropdownController;
+    [SerializeField] private OptionsButtonsController _destinationOptionsButtons;
+
+    [Header("Destination Classes")]
+    [SerializeField] private List<TranslatedText> _destinationFilterOptions;
+    [SerializeField] private List<Transform>[] _destinationRoomsByType;
 
     public void StartDestinationManager()
     {   // Start destination manager
-        GenerateDestinationPoints();
-        SetDropdownOptions();
+        _destinationFilterOptions = new List<TranslatedText>();
+        _destinationRoomsByType = new List<Transform>[_mapLoader.mapData.roomTypes.Length];
+
+        GetDestinationClasses();
+        LoadDestinationPoints();
+        SetAllDestinationsOnDropdown();
+
+        // Set test destination
+        SetDestinationOptionsButtons();
+        _destinationOptionsButtons.ShowOptionsButtons();
     }
 
-    #region --- Dropdown Options ---
-    private void SetDropdownOptions()
+    #region --- UI Managment ---
+    private void SetAllDestinationsOnDropdown()
     {   // Set dropdown options from destination points
         List<string> _dropdownOptions = new List<string>();
 
@@ -41,25 +56,89 @@ public class DestinationManager : MonoBehaviour
         _dropdownController.SetDropdownOptions(_dropdownOptions);
     }
 
-    public void SetDestinationFromDropdown()
+    private void SetDestinationsOnDropdown(List<string> _destionationName)
+    {   // Set destination types buttons from destination classes
+        string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
+
+        // TODO: Search _destinationName in _destinationFilterOptions
+
+        List<string> _options = new List<string>();
+        _dropdownController.SetDropdownOptions(_options);
+    }
+
+    public void SelectDestinationFromDropdown()
     {   // Set destination point from dropdown selection
         string _roomName = _dropdownController.GetSelectedOption();
         int _floorLevel = 0; // Set floor level to 0 for now
 
         SetDestinationPoint(_roomName, _floorLevel);
     }
+
+    public void SetDestinationOptionsButtons()
+    {   // Set destination types buttons from destination classes
+        foreach (TranslatedText _option in _destinationFilterOptions)
+        {   // Create a button for each destination class
+            _destinationOptionsButtons.AddOptionButton(_option, () => SetNavigationOption(_option.key));
+        }
+    }
     #endregion
 
     #region --- Set Navigation Destination ---
+    public int SetNavigationOption(string _optionName)
+    {   // Set navigation destination from option name
+        foreach (RoomTypeData _roomType in _mapLoader.mapData.roomTypes)
+        {   // Check for room type selected to set destination
+            if (_roomType.typeName.key == _optionName)
+            {
+                if (_roomType.searchNearestMode)
+                {   // Search nearest room of the type selected to set as destination
+                    List<Transform> _rooms = _destinationRoomsByType[_roomType.typeID];
+                    SetNearestRoomAsDestination(_rooms);
+                    return 2; // Return 2 for nearest room mode
+                }
+                else
+                {   // Set dropdown options from destination rooms of the type selected
+                    List<string> _options = _destinationRoomsByType[_roomType.typeID].ConvertAll(_room => _room.name);
+                    SetDestinationsOnDropdown(_options);
+                    return 1; // Return 1 for dropdown mode
+                }
+            }
+        }
+        // If is a unique room, set directly the destination
+        SetDestinationPoint(_optionName, 0);
+        return 0; // Return 0 for unique room mode
+    }
+
     public void SetDestinationPoint(string _roomName, int _floorLevel)
     {   // Set destination point to navigation manager
         Vector3 _startPos = _navManager.transform.position;
-        Transform _destination = GetEntrancePoint(_roomName, _floorLevel, _startPos);
+        Transform _destination = GetNeareastEntrancePoint(_roomName, _floorLevel, _startPos);
         _navManager.destinationPoint = _destination;
         _navTarget.transform.position = _destination.position;
     }
 
-    private Transform GetEntrancePoint(string _roomName, int _floorLevel, Vector3 _startPos)
+    private void SetNearestRoomAsDestination(List<Transform> _rooms)
+    {   // Get the nearest room from a list of rooms
+        Vector3 _startPos = _navManager.transform.position;
+        float[] _pathDistances = new float[_rooms.Count];
+
+        for (int i = 0; i < _rooms.Count; i++)
+        {   // Calculate path distance from start position to each room
+            Transform _room = _rooms[i];
+            Transform _entrance = _room.GetChild(0);
+            NavMeshPath _navPath = new NavMeshPath();
+            NavMesh.CalculatePath(_startPos, _entrance.position, NavMesh.AllAreas, _navPath);
+            _pathDistances[i] = GetPathDistance(_navPath);
+        }
+        // Return the room with the shortest path distance
+        int _minIndex = 0;
+        for (int i = 1; i < _pathDistances.Length; i++)
+            if (_pathDistances[i] < _pathDistances[_minIndex]) _minIndex = i;
+
+        SetDestinationPoint(_rooms[_minIndex].name, 0);
+    }
+
+    private Transform GetNeareastEntrancePoint(string _roomName, int _floorLevel, Vector3 _startPos)
     {   // Get entrance point for a room, to set as destination point
         Transform _room = this.transform.GetChild(_floorLevel).Find(_roomName);
 
@@ -95,8 +174,8 @@ public class DestinationManager : MonoBehaviour
     }
     #endregion
 
-    #region --- Load Destination Data ---
-    public void GenerateDestinationPoints()
+    #region --- Destination Data ---
+    public void LoadDestinationPoints()
     {   // Generate destination points from map data
         foreach (FloorData _floor in _mapLoader.mapData.floors)
         {   // Generate a object for each floor
@@ -105,10 +184,25 @@ public class DestinationManager : MonoBehaviour
 
             foreach (RoomData _room in _floor.rooms)
             {   // Generate a object for each room in the floor
-                GameObject _roomObj = new GameObject(_room.roomName);
+                GameObject _roomObj = new GameObject(_room.roomName.key);
                 _roomObj.transform.SetParent(_floorObj.transform);
-
                 CreateEntrancesFromRoom(_room, _roomObj);
+
+                // If room type is unique, add to destination filter options
+                if (_room.roomType == 0) _destinationFilterOptions.Add(_room.roomName);
+                else _destinationRoomsByType[_room.roomType].Add(_roomObj.transform);
+            }
+        }
+    }
+
+    private void GetDestinationClasses()
+    {   // Get destination classes from map data
+        foreach (RoomTypeData _roomType in _mapLoader.mapData.roomTypes)
+        {   // Add room type name to destination classes
+            if (_roomType.typeName.key != "Unique")
+            {
+                _destinationRoomsByType[_roomType.typeID] = new List<Transform>();
+                _destinationFilterOptions.Add(_roomType.typeName);
             }
         }
     }

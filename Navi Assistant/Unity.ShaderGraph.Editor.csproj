@@ -132,8 +132,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Drawing\Inspector\TabbedView\TabbedView.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Graphs\PreviewProperty.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Nodes\Math\Round\SignNode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Drawing\Interfaces\IResizable.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Generation\Targets\Fullscreen\FullscreenShaderGUI.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Drawing\Interfaces\IResizable.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Graphs\SerializableVirtualTexture.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Interfaces\IGroupItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Nodes\Utility\RedirectNodeView.cs" />
