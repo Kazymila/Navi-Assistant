@@ -34,6 +34,7 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private TranslatedText[] _selectFromDropdownDialog;
     [SerializeField] private TranslatedText[] _goToDestinationDialog;
 
+    private GameObject _assistantModel;
     private string[] _sentencesToDisplay;
     private int _sentenceIndex = -1;
     private int _charIndex = 0;
@@ -47,7 +48,9 @@ public class AssistantManager : MonoBehaviour
         _input = this.GetComponent<PlayerInput>();
         _dialogArrow = _dialoguePanel.transform.GetChild(1).gameObject;
         _dialogueTextDisplay = _dialoguePanel.GetComponentInChildren<TextMeshProUGUI>();
+        _assistantModel = this.transform.GetChild(0).gameObject;
 
+        _assistantModel.SetActive(true);
         _dialogArrow.SetActive(false);
         _navigationUI.SetActive(false);
         _destinationDropdown.gameObject.SetActive(false);
@@ -82,10 +85,17 @@ public class AssistantManager : MonoBehaviour
         SetDialogueToDisplay(_goToDestinationDialog);
         _displayingText = true;
 
+        _assistantModel.SetActive(true);
         _destinationsManager.SetAllDestinationsOnDropdown();
         _destinationDropdown.ChangeSelectedItem(_destinationName);
         _destinationDropdown.gameObject.SetActive(true);
         _navigationUI.SetActive(true);
+        
+        _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(() =>
+        {
+            _assistantModel.SetActive(false);
+        });
     }
 
     public void SelectDestinationFromDropdown()

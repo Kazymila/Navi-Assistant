@@ -53,7 +53,6 @@ public class DestinationManager : MonoBehaviour
 
     private void SetDestinationsOnDropdown(List<string> _destionations)
     {   // Set destination options on dropdown from a list of room names
-        string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
         List<TranslatedText> _dropdownOptions = new List<TranslatedText>();
 
         foreach (FloorData _floor in _mapLoader.mapData.floors)
