@@ -18,6 +18,7 @@ public class DestinationManager : MonoBehaviour
     [Header("External References")]
     [SerializeField] private MapLoader _mapLoader;
     [SerializeField] private NavigationManager _navManager;
+    [SerializeField] private AssistantManager _assistantManager;
 
     [Header("UI References")]
     [SerializeField] private SearchableDropdownController _dropdownController;
@@ -34,38 +35,32 @@ public class DestinationManager : MonoBehaviour
 
         GetDestinationClasses();
         LoadDestinationPoints();
-        SetAllDestinationsOnDropdown();
-
-        // Set test destination
         SetDestinationOptionsButtons();
-        _destinationOptionsButtons.ShowOptionsButtons();
     }
 
     #region --- UI Managment ---
-    private void SetAllDestinationsOnDropdown()
+    public void SetAllDestinationsOnDropdown()
     {   // Set dropdown options from destination points
-        List<string> _dropdownOptions = new List<string>();
+        List<TranslatedText> _dropdownOptions = new List<TranslatedText>();
 
-        foreach (Transform _floor in this.transform)
-        {   // Add floor name to dropdown options
-            foreach (Transform _room in _floor)
+        foreach (FloorData _floor in _mapLoader.mapData.floors)
+            foreach (RoomData _room in _floor.rooms)
             {   // Add room name to dropdown options
-                _dropdownOptions.Add(_room.name);
+                _dropdownOptions.Add(_room.roomName);
             }
-        }
         _dropdownController.SetDropdownOptions(_dropdownOptions);
     }
 
     private void SetDestinationsOnDropdown(List<string> _destionations)
     {   // Set destination options on dropdown from a list of room names
         string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
-        List<string> _dropdownOptions = new List<string>();
+        List<TranslatedText> _dropdownOptions = new List<TranslatedText>();
 
         foreach (FloorData _floor in _mapLoader.mapData.floors)
             foreach (RoomData _room in _floor.rooms)
             {   // Add translated room name to dropdown options
                 if (_destionations.Contains(_room.roomName.key))
-                    _dropdownOptions.Add(_room.roomName.GetTranslationByCode(_languageCode));
+                    _dropdownOptions.Add(_room.roomName);
             }
         _dropdownController.SetDropdownOptions(_dropdownOptions);
     }
@@ -75,6 +70,7 @@ public class DestinationManager : MonoBehaviour
         string _roomName = _dropdownController.GetSelectedOption();
         int _floorLevel = 0; // Set floor level to 0 for now
 
+        _assistantManager.GoToDestination(_roomName);
         SetDestinationPoint(_roomName, _floorLevel);
     }
 
@@ -85,11 +81,18 @@ public class DestinationManager : MonoBehaviour
             _destinationOptionsButtons.AddOptionButton(_option, () => SetNavigationOption(_option.key));
         }
     }
+
+    public void ShowDestinationOptionsButtons()
+    {   // Show destination options buttons
+        _destinationOptionsButtons.ShowOptionsButtons();
+    }
     #endregion
 
     #region --- Set Navigation Destination ---
-    public int SetNavigationOption(string _optionName)
+    public void SetNavigationOption(string _optionName)
     {   // Set navigation destination from option name
+        _destinationOptionsButtons.HideOptionsButtons();
+
         foreach (RoomTypeData _roomType in _mapLoader.mapData.roomTypes)
         {   // Check for room type selected to set destination
             if (_roomType.typeName.key == _optionName)
@@ -97,20 +100,23 @@ public class DestinationManager : MonoBehaviour
                 if (_roomType.searchNearestMode)
                 {   // Search nearest room of the type selected to set as destination
                     List<Transform> _rooms = _destinationRoomsByType[_roomType.typeID];
-                    SetNearestRoomAsDestination(_rooms);
-                    return 2; // Return 2 for nearest room mode
+                    string _roomName = SetNearestRoomAsDestination(_rooms);
+                    _assistantManager.GoToDestination(_roomName);
+                    return;
                 }
                 else
                 {   // Set dropdown options from destination rooms of the type selected
                     List<string> _options = _destinationRoomsByType[_roomType.typeID].ConvertAll(_room => _room.name);
                     SetDestinationsOnDropdown(_options);
-                    return 1; // Return 1 for dropdown mode
+                    _assistantManager.SelectDestinationFromDropdown();
+                    return;
                 }
             }
         }
         // If is a unique room, set directly the destination
         SetDestinationPoint(_optionName, 0);
-        return 0; // Return 0 for unique room mode
+        _assistantManager.GoToDestination(_optionName);
+        return;
     }
 
     public void SetDestinationPoint(string _roomName, int _floorLevel)
@@ -121,7 +127,7 @@ public class DestinationManager : MonoBehaviour
         _navTarget.transform.position = _destination.position;
     }
 
-    private void SetNearestRoomAsDestination(List<Transform> _rooms)
+    private string SetNearestRoomAsDestination(List<Transform> _rooms)
     {   // Get the nearest room from a list of rooms
         Vector3 _startPos = _navManager.transform.position;
         float[] _pathDistances = new float[_rooms.Count];
@@ -140,6 +146,7 @@ public class DestinationManager : MonoBehaviour
             if (_pathDistances[i] < _pathDistances[_minIndex]) _minIndex = i;
 
         SetDestinationPoint(_rooms[_minIndex].name, 0);
+        return _rooms[_minIndex].name;
     }
 
     private Transform GetNeareastEntrancePoint(string _roomName, int _floorLevel, Vector3 _startPos)
