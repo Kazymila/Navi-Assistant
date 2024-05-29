@@ -97,6 +97,21 @@ public class SearchableDropdownController : MonoBehaviour
         return _dropdownOptions[_selectedOptionIndex].key;
     }
 
+    public void OnSelectInputField()
+    {   // Clear input field text
+        _inputField.text = "";
+    }
+
+    public void OnDeselectInputField()
+    {   // Set value on input field
+        if (_selectedOptionIndex < 0) return;
+
+        // TODO: Return if cursor is over dropdown items
+
+        _inputField.text = _dropdownOptions[_selectedOptionIndex].GetTranslationByCode(
+            LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0]);
+    }
+
     public void FilterDropdown(string _input)
     {   // Filter dropdown options based on input text
         if (_input == "")
@@ -134,7 +149,7 @@ public class SearchableDropdownController : MonoBehaviour
         if (_filteredOptions.Count == 0) return;
         _inputField.text = _dropdownOptions.Find(_opt => _opt.key == _option).GetTranslationByCode(
             LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0]);
-        _selectedOptionIndex = _filteredOptions.IndexOf(_option);
+        _selectedOptionIndex = _dropdownOptions.IndexOf(_dropdownOptions.Find(_opt => _opt.key == _option));
         _itemsDisplay.SetActive(false);
     }
 
