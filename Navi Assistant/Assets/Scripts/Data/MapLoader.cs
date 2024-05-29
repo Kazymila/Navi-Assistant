@@ -84,7 +84,9 @@ public class MapLoader : MonoBehaviour
         _roomRender.GetComponent<MeshFilter>().mesh.triangles = triangles;
         _roomRender.GetComponent<MeshRenderer>().material.SetColor(
             "_Color1", _roomData.polygonData.materialColor.GetColor);
-        _roomRender.name = "Floor_" + _roomData.roomID.ToString();
+        _roomRender.name = _roomData.roomName.key;
+
+        _roomRender.GetComponent<MeshCollider>().sharedMesh = _roomRender.GetComponent<MeshFilter>().mesh;
     }
 
     private void GenerateShapeRender(ShapeData _shapeData)

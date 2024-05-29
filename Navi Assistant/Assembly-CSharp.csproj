@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Navigation\PathArrowVisualization.cs" />
     <Compile Include="Assets\Scripts\UI\SearchableDropdownController.cs" />
     <Compile Include="Assets\Scripts\Navigation\TargetCollision.cs" />
+    <Compile Include="Assets\Scripts\UI\TargetLabelController.cs" />
     <Compile Include="Assets\Scripts\Data\JsonDataService.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavArrowController.cs" />
     <Compile Include="Assets\Scripts\AssistantManager.cs" />

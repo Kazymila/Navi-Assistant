@@ -56,4 +56,17 @@ public class NavigationManager : MonoBehaviour
             _errorPanel.SetActive(true);
         }
     }
+
+    public string GetCurrentRoom()
+    {   // Get the current room where the user is located
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f))
+        {   // Check if the user is inside a room
+            if (hit.collider.CompareTag("Room"))
+            {
+                return hit.collider.name;
+            }
+        }
+        return "";
+    }
 }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using MapDataModel;
 using UnityEngine.Localization.Settings;
+using UnityEngine.InputSystem;
+using MapDataModel;
+using TMPro;
 
 public class SearchableDropdownController : MonoBehaviour
 {
@@ -23,8 +24,11 @@ public class SearchableDropdownController : MonoBehaviour
     [SerializeField] private List<string> _filteredOptions;
     [SerializeField] private UnityEvent _onOptionSelected;
 
+    private PlayerInput _input;
+
     private void Awake()
     {
+        _input = this.GetComponent<PlayerInput>();
         _dropdownOptions = new List<TranslatedText>();
         _filteredOptions = new List<string>();
         _itemTemplate.SetActive(false);
@@ -36,6 +40,23 @@ public class SearchableDropdownController : MonoBehaviour
             new TranslatedText("Option 1", "Option 1", "Opción 1"),
             new TranslatedText("Option 2", "Option 2", "Opción 2"),};
         SetDropdownOptions(_options);*/
+    }
+
+    private void Update()
+    {
+        /*// Hide dropdown if click is outside dropdown area
+        Vector2 _cursorPos = _input.actions["CursorPosition"].ReadValue<Vector2>();
+        bool _isCursorOverItems = RectTransformUtility.RectangleContainsScreenPoint(
+            _itemsDisplay.GetComponent<RectTransform>(), _cursorPos, Camera.main);
+        bool _isCursorOverBar = RectTransformUtility.RectangleContainsScreenPoint(
+                this.GetComponent<RectTransform>(), _cursorPos, Camera.main);
+
+        if (_itemsDisplay.activeSelf && !_isCursorOverItems && !_isCursorOverBar)
+            HideDropdown();*/
+
+        // If dropdown is closed, show selected item on input field
+        if (!_itemsDisplay.activeSelf && _dropdownOptions.Count > 0 && _selectedOptionIndex >= 0)
+            ChangeSelectedItem(_dropdownOptions[_selectedOptionIndex].key);
     }
 
     #region --- Dropdown visibility ---
@@ -97,19 +118,9 @@ public class SearchableDropdownController : MonoBehaviour
         return _dropdownOptions[_selectedOptionIndex].key;
     }
 
-    public void OnSelectInputField()
+    public void ClearInputText()
     {   // Clear input field text
         _inputField.text = "";
-    }
-
-    public void OnDeselectInputField()
-    {   // Set value on input field
-        if (_selectedOptionIndex < 0) return;
-
-        // TODO: Return if cursor is over dropdown items
-
-        _inputField.text = _dropdownOptions[_selectedOptionIndex].GetTranslationByCode(
-            LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0]);
     }
 
     public void FilterDropdown(string _input)

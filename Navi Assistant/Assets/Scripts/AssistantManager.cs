@@ -43,7 +43,7 @@ public class AssistantManager : MonoBehaviour
 
     private PlayerInput _input;
 
-    void Start()
+    void Awake()
     {
         _input = this.GetComponent<PlayerInput>();
         _dialogArrow = _dialoguePanel.transform.GetChild(1).gameObject;
@@ -90,7 +90,7 @@ public class AssistantManager : MonoBehaviour
         _destinationDropdown.ChangeSelectedItem(_destinationName);
         _destinationDropdown.gameObject.SetActive(true);
         _navigationUI.SetActive(true);
-        
+
         _onDialogueEnd = new UnityEvent();
         _onDialogueEnd.AddListener(() =>
         {

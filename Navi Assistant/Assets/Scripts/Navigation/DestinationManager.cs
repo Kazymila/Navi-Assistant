@@ -4,6 +4,7 @@ using UnityEngine.AI;
 using UnityEngine;
 using MapDataModel;
 using UnityEngine.Localization.Settings;
+using TMPro;
 
 public class DestinationManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class DestinationManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private SearchableDropdownController _dropdownController;
     [SerializeField] private OptionsButtonsController _destinationOptionsButtons;
+    [SerializeField] private GameObject _floatingLabelTemplate;
 
     [Header("Destination Classes")]
     [SerializeField] private List<TranslatedText> _destinationFilterOptions;
@@ -235,8 +237,23 @@ public class DestinationManager : MonoBehaviour
 
                 GameObject _obj = Instantiate(_destinationPrefab, _position, Quaternion.identity, _roomObj.transform);
                 _obj.name = "Entrance_" + _obj.transform.GetSiblingIndex().ToString();
+
+                CreateTargetFloatingLabel(_roomData.roomName, _position);
             }
         }
+    }
+
+    private void CreateTargetFloatingLabel(TranslatedText _roomName, Vector3 _position)
+    {   // Create a floating label for the destination point
+        GameObject _label = Instantiate(_floatingLabelTemplate, _position, Quaternion.identity);
+        _label.transform.SetParent(_floatingLabelTemplate.transform.parent);
+        _label.name = "TargetLabel " + _label.transform.GetSiblingIndex() + ": " + _roomName.key;
+
+        // Set the room name in the label in the current language
+        string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
+        _label.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = _roomName.GetTranslationByCode(_languageCode);
+        _label.GetComponent<TargetLabelController>()._targetLabelName = _roomName;
+        _label.SetActive(true);
     }
 
     private bool WallBelongsToRoom(WallData wallData, RoomData roomData)

@@ -1,8 +1,8 @@
 {
-    "name": "DebugControllers",
+    "name": "InputControllers",
     "maps": [
         {
-            "name": "Simulation",
+            "name": "DebugSimulation",
             "id": "10703c31-1adf-4370-9b3a-e16ac665d465",
             "actions": [
                 {
@@ -138,7 +138,7 @@
             ]
         },
         {
-            "name": "Assistant",
+            "name": "AssistantInteraction",
             "id": "94bb34d2-a432-4fac-8bf6-94210d35318b",
             "actions": [
                 {
@@ -149,6 +149,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CursorPosition",
+                    "type": "Value",
+                    "id": "c1b95fc0-9e4a-42a3-9e76-09aa63d84fef",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -171,6 +180,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2482b75d-df78-4461-9b3f-b2a5702b4340",
+                    "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CursorPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69afbafe-f4f1-4270-8120-525aeec4a631",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CursorPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
