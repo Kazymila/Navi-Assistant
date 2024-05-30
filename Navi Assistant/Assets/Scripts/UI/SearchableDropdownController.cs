@@ -7,7 +7,6 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.InputSystem;
 using MapDataModel;
 using TMPro;
-using JetBrains.Annotations;
 
 public class SearchableDropdownController : MonoBehaviour
 {
@@ -30,6 +29,7 @@ public class SearchableDropdownController : MonoBehaviour
     private void Awake()
     {
         _input = this.GetComponent<PlayerInput>();
+        //_input.actions["Click"].performed += _ => HandleOutsideClick();
         _dropdownOptions = new List<TranslatedText>();
         _filteredOptions = new List<string>();
         _itemTemplate.SetActive(false);
@@ -51,20 +51,22 @@ public class SearchableDropdownController : MonoBehaviour
     }
 
     private void Update()
-    {
-        /*// Hide dropdown if click is outside dropdown area
+    {   // If dropdown is closed, show selected item on input field
+        if (!_itemsDisplay.activeSelf && _dropdownOptions.Count > 0 && _selectedOptionIndex >= 0)
+            ChangeSelectedItem(_dropdownOptions[_selectedOptionIndex].key);
+    }
+
+    private void HandleOutsideClick()
+    {   // Hide dropdown if click is outside dropdown area
         Vector2 _cursorPos = _input.actions["CursorPosition"].ReadValue<Vector2>();
+
         bool _isCursorOverItems = RectTransformUtility.RectangleContainsScreenPoint(
             _itemsDisplay.GetComponent<RectTransform>(), _cursorPos, Camera.main);
         bool _isCursorOverBar = RectTransformUtility.RectangleContainsScreenPoint(
                 this.GetComponent<RectTransform>(), _cursorPos, Camera.main);
 
         if (_itemsDisplay.activeSelf && !_isCursorOverItems && !_isCursorOverBar)
-            HideDropdown();*/
-
-        // If dropdown is closed, show selected item on input field
-        if (!_itemsDisplay.activeSelf && _dropdownOptions.Count > 0 && _selectedOptionIndex >= 0)
-            ChangeSelectedItem(_dropdownOptions[_selectedOptionIndex].key);
+            HideDropdown();
     }
 
     private string GetLanguageCode()
@@ -76,6 +78,8 @@ public class SearchableDropdownController : MonoBehaviour
     public void ShowDropdown()
     {   // Show dropdown items
         if (_filteredOptions.Count == 0) return;
+        AdjustItemDisplaySize();
+
         _arrowAnimator.Play("ShowDropdown", 0, 0);
         _itemsDisplay.SetActive(true);
     }
@@ -134,9 +138,16 @@ public class SearchableDropdownController : MonoBehaviour
         }
         _itemsDisplay.SetActive(false);
         _inputText = _input.ToLower();
-        _filteredOptions = _dropdownOptions.ConvertAll(option => option.key).FindAll(
-            option => option.ToLower().Contains(_inputText)
-        );
+
+        // Filter options based on input text in selected language
+        List<string> _filteredTranslatedOptions = _dropdownOptions.ConvertAll(
+            option => option.GetTranslationByCode(GetLanguageCode())).FindAll(
+                option => option.ToLower().Contains(_inputText)
+            );
+        // Get filtered options keys
+        _filteredOptions = _filteredTranslatedOptions.ConvertAll(option => _dropdownOptions.Find(
+            _opt => _opt.GetTranslationByCode(GetLanguageCode()) == option).key);
+
         UpdateDropdownOptions();
     }
 
@@ -150,7 +161,6 @@ public class SearchableDropdownController : MonoBehaviour
             int _itemIndex = _dropdownOptions.FindIndex(_opt => _opt.key == _option) + 1;
             _itemsContainer.transform.GetChild(_itemIndex).gameObject.SetActive(true);
         }
-        AdjustItemDisplaySize();
         ShowDropdown();
     }
 

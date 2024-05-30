@@ -38,10 +38,13 @@ public class AssistantManager : MonoBehaviour
         _assistantModel = this.transform.GetChild(0).gameObject;
         _assistantAnimator = _assistantModel.GetComponent<Animator>();
 
-        _destinationDropdown.gameObject.SetActive(false);
         _navigationUI.SetActive(false);
         _assistantModel.SetActive(true);
+    }
 
+    void Start()
+    {   // Start the assistant when the scene starts
+        _destinationDropdown.gameObject.SetActive(false);
         SelectDestinationInteraction(); // Test the destination selection
     }
 
@@ -85,7 +88,6 @@ public class AssistantManager : MonoBehaviour
         });
         _dialogPanel.SetDialogueToDisplay(_goToDestinationDialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
-
     }
 
     public void SelectDestinationFromDropdown()
@@ -94,6 +96,7 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.PlayDialogue();
 
         _destinationDropdown.gameObject.SetActive(true);
+        _destinationDropdown.ShowDropdown();
     }
 
     private void SelectDestinationInteraction()
