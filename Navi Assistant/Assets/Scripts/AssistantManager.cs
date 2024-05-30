@@ -50,12 +50,32 @@ public class AssistantManager : MonoBehaviour
         this.transform.position = Camera.main.transform.position + Camera.main.transform.forward * _assistantDistance;
     }
 
+    private void WelcomeAssistant()
+    {   // Welcome the assistant when the scene starts
+        UnityEvent _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(() =>
+        {
+            _assistantModel.SetActive(false);
+            _qrLocalization.ToggleScanning();
+        });
+        _dialogPanel.SetDialogueToDisplay(_introDialog, _onDialogueEnd);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Hello", 0);
+    }
+
+    public void UserLocalized()
+    {   // When the user is localized, show the destination options
+        SelectDestinationInteraction();
+    }
+
+    #region --- Choose Destination Events ---
     public void GoToDestination(string _destinationName)
     {   // Go to the selected destination
         _assistantModel.SetActive(true);
+        _destinationDropdown.gameObject.SetActive(true);
         _destinationsManager.SetAllDestinationsOnDropdown();
         _destinationDropdown.ChangeSelectedItem(_destinationName);
-        _destinationDropdown.gameObject.SetActive(true);
         _navigationUI.SetActive(true);
 
         UnityEvent _onDialogEnd = new UnityEvent();
@@ -88,25 +108,7 @@ public class AssistantManager : MonoBehaviour
 
         _assistantAnimator.Play("Hello", 0);
     }
-
-    private void WelcomeAssistant()
-    {   // Welcome the assistant when the scene starts
-        UnityEvent _onDialogueEnd = new UnityEvent();
-        _onDialogueEnd.AddListener(() =>
-        {
-            _assistantModel.SetActive(false);
-            _qrLocalization.ToggleScanning();
-        });
-        _dialogPanel.SetDialogueToDisplay(_introDialog, _onDialogueEnd);
-        _dialogPanel.PlayDialogue();
-
-        _assistantAnimator.Play("Hello", 0);
-    }
-
-    public void UserLocalized()
-    {   // When the user is localized, show the destination options
-        SelectDestinationInteraction();
-    }
+    #endregion
 
     #region --- Trigger Events ---
     private void OnTriggerStay(Collider _collision)

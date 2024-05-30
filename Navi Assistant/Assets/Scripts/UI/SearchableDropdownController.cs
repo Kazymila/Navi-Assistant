@@ -7,6 +7,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.InputSystem;
 using MapDataModel;
 using TMPro;
+using JetBrains.Annotations;
 
 public class SearchableDropdownController : MonoBehaviour
 {
@@ -34,12 +35,19 @@ public class SearchableDropdownController : MonoBehaviour
         _itemTemplate.SetActive(false);
         _itemsDisplay.SetActive(false);
 
-        // Test dropdown options
-        /*
+        // Default dropdown options for testing
         List<TranslatedText> _options = new List<TranslatedText> {
-            new TranslatedText("Option 1", "Option 1", "Opción 1"),
-            new TranslatedText("Option 2", "Option 2", "Opción 2"),};
-        SetDropdownOptions(_options);*/
+            new TranslatedText(){
+                key = "Option 1",
+                englishTranslation = "Option 1",
+                spanishTranslation = "Opción 1"
+            },
+            new TranslatedText(){
+                key = "Option 2",
+                englishTranslation = "Option 2",
+                spanishTranslation = "Opción 2"
+            }};
+        SetDropdownOptions(_options);
     }
 
     private void Update()
@@ -57,6 +65,11 @@ public class SearchableDropdownController : MonoBehaviour
         // If dropdown is closed, show selected item on input field
         if (!_itemsDisplay.activeSelf && _dropdownOptions.Count > 0 && _selectedOptionIndex >= 0)
             ChangeSelectedItem(_dropdownOptions[_selectedOptionIndex].key);
+    }
+
+    private string GetLanguageCode()
+    {   // Get the language code from the selected locale
+        return LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
     }
 
     #region --- Dropdown visibility ---
@@ -92,6 +105,7 @@ public class SearchableDropdownController : MonoBehaviour
 
     public void SetDropdownOptions(List<TranslatedText> _options)
     {   // Set dropdown options from a list
+        _itemsDisplay.SetActive(false);
         _dropdownOptions.Clear();
         _filteredOptions.Clear();
         _dropdownOptions = _options;
@@ -104,22 +118,9 @@ public class SearchableDropdownController : MonoBehaviour
                     Destroy(_child.gameObject);
 
         // Instantiate dropdown items based on selected language
-        string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
-
         foreach (TranslatedText _option in _options) InstantiateItem(_option);
 
         _selectedOptionIndex = -1;
-        _inputField.text = "";
-    }
-
-    public string GetSelectedOption()
-    {   // Get selected option from dropdown
-        if (_selectedOptionIndex < 0) return "";
-        return _dropdownOptions[_selectedOptionIndex].key;
-    }
-
-    public void ClearInputText()
-    {   // Clear input field text
         _inputField.text = "";
     }
 
@@ -129,7 +130,6 @@ public class SearchableDropdownController : MonoBehaviour
         {   // Show all options if input is empty
             _filteredOptions = _dropdownOptions.ConvertAll(option => option.key);
             UpdateDropdownOptions();
-            ShowDropdown();
             return;
         }
         _itemsDisplay.SetActive(false);
@@ -138,7 +138,6 @@ public class SearchableDropdownController : MonoBehaviour
             option => option.ToLower().Contains(_inputText)
         );
         UpdateDropdownOptions();
-        ShowDropdown();
     }
 
     private void UpdateDropdownOptions()
@@ -152,16 +151,27 @@ public class SearchableDropdownController : MonoBehaviour
             _itemsContainer.transform.GetChild(_itemIndex).gameObject.SetActive(true);
         }
         AdjustItemDisplaySize();
+        ShowDropdown();
+    }
+
+    public void ClearInputText()
+    {   // Clear input field text
+        _inputField.text = "";
     }
 
     #region --- Dropdown Items ---
     public void ChangeSelectedItem(string _option)
     {   // Change selected option based on input text
         if (_filteredOptions.Count == 0) return;
-        _inputField.text = _dropdownOptions.Find(_opt => _opt.key == _option).GetTranslationByCode(
-            LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0]);
+        _inputField.text = _dropdownOptions.Find(_opt => _opt.key == _option).GetTranslationByCode(GetLanguageCode());
         _selectedOptionIndex = _dropdownOptions.IndexOf(_dropdownOptions.Find(_opt => _opt.key == _option));
         _itemsDisplay.SetActive(false);
+    }
+
+    public string GetSelectedOption()
+    {   // Get selected option from dropdown
+        if (_selectedOptionIndex < 0) return "";
+        return _dropdownOptions[_selectedOptionIndex].key;
     }
 
     public void SelectOption(int _index)
@@ -169,8 +179,7 @@ public class SearchableDropdownController : MonoBehaviour
         if (_index < 0 || _index > _dropdownOptions.Count) return;
 
         _selectedOptionIndex = _index;
-        _inputField.text = _dropdownOptions[_selectedOptionIndex].GetTranslationByCode(
-            LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0]);
+        _inputField.text = _dropdownOptions[_selectedOptionIndex].GetTranslationByCode(GetLanguageCode());
 
         _onOptionSelected.Invoke();
         HideDropdown();
@@ -187,8 +196,7 @@ public class SearchableDropdownController : MonoBehaviour
             (value) => SelectOption(_dropdownOptions.IndexOf(_itemName)));
 
         // Set item text and toggle state
-        _item.GetComponentInChildren<TextMeshProUGUI>().text = _itemName.GetTranslationByCode(
-            LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0]);
+        _item.GetComponentInChildren<TextMeshProUGUI>().text = _itemName.GetTranslationByCode(GetLanguageCode());
         _itemToggle.isOn = false;
         _item.SetActive(true);
     }
