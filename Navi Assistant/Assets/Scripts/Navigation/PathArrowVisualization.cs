@@ -18,8 +18,8 @@ public class PathArrowVisualization : MonoBehaviour
     {
 #if UNITY_EDITOR
         // Set variables for testing in the editor
-        pathYOffset = 0.0f;
-        maxArrowCount = 10;
+        pathYOffset = 0.2f;
+        maxArrowCount = 7;
 #endif
     }
 
