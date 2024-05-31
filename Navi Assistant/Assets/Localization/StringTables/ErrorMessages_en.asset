@@ -17,7 +17,16 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: c42266cc4b775c84fafe37be95e624c7, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1816289174630400
+    m_Localized: Unable to reach the destination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1816362969214976
+    m_Localized: Make sure you are on the road, you can reset your location by reading
+      a nearby QR code.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

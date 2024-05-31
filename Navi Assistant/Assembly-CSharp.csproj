@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Data\JsonDataService.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavArrowController.cs" />
     <Compile Include="Assets\Scripts\UI\DialogController.cs" />
+    <Compile Include="Assets\Scripts\UI\ErrorMessagePanelController.cs" />
     <Compile Include="Assets\Scripts\AssistantManager.cs" />
     <Compile Include="Assets\Scripts\UI\DebugMenuManager.cs" />
     <Compile Include="Assets\Scripts\Navigation\PathLineVisualization.cs" />

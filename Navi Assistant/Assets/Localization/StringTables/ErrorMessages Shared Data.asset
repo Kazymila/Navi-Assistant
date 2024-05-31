@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: ErrorMessages
   m_TableCollectionNameGuidString: c42266cc4b775c84fafe37be95e624c7
-  m_Entries: []
+  m_Entries:
+  - m_Id: 1816289174630400
+    m_Key: CannotReachDestination_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1816362969214976
+    m_Key: CannotReachDestination_Message
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

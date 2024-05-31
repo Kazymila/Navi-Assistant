@@ -49,14 +49,14 @@ public class AssistantManager : MonoBehaviour
     {
         _assistantModel = this.transform.GetChild(0).gameObject;
         _assistantAnimator = _assistantModel.GetComponent<Animator>();
-
         _navigationUI.SetActive(false);
-        _assistantModel.SetActive(true);
+        InitializeSystemLanguage();
     }
 
     void Start()
     {   // Start the assistant when the scene starts
         _destinationDropdown.gameObject.SetActive(false);
+        _assistantModel.SetActive(true);
         SetAssitantOptionsButtons();
         SetLanguageOptonsButtons();
 
@@ -66,6 +66,17 @@ public class AssistantManager : MonoBehaviour
     private void Update()
     {   // Update the assistant position to face the camera
         this.transform.position = Camera.main.transform.position + Camera.main.transform.forward * _assistantDistance;
+    }
+
+    #region --- Initialization Methods ---
+    private void InitializeSystemLanguage()
+    {   // Initialize the system language
+        if (Application.systemLanguage == SystemLanguage.Spanish)
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("es");
+        else if (Application.systemLanguage == SystemLanguage.English)
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("en");
+
+        Debug.Log("This system is in " + Application.systemLanguage);
     }
 
     private void SetAssitantOptionsButtons()
@@ -80,6 +91,7 @@ public class AssistantManager : MonoBehaviour
         foreach (TranslatedText _language in _languageOptions)
             _changeLanguageButtons.AddOptionButton(_language, () => ChangeLanguage(_language.key));
     }
+    #endregion
 
     #region --- Assistance Events ---
     private void WelcomeAssistant()

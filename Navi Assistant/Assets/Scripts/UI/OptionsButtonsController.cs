@@ -1,12 +1,12 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using TMPro;
+using UnityEngine;
 using MapDataModel;
-using UnityEngine.Localization.Settings;
-using System.Linq;
+using TMPro;
 
 public class OptionsButtonsController : MonoBehaviour
 {
@@ -32,8 +32,12 @@ public class OptionsButtonsController : MonoBehaviour
         GameObject _optionButton = Instantiate(_optionButtonTemplate, transform);
         _optionButton.name = "Option " + (_optionButton.transform.GetSiblingIndex() - 3) + ": " + _optionText.key;
         _optionButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _optionText.key;
-        _optionButton.GetComponent<Button>().onClick.AddListener(_optionAction);
         _optionsTranslatedTexts.Add(_optionText);
+
+        Button.ButtonClickedEvent _onClick = new Button.ButtonClickedEvent();
+        _onClick.AddListener(_optionAction);              // Add the action to the option button
+        _onClick.AddListener(() => HideOptionsButtons()); // Hide the options buttons after click
+        _optionButton.GetComponent<Button>().onClick = _onClick;
     }
 
     public void ShowOptionsButtons()

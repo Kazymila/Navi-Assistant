@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
+using MapDataModel;
 using TMPro;
-using System.Runtime.CompilerServices;
+using UnityEngine.Localization;
 
 public class NavigationManager : MonoBehaviour
 {
@@ -15,13 +15,17 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] private Camera _topDownCamera;
     [SerializeField] private Camera _ARCamera;
     [SerializeField] private GameObject _navTarget;
-    [SerializeField] private GameObject _errorPanel;
+    [SerializeField] private ErrorMessagePanelController _errorPanel;
 
     [Header("Path Visualization")]
     [SerializeField] private PathArrowVisualization _pathArrowVisualizer;
     [SerializeField] private NavArrowController _navArrowController;
     [SerializeField] private PathLineVisualization _pathLineVisualizer;
     [SerializeField] private PathLineVisualization _miniMapLineVisualizer;
+
+    [Header("Error Messages")]
+    [SerializeField] private LocalizedString _destinationErrorTitle;
+    [SerializeField] private LocalizedString _destinationErrorMessage;
 
     private NavMeshPath _navPath;
     void Start()
@@ -36,7 +40,7 @@ public class NavigationManager : MonoBehaviour
 
         if (_navPath.status == NavMeshPathStatus.PathComplete)
         {
-            _errorPanel.SetActive(false);
+            _errorPanel.gameObject.SetActive(false);
             _pathArrowVisualizer.DrawPath(_navPath);
             _pathLineVisualizer.DrawPathLine(_navPath);
             _miniMapLineVisualizer.DrawPathLine(_navPath);
@@ -51,10 +55,8 @@ public class NavigationManager : MonoBehaviour
             Debug.Log("Path is not reachable");
 
             // Show an alert message to the user
-            _errorPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "No es posible llegar al destino";
-            _errorPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text =
-                "Asegurese de encontrarse dentro del camino, puede reiniciar su ubicación leyendo un código QR cercano.";
-            _errorPanel.SetActive(true);
+            _errorPanel.SetErrorMessage(_destinationErrorTitle.GetLocalizedString(), _destinationErrorMessage.GetLocalizedString(), 0);
+            _errorPanel.gameObject.SetActive(true);
         }
     }
 

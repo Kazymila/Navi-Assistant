@@ -17,7 +17,16 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: c42266cc4b775c84fafe37be95e624c7, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1816362969214976
+    m_Localized: "Asegurese de encontrarse dentro del camino, puede reiniciar su
+      ubicaci\xF3n leyendo un c\xF3digo QR cercano."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1816289174630400
+    m_Localized: No es posible llegar al destino
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
