@@ -46,10 +46,10 @@ public class TargetLabelController : MonoBehaviour
                 Invoke("HideLabel", 0.10f);
             }
             else
-            {
+            {   // Show the label if it is hidden
                 _isLabelVisible = true;
                 if (this.transform.localScale == Vector3.zero)
-                    _labelAnimator.Play("Show", 0); // Show the label if it is hidden
+                    _labelAnimator.Play("Show", 0);
             }
         }
     }

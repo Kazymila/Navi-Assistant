@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.CompilerServices;
 
 public class NavigationManager : MonoBehaviour
 {
@@ -60,10 +61,11 @@ public class NavigationManager : MonoBehaviour
     public string GetCurrentRoom()
     {   // Get the current room where the user is located
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f))
-        {   // Check if the user is inside a room
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f, LayerMask.GetMask("Floor")))
+        {   // Check if the user is over a room
             if (hit.collider.CompareTag("Room"))
-            {
+            {   // Return the current room name
+                print("Current Room: " + hit.collider.name);
                 return hit.collider.name;
             }
         }

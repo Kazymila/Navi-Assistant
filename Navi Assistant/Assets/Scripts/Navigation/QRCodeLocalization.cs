@@ -22,13 +22,14 @@ public class QRCodeLocalization : MonoBehaviour
     [Header("Actions")]
     [SerializeField] private UnityEvent _onCodeLocalized;
 
-    private IBarcodeReader _reader = new BarcodeReader(); // create a barcode reader instance
+    private IBarcodeReader _reader = new BarcodeReader();
     private Texture2D _cameraImageTexture;
     private bool _scanningEnabled = true;
 
     private void OnEnable()
     {
         _scanningEnabled = true;
+        _qrCodeScannerPanel.SetActive(true);
         _cameraManager.frameReceived += OnCameraFrameReceived;
         //Invoke("TestLocalization", 1f);
     }
@@ -38,6 +39,7 @@ public class QRCodeLocalization : MonoBehaviour
     private void OnDisable()
     {
         _scanningEnabled = false;
+        _qrCodeScannerPanel.SetActive(false);
         _cameraManager.frameReceived -= OnCameraFrameReceived;
     }
 

@@ -14,6 +14,7 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private DestinationManager _destinationsManager;
 
     [Header("UI References")]
+    [SerializeField] private GameObject _assistantUI;
     [SerializeField] private GameObject _navigationUI;
     [SerializeField] private DialogController _dialogPanel;
     [SerializeField] private SearchableDropdownController _destinationDropdown;
@@ -45,7 +46,9 @@ public class AssistantManager : MonoBehaviour
     void Start()
     {   // Start the assistant when the scene starts
         _destinationDropdown.gameObject.SetActive(false);
-        SelectDestinationInteraction(); // Test the destination selection
+
+        //SelectDestinationInteraction(); // Test the destination selection
+        WelcomeAssistant();
     }
 
     private void Update()
@@ -58,8 +61,9 @@ public class AssistantManager : MonoBehaviour
         UnityEvent _onDialogueEnd = new UnityEvent();
         _onDialogueEnd.AddListener(() =>
         {
+            _assistantUI.SetActive(false);
             _assistantModel.SetActive(false);
-            _qrLocalization.ToggleScanning();
+            _qrLocalization.gameObject.SetActive(true);
         });
         _dialogPanel.SetDialogueToDisplay(_introDialog, _onDialogueEnd);
         _dialogPanel.PlayDialogue();
@@ -69,6 +73,10 @@ public class AssistantManager : MonoBehaviour
 
     public void UserLocalized()
     {   // When the user is localized, show the destination options
+        _navigationUI.SetActive(false);
+        _assistantModel.SetActive(true);
+        _assistantUI.SetActive(true);
+
         SelectDestinationInteraction();
     }
 
