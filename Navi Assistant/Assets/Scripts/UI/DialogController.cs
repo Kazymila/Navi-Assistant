@@ -71,7 +71,9 @@ public class DialogController : MonoBehaviour
         {   // Get the sentences to display in the current language
             _sentencesToDisplay[i] = _dialog[i].GetTranslationByCode(_languageCode);
         }
-        _onDialogueEnd = _onEndEvent; // Set the event to invoke when the dialogue ends
+        // Set the event to invoke when the dialogue ends
+        if (_onEndEvent != null) _onDialogueEnd = _onEndEvent;
+        else _onDialogueEnd = new UnityEvent();
 
         if (_keepLastSentence)
         {   // Keep the last sentence displayed

@@ -30,6 +30,18 @@ MonoBehaviour:
     m_Localized: Go back
     m_Metadata:
       m_Items: []
+  - m_Id: 1648282838249472
+    m_Localized: Find a place
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1648660535324672
+    m_Localized: Know the place
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1648738725539840
+    m_Localized: Change language
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using UnityEngine;
 using MapDataModel;
+using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class AssistantManager : MonoBehaviour
 {
@@ -17,14 +19,23 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private GameObject _assistantUI;
     [SerializeField] private GameObject _navigationUI;
     [SerializeField] private DialogController _dialogPanel;
+    [SerializeField] private OptionsButtonsController _assistantOptionsButtons;
+    [SerializeField] private OptionsButtonsController _changeLanguageButtons;
     [SerializeField] private SearchableDropdownController _destinationDropdown;
 
     [Header("Assistant Settings")]
     [SerializeField] private float _assistantDistance = 1.0f;
+    [SerializeField] private TranslatedText[] _assistantOptions;
+    [SerializeField] private TranslatedText[] _languageOptions;
 
     [Header("General Dialogues")]
     [SerializeField] private TranslatedText[] _introDialog;
-    [SerializeField] private TranslatedText[] _goodbyeDialog;
+    [SerializeField] private TranslatedText[] _assistantOptionsDialog;
+    [SerializeField] private TranslatedText[] _destinationReachedDialog;
+    [Header(" Localization Dialogues")]
+    [SerializeField] private TranslatedText[] _goQRScannerDialog;
+    [SerializeField] private TranslatedText[] _scannerBackDialog;
+    [SerializeField] private TranslatedText[] _localizedDialog;
 
     [Header("Destination Selection Dialogues")]
     [SerializeField] private TranslatedText[] _selectDestinationDialog;
@@ -46,8 +57,9 @@ public class AssistantManager : MonoBehaviour
     void Start()
     {   // Start the assistant when the scene starts
         _destinationDropdown.gameObject.SetActive(false);
+        SetAssitantOptionsButtons();
+        SetLanguageOptonsButtons();
 
-        //SelectDestinationInteraction(); // Test the destination selection
         WelcomeAssistant();
     }
 
@@ -56,29 +68,108 @@ public class AssistantManager : MonoBehaviour
         this.transform.position = Camera.main.transform.position + Camera.main.transform.forward * _assistantDistance;
     }
 
+    private void SetAssitantOptionsButtons()
+    {   // Set the assistant options buttons
+        _assistantOptionsButtons.AddOptionButton(_assistantOptions[0], StartNavigation);
+        _assistantOptionsButtons.AddOptionButton(_assistantOptions[1], StartTour);
+        _assistantOptionsButtons.AddOptionButton(_assistantOptions[2], _changeLanguageButtons.ShowOptionsButtons);
+    }
+
+    private void SetLanguageOptonsButtons()
+    {   // Set the language options buttons
+        foreach (TranslatedText _language in _languageOptions)
+            _changeLanguageButtons.AddOptionButton(_language, () => ChangeLanguage(_language.key));
+    }
+
+    #region --- Assistance Events ---
     private void WelcomeAssistant()
     {   // Welcome the assistant when the scene starts
-        UnityEvent _onDialogueEnd = new UnityEvent();
-        _onDialogueEnd.AddListener(() =>
-        {
-            _assistantUI.SetActive(false);
-            _assistantModel.SetActive(false);
-            _qrLocalization.gameObject.SetActive(true);
-        });
-        _dialogPanel.SetDialogueToDisplay(_introDialog, _onDialogueEnd);
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(ShowAssistantOptions);
+        _dialogPanel.SetDialogueToDisplay(_introDialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
 
         _assistantAnimator.Play("Hello", 0);
     }
 
-    public void UserLocalized()
-    {   // When the user is localized, show the destination options
-        _navigationUI.SetActive(false);
-        _assistantModel.SetActive(true);
-        _assistantUI.SetActive(true);
+    private void ShowAssistantOptions()
+    {   // Show the assistant options
+        _dialogPanel.SetDialogueToDisplay(_assistantOptionsDialog, null, true);
+        _dialogPanel.PlayDialogue();
 
-        SelectDestinationInteraction();
+        _assistantOptionsButtons.ShowOptionsButtons();
     }
+
+    public void StartNavigation()
+    {   // Start the navigation process
+        _assistantOptionsButtons.HideOptionsButtons();
+        _dialogPanel.SetDialogueToDisplay(_goQRScannerDialog, GoLocalizationScanner());
+        _dialogPanel.PlayDialogue();
+    }
+
+    public void StartTour()
+    {   // Start the building tour
+        Debug.Log("Starting the tour");
+        // TODO: Start the tour
+    }
+
+    public void ChangeLanguage(string _languageCode)
+    {   // Change the language of the assistant
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(_languageCode);
+        _changeLanguageButtons.HideOptionsButtons();
+        ShowAssistantOptions();
+    }
+
+    private void DestinationReached()
+    {   // When the user reaches the destination
+        _dialogPanel.SetDialogueToDisplay(_destinationReachedDialog);
+        _dialogPanel.PlayDialogue();
+
+        // TODO: Celebrate the user reaching the destination
+        //_assistantAnimator.Play("Happy", 0);
+    }
+    #endregion
+
+    #region --- Localization Events ---
+    private UnityEvent GoLocalizationScanner()
+    {   // Go to the QR code localization scanner
+        UnityEvent _event = new UnityEvent();
+        Button.ButtonClickedEvent _onBack = new Button.ButtonClickedEvent();
+
+        _onBack.AddListener(() =>
+        {   // When the user goes back from the QR code scanner
+            _assistantUI.SetActive(true);
+            _assistantModel.SetActive(true);
+            _qrLocalization.gameObject.SetActive(false);
+
+            _dialogPanel.SetDialogueToDisplay(_scannerBackDialog, GoLocalizationScanner());
+            _dialogPanel.PlayDialogue();
+        });
+
+        _event.AddListener(() =>
+        {   // When the user goes to the QR code scanner
+            _assistantUI.SetActive(false);
+            _assistantModel.SetActive(false);
+            _qrLocalization.gameObject.SetActive(true);
+            _qrLocalization.ChangeLocalizedAction(OnLocalizedEvent());
+            _qrLocalization.ChangeBackButtonAction(_onBack);
+        });
+        return _event;
+    }
+
+    private UnityEvent OnLocalizedEvent()
+    {   // When the user is localized, show the destination options
+        UnityEvent _event = new UnityEvent();
+        _event.AddListener(() =>
+        {
+            _assistantUI.SetActive(true);
+            _assistantModel.SetActive(true);
+            SelectDestinationInteraction();
+            _qrLocalization.gameObject.SetActive(false);
+        });
+        return _event;
+    }
+    #endregion
 
     #region --- Choose Destination Events ---
     public void GoToDestination(string _destinationName)
@@ -116,8 +207,6 @@ public class AssistantManager : MonoBehaviour
         });
         _dialogPanel.SetDialogueToDisplay(_selectDestinationDialog, _onDialogueEnd, true);
         _dialogPanel.PlayDialogue();
-
-        _assistantAnimator.Play("Hello", 0);
     }
     #endregion
 

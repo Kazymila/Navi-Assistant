@@ -27,6 +27,18 @@ MonoBehaviour:
     m_Key: OptionsButtons_OptionsBack
     m_Metadata:
       m_Items: []
+  - m_Id: 1648282838249472
+    m_Key: OptionsButtons_StartNavigation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1648660535324672
+    m_Key: OptionsButtons_StartTour
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1648738725539840
+    m_Key: OptionsButtons_ChangeLanguage
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

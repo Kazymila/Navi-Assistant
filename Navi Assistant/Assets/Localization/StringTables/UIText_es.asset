@@ -30,6 +30,18 @@ MonoBehaviour:
     m_Localized: "Atr\xE1s"
     m_Metadata:
       m_Items: []
+  - m_Id: 1648282838249472
+    m_Localized: Encontrar un lugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1648660535324672
+    m_Localized: Conocer el lugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1648738725539840
+    m_Localized: Cambiar idioma
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -3,6 +3,7 @@ using UnityEngine.XR.ARSubsystems;
 using Unity.XR.CoreUtils;
 using UnityEngine.Events;
 using Unity.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 using ZXing;
 using TMPro;
@@ -18,6 +19,7 @@ public class QRCodeLocalization : MonoBehaviour
     [SerializeField] private GameObject _qrCodeScannerPanel;
     [SerializeField] private TextMeshProUGUI _qrCodeText;
     [SerializeField] private RectTransform _scanZone;
+    [SerializeField] private Button _backButton;
 
     [Header("Actions")]
     [SerializeField] private UnityEvent _onCodeLocalized;
@@ -31,7 +33,7 @@ public class QRCodeLocalization : MonoBehaviour
         _scanningEnabled = true;
         _qrCodeScannerPanel.SetActive(true);
         _cameraManager.frameReceived += OnCameraFrameReceived;
-        //Invoke("TestLocalization", 1f);
+        Invoke("TestLocalization", 1f);
     }
 
     private void TestLocalization() => GetQrCodeLocalization("(-1.47,0,-3.66)pos:dir(1.00,0.00,0.00)");
@@ -127,6 +129,18 @@ public class QRCodeLocalization : MonoBehaviour
         {
             Debug.Log("Invalid QR code format");
         }
+    }
+
+    public void ChangeLocalizedAction(UnityEvent _newAction)
+    {   // Change the action when the QR code is localized
+        _onCodeLocalized.RemoveAllListeners();
+        _onCodeLocalized = _newAction;
+    }
+
+    public void ChangeBackButtonAction(Button.ButtonClickedEvent _newAction)
+    {   // Change the action of the back button
+        _backButton.onClick.RemoveAllListeners();
+        _backButton.onClick = _newAction;
     }
 
     public void ToggleScanning()
