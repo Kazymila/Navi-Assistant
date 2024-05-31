@@ -30,8 +30,11 @@ public class DestinationManager : MonoBehaviour
     [SerializeField] private List<TranslatedText> _destinationFilterOptions;
     [SerializeField] private List<Transform>[] _destinationRoomsByType;
 
+    private List<TargetLabelController> _floatingLabels;
+
     public void StartDestinationManager()
     {   // Start destination manager
+        _floatingLabels = new List<TargetLabelController>();
         _destinationFilterOptions = new List<TranslatedText>();
         _destinationRoomsByType = new List<Transform>[_mapLoader.mapData.roomTypes.Length];
 
@@ -126,6 +129,8 @@ public class DestinationManager : MonoBehaviour
         Transform _destination = GetNeareastEntrancePoint(_roomName, _floorLevel, _startPos);
         _navManager.destinationPoint = _destination;
         _navTarget.transform.position = _destination.position;
+
+        _floatingLabels.Find(_label => _label.transform.position == _destination.position).SetAsNavigationTarget(true);
     }
 
     private string SetNearestRoomAsDestination(List<Transform> _rooms)
@@ -253,6 +258,7 @@ public class DestinationManager : MonoBehaviour
         string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
         _label.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = _roomName.GetTranslationByCode(_languageCode);
         _label.GetComponent<TargetLabelController>()._targetLabelName = _roomName;
+        _floatingLabels.Add(_label.GetComponent<TargetLabelController>());
         _label.SetActive(true);
     }
 

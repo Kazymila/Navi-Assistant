@@ -6,10 +6,12 @@ using MapDataModel;
 public class TargetLabelController : MonoBehaviour
 {
     [Header("Target Label Settings")]
+    public bool isNavigationTarget;
     public TranslatedText _targetLabelName;
 
     [Header("External References")]
     [SerializeField] private NavigationManager _navigationManager;
+    [SerializeField] private AssistantManager _assistantManager;
 
     private GameObject _floatingLabel;
     private Animator _labelAnimator;
@@ -29,6 +31,8 @@ public class TargetLabelController : MonoBehaviour
 
     private void HideLabel() => _isLabelVisible = false;
 
+    public void SetAsNavigationTarget(bool _isTarget) => isNavigationTarget = _isTarget;
+
     private void OnTriggerStay(Collider other)
     {   // Show the target when the user is looking at the path
         if (other.CompareTag("Player"))
@@ -44,6 +48,13 @@ public class TargetLabelController : MonoBehaviour
             {   // Show the label if the user is close to the target
                 _labelAnimator.Play("Pop", 0);
                 Invoke("HideLabel", 0.10f);
+
+                if (isNavigationTarget)
+                {   // Notify the assistant manager when the destination is reached
+                    _assistantManager.DestinationReached();
+                    isNavigationTarget = false;
+                    Debug.Log("Destination Reached");
+                }
             }
             else
             {   // Show the label if it is hidden

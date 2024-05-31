@@ -15,6 +15,7 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] private Camera _topDownCamera;
     [SerializeField] private Camera _ARCamera;
     [SerializeField] private GameObject _navTarget;
+    [SerializeField] private GameObject _floatingLabels;
     [SerializeField] private ErrorMessagePanelController _errorPanel;
 
     [Header("Path Visualization")]
@@ -40,6 +41,7 @@ public class NavigationManager : MonoBehaviour
 
         if (_navPath.status == NavMeshPathStatus.PathComplete)
         {
+            _floatingLabels.SetActive(true);
             _errorPanel.gameObject.SetActive(false);
             _pathArrowVisualizer.DrawPath(_navPath);
             _pathLineVisualizer.DrawPathLine(_navPath);
@@ -58,6 +60,16 @@ public class NavigationManager : MonoBehaviour
             _errorPanel.SetErrorMessage(_destinationErrorTitle.GetLocalizedString(), _destinationErrorMessage.GetLocalizedString(), 0);
             _errorPanel.gameObject.SetActive(true);
         }
+    }
+
+    public void EndNavigation()
+    {   // Clear the path and hide the navigation arrow
+        destinationPoint = null;
+        _pathArrowVisualizer.ClearPath();
+        _pathLineVisualizer.ClearPathLine();
+        _miniMapLineVisualizer.ClearPathLine();
+        _navArrowController.EnableNavArrow(false);
+        _floatingLabels.SetActive(false);
     }
 
     public string GetCurrentRoom()

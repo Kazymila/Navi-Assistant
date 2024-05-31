@@ -21,12 +21,14 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private DialogController _dialogPanel;
     [SerializeField] private OptionsButtonsController _assistantOptionsButtons;
     [SerializeField] private OptionsButtonsController _changeLanguageButtons;
+    [SerializeField] private OptionsButtonsController _continueOptionsButtons;
     [SerializeField] private SearchableDropdownController _destinationDropdown;
 
     [Header("Assistant Settings")]
     [SerializeField] private float _assistantDistance = 1.0f;
     [SerializeField] private TranslatedText[] _assistantOptions;
     [SerializeField] private TranslatedText[] _languageOptions;
+    [SerializeField] private TranslatedText[] _continueOptions;
 
     [Header("General Dialogues")]
     [SerializeField] private TranslatedText[] _introDialog;
@@ -59,6 +61,7 @@ public class AssistantManager : MonoBehaviour
         _assistantModel.SetActive(true);
         SetAssitantOptionsButtons();
         SetLanguageOptonsButtons();
+        SetContinueOptionsButtons();
 
         WelcomeAssistant();
     }
@@ -91,6 +94,12 @@ public class AssistantManager : MonoBehaviour
         foreach (TranslatedText _language in _languageOptions)
             _changeLanguageButtons.AddOptionButton(_language, () => ChangeLanguage(_language.key));
     }
+
+    private void SetContinueOptionsButtons()
+    {   // Set the continue options buttons
+        _continueOptionsButtons.AddOptionButton(_continueOptions[0], ShowAssistantOptions);
+        _continueOptionsButtons.AddOptionButton(_continueOptions[1], ExitAplication);
+    }
     #endregion
 
     #region --- Assistance Events ---
@@ -102,6 +111,13 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.PlayDialogue();
 
         _assistantAnimator.Play("Hello", 0);
+    }
+
+    private void ExitAplication()
+    {   // Exit the application
+        Debug.Log("Exiting the application");
+
+        // TODO: Exit the application
     }
 
     private void ShowAssistantOptions()
@@ -132,9 +148,20 @@ public class AssistantManager : MonoBehaviour
         ShowAssistantOptions();
     }
 
-    private void DestinationReached()
+    public void DestinationReached()
     {   // When the user reaches the destination
-        _dialogPanel.SetDialogueToDisplay(_destinationReachedDialog);
+        _destinationDropdown.gameObject.SetActive(false);
+        _navigationUI.SetActive(false);
+        _navManager.EndNavigation();
+
+        _assistantModel.SetActive(true);
+
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() =>
+        {
+            _continueOptionsButtons.ShowOptionsButtons();
+        });
+        _dialogPanel.SetDialogueToDisplay(_destinationReachedDialog, _onDialogEnd, true);
         _dialogPanel.PlayDialogue();
 
         // TODO: Celebrate the user reaching the destination
