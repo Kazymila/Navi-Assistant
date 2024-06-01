@@ -1,5 +1,6 @@
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.Localization;
 using Unity.XR.CoreUtils;
 using UnityEngine.Events;
 using Unity.Collections;
@@ -15,11 +16,20 @@ public class QRCodeLocalization : MonoBehaviour
     [SerializeField] private XROrigin _sessionOrigin;
     [SerializeField] private ARCameraManager _cameraManager;
 
+    [Header("UI References")]
+    [SerializeField] private GameObject _assistantUI;
+    [SerializeField] private GameObject _navigationUI;
+    [SerializeField] private PopUpAlertController _alertPanel;
+
     [Header("Scanner Components")]
     [SerializeField] private GameObject _qrCodeScannerPanel;
-    [SerializeField] private TextMeshProUGUI _qrCodeText;
+    [SerializeField] private TextMeshProUGUI _qrCodeTextDisplay;
     [SerializeField] private RectTransform _scanZone;
     [SerializeField] private Button _backButton;
+
+    [Header("Messages")]
+    [SerializeField] private LocalizedString _invalidQrCodeMessage;
+    [SerializeField] private LocalizedString _localizedAlertMessage;
 
     [Header("Actions")]
     [SerializeField] private UnityEvent _onCodeLocalized;
@@ -33,6 +43,7 @@ public class QRCodeLocalization : MonoBehaviour
         _scanningEnabled = true;
         _qrCodeScannerPanel.SetActive(true);
         _cameraManager.frameReceived += OnCameraFrameReceived;
+        _qrCodeTextDisplay.text = "";
         Invoke("TestLocalization", 1f);
     }
 
@@ -86,7 +97,6 @@ public class QRCodeLocalization : MonoBehaviour
 
         if (result != null)
         {   // Display the QR code text and localize the device
-            _qrCodeText.text = result.Text;
             GetQrCodeLocalization(result.Text);
         }
     }
@@ -126,7 +136,8 @@ public class QRCodeLocalization : MonoBehaviour
             _onCodeLocalized.Invoke();
         }
         else
-        {
+        {   // Display an error message if the QR code format is invalid
+            _qrCodeTextDisplay.text = _invalidQrCodeMessage.GetLocalizedString();
             Debug.Log("Invalid QR code format");
         }
     }
@@ -141,6 +152,30 @@ public class QRCodeLocalization : MonoBehaviour
     {   // Change the action of the back button
         _backButton.onClick.RemoveAllListeners();
         _backButton.onClick = _newAction;
+    }
+
+    public void ResetScannerButtonsActions()
+    {   // Reset the actions of the scanner buttons
+        UnityEvent _onLocalized = new UnityEvent();
+        Button.ButtonClickedEvent _onBack = new Button.ButtonClickedEvent();
+
+        _onLocalized.AddListener(() =>
+        {
+            _assistantUI.SetActive(true);
+            _navigationUI.SetActive(true);
+            _alertPanel.ShowTimingAlert(_localizedAlertMessage.GetLocalizedString(), 1f);
+            this.gameObject.SetActive(false);
+        });
+
+        _onBack.AddListener(() =>
+        {
+            _assistantUI.SetActive(false);
+            _navigationUI.SetActive(false);
+            this.gameObject.SetActive(true);
+        });
+
+        ChangeLocalizedAction(_onLocalized);
+        ChangeBackButtonAction(_onBack);
     }
 
     public void ToggleScanning()

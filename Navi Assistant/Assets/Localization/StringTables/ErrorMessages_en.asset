@@ -27,6 +27,10 @@ MonoBehaviour:
       a nearby QR code.
     m_Metadata:
       m_Items: []
+  - m_Id: 1866605291122688
+    m_Localized: "Invalid QR Code format. \nPlease try again!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

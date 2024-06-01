@@ -42,6 +42,20 @@ MonoBehaviour:
     m_Localized: Change language
     m_Metadata:
       m_Items: []
+  - m_Id: 1863760265359360
+    m_Localized: 'Scan a QR Code
+
+      To reset your position'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863919023960064
+    m_Localized: Place the QR code inside
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1905948529537024
+    m_Localized: Localized succesfully
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

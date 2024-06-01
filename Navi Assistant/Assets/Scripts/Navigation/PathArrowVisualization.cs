@@ -41,13 +41,13 @@ public class PathArrowVisualization : MonoBehaviour
 
             if (_arrowCount == 0 || _dist < _pathArrowSpacing)
             {   // Draw arrows in a corner
-                Vector3 _pos = _start + _dir.normalized * _pathArrowSpacing;
+                Vector3 _pos = _start + _dir.normalized * (_pathArrowSpacing + 0.1f);
                 InstantiateArrow(_pos, _dir);
                 _countArrowsDrawn++;
             }
             else
             {
-                for (int j = 1; j < _arrowCount + 1; j++)
+                for (int j = 2; j < _arrowCount + 2; j++)
                 {   // Draw arrows between path corners
                     Vector3 _pos = _start + _dir.normalized * _pathArrowSpacing * j;
                     InstantiateArrow(_pos, _dir);

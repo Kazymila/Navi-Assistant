@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Localized: No es posible llegar al destino
     m_Metadata:
       m_Items: []
+  - m_Id: 1866605291122688
+    m_Localized: "Formato de c\xF3digo QR inv\xE1lido.\nInt\xE9ntelo de nuevo!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

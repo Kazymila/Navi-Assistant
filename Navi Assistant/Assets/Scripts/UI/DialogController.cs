@@ -111,7 +111,7 @@ public class DialogController : MonoBehaviour
         }
     }
 
-    private void EndDialogDisplay()
+    public void EndDialogDisplay()
     {   // Clean the text display and ends the dialogue
         _charIndex = 0;
         _sentenceIndex = -1;
@@ -127,7 +127,7 @@ public class DialogController : MonoBehaviour
         }
     }
 
-    private void HideDialogPanel()
+    public void HideDialogPanel()
     {   // Hide the dialog panel and arrow
         _dialoguePanel.SetActive(false);
         _dialogArrow.SetActive(false);

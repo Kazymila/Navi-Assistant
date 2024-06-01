@@ -23,6 +23,10 @@ MonoBehaviour:
     m_Key: CannotReachDestination_Message
     m_Metadata:
       m_Items: []
+  - m_Id: 1866605291122688
+    m_Key: QRScanner_InvalidQRCode
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Navigation\PathLineVisualization.cs" />
     <Compile Include="Assets\Scripts\DebugController.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavigationManager.cs" />
+    <Compile Include="Assets\Scripts\UI\PopUpAlertController.cs" />
     <Compile Include="Assets\Scripts\Data\MapLoader.cs" />
   </ItemGroup>
   <ItemGroup>

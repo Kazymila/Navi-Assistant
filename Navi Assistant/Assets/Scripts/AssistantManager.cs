@@ -9,6 +9,7 @@ using UnityEngine.Localization.Settings;
 
 public class AssistantManager : MonoBehaviour
 {
+    #region --- External References ---
     [Header("External References")]
     [SerializeField] private MapLoader _mapLoader;
     [SerializeField] private NavigationManager _navManager;
@@ -18,15 +19,21 @@ public class AssistantManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject _assistantUI;
     [SerializeField] private GameObject _navigationUI;
-    [SerializeField] private DialogController _dialogPanel;
-    [SerializeField] private OptionsButtonsController _assistantOptionsButtons;
-    [SerializeField] private OptionsButtonsController _changeLanguageButtons;
-    [SerializeField] private OptionsButtonsController _continueOptionsButtons;
-    [SerializeField] private SearchableDropdownController _destinationDropdown;
+    private DialogController _dialogPanel;
+    private SearchableDropdownController _destinationDropdown;
+    private OptionsButtonsController _assistantOptionsButtons;
+    private OptionsButtonsController _onNavigationOptions;
+    private OptionsButtonsController _problemSolvingButtons;
+    private OptionsButtonsController _changeLanguageButtons;
+    private OptionsButtonsController _continueOptionsButtons;
+    #endregion
 
+    #region --- Assistant Settings ---
     [Header("Assistant Settings")]
     [SerializeField] private float _assistantDistance = 1.0f;
     [SerializeField] private TranslatedText[] _assistantOptions;
+    [SerializeField] private TranslatedText[] _navigationOptions;
+    [SerializeField] private TranslatedText[] _problemSolvingOptions;
     [SerializeField] private TranslatedText[] _languageOptions;
     [SerializeField] private TranslatedText[] _continueOptions;
 
@@ -34,6 +41,7 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private TranslatedText[] _introDialog;
     [SerializeField] private TranslatedText[] _assistantOptionsDialog;
     [SerializeField] private TranslatedText[] _destinationReachedDialog;
+    [SerializeField] private TranslatedText[] _goodbyeDialog;
     [Header(" Localization Dialogues")]
     [SerializeField] private TranslatedText[] _goQRScannerDialog;
     [SerializeField] private TranslatedText[] _scannerBackDialog;
@@ -43,14 +51,24 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private TranslatedText[] _selectDestinationDialog;
     [SerializeField] private TranslatedText[] _selectFromDropdownDialog;
     [SerializeField] private TranslatedText[] _goToDestinationDialog;
+    #endregion
 
     private GameObject _assistantModel;
     private Animator _assistantAnimator;
+    private bool _isOnNavigation = false;
 
     void Awake()
     {
         _assistantModel = this.transform.GetChild(0).gameObject;
         _assistantAnimator = _assistantModel.GetComponent<Animator>();
+        _dialogPanel = _assistantUI.GetComponentInChildren<DialogController>();
+        _destinationDropdown = _assistantUI.GetComponentInChildren<SearchableDropdownController>();
+        _assistantOptionsButtons = _assistantUI.transform.GetChild(2).GetComponent<OptionsButtonsController>();
+        _onNavigationOptions = _assistantUI.transform.GetChild(3).GetComponent<OptionsButtonsController>();
+        _problemSolvingButtons = _assistantUI.transform.GetChild(4).GetComponent<OptionsButtonsController>();
+        _changeLanguageButtons = _assistantUI.transform.GetChild(5).GetComponent<OptionsButtonsController>();
+        _continueOptionsButtons = _assistantUI.transform.GetChild(6).GetComponent<OptionsButtonsController>();
+
         _navigationUI.SetActive(false);
         InitializeSystemLanguage();
     }
@@ -62,6 +80,8 @@ public class AssistantManager : MonoBehaviour
         SetAssitantOptionsButtons();
         SetLanguageOptonsButtons();
         SetContinueOptionsButtons();
+        SetProblemSolvingOptions();
+        SetNavigationAssistantOptions();
 
         WelcomeAssistant();
     }
@@ -89,6 +109,21 @@ public class AssistantManager : MonoBehaviour
         _assistantOptionsButtons.AddOptionButton(_assistantOptions[2], _changeLanguageButtons.ShowOptionsButtons);
     }
 
+    private void SetNavigationAssistantOptions()
+    {   // Set the assistant options for navigation
+        _onNavigationOptions.AddOptionButton(_navigationOptions[0], SelectDestinationInteraction);
+        _onNavigationOptions.AddOptionButton(_navigationOptions[1], ShowProblemSolvingOptions);
+        _onNavigationOptions.AddOptionButton(_navigationOptions[2], _changeLanguageButtons.ShowOptionsButtons);
+        _onNavigationOptions.AddOptionButton(_navigationOptions[3], AssistantGoAway);
+    }
+
+    private void SetProblemSolvingOptions()
+    {   // Set the problem solving options
+        //_problemSolvingButtons.AddOptionButton(_problemSolvingOptions[0], null);
+        //_problemSolvingButtons.AddOptionButton(_problemSolvingOptions[1], null);
+        //_problemSolvingButtons.AddOptionButton(_problemSolvingOptions[2], null);
+    }
+
     private void SetLanguageOptonsButtons()
     {   // Set the language options buttons
         foreach (TranslatedText _language in _languageOptions)
@@ -97,7 +132,7 @@ public class AssistantManager : MonoBehaviour
 
     private void SetContinueOptionsButtons()
     {   // Set the continue options buttons
-        _continueOptionsButtons.AddOptionButton(_continueOptions[0], ShowAssistantOptions);
+        _continueOptionsButtons.AddOptionButton(_continueOptions[0], ShowInitialAssistantOptions);
         _continueOptionsButtons.AddOptionButton(_continueOptions[1], ExitAplication);
     }
     #endregion
@@ -106,26 +141,52 @@ public class AssistantManager : MonoBehaviour
     private void WelcomeAssistant()
     {   // Welcome the assistant when the scene starts
         UnityEvent _onDialogEnd = new UnityEvent();
-        _onDialogEnd.AddListener(ShowAssistantOptions);
+        _onDialogEnd.AddListener(ShowInitialAssistantOptions);
         _dialogPanel.SetDialogueToDisplay(_introDialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
 
         _assistantAnimator.Play("Hello", 0);
     }
+    public void CallAssistant()
+    {   // Call the assistant when the user presses the assistant button
+        _destinationDropdown.gameObject.SetActive(false);
+        _assistantModel.SetActive(true);
+        _navigationUI.SetActive(false);
 
-    private void ExitAplication()
-    {   // Exit the application
-        Debug.Log("Exiting the application");
-
-        // TODO: Exit the application
+        ShowNavigationAssistantOptions();
     }
 
-    private void ShowAssistantOptions()
+    private void AssistantGoAway()
+    {   // Hide the assistant
+        _dialogPanel.EndDialogDisplay();
+        _navigationUI.SetActive(true);
+        _assistantModel.SetActive(false);
+        _destinationDropdown.gameObject.SetActive(true);
+        _onNavigationOptions.HideOptionsButtons();
+    }
+
+    private void ShowInitialAssistantOptions()
     {   // Show the assistant options
         _dialogPanel.SetDialogueToDisplay(_assistantOptionsDialog, null, true);
         _dialogPanel.PlayDialogue();
 
         _assistantOptionsButtons.ShowOptionsButtons();
+    }
+
+    private void ShowNavigationAssistantOptions()
+    {   // Show the assistant options for navigation
+        _dialogPanel.SetDialogueToDisplay(_assistantOptionsDialog, null, true);
+        _dialogPanel.PlayDialogue();
+
+        _onNavigationOptions.ShowOptionsButtons();
+    }
+
+    private void ShowProblemSolvingOptions()
+    {   // Show the problem solving options
+        _dialogPanel.SetDialogueToDisplay(_assistantOptionsDialog, null, true);
+        _dialogPanel.PlayDialogue();
+
+        _problemSolvingButtons.ShowOptionsButtons();
     }
 
     public void StartNavigation()
@@ -145,7 +206,22 @@ public class AssistantManager : MonoBehaviour
     {   // Change the language of the assistant
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(_languageCode);
         _changeLanguageButtons.HideOptionsButtons();
-        ShowAssistantOptions();
+
+        if (_isOnNavigation) ShowNavigationAssistantOptions();
+        else ShowInitialAssistantOptions();
+    }
+
+    private void ExitAplication()
+    {   // Exit the application
+        _assistantAnimator.Play("Hello", 0);
+
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() =>
+        {
+            Application.Quit();
+        });
+        _dialogPanel.SetDialogueToDisplay(_goodbyeDialog, _onDialogEnd);
+        _dialogPanel.PlayDialogue();
     }
 
     public void DestinationReached()
@@ -153,6 +229,7 @@ public class AssistantManager : MonoBehaviour
         _destinationDropdown.gameObject.SetActive(false);
         _navigationUI.SetActive(false);
         _navManager.EndNavigation();
+        _isOnNavigation = false;
 
         _assistantModel.SetActive(true);
 
@@ -208,6 +285,7 @@ public class AssistantManager : MonoBehaviour
         });
         return _event;
     }
+
     #endregion
 
     #region --- Choose Destination Events ---
@@ -217,7 +295,9 @@ public class AssistantManager : MonoBehaviour
         _destinationDropdown.gameObject.SetActive(true);
         _destinationsManager.SetAllDestinationsOnDropdown();
         _destinationDropdown.ChangeSelectedItem(_destinationName);
+        _qrLocalization.ResetScannerButtonsActions();
         _navigationUI.SetActive(true);
+        _isOnNavigation = true;
 
         UnityEvent _onDialogEnd = new UnityEvent();
         _onDialogEnd.AddListener(() =>

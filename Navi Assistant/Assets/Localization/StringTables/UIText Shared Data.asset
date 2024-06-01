@@ -39,6 +39,18 @@ MonoBehaviour:
     m_Key: OptionsButtons_ChangeLanguage
     m_Metadata:
       m_Items: []
+  - m_Id: 1863760265359360
+    m_Key: QRScanner_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863919023960064
+    m_Key: QRScanner_BoxMessage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1905948529537024
+    m_Key: QRScanner_LocalizedAlert
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
