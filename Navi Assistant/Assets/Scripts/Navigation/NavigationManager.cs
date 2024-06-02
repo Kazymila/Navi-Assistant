@@ -35,6 +35,7 @@ public class NavigationManager : MonoBehaviour
     {
         _navPath = new NavMeshPath();
         _navigationUI.SetActive(false);
+        _floatingLabels.SetActive(false);
     }
 
     void Update()

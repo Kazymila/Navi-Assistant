@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: AssistantDialogs Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: AssistantDialogs
+  m_TableCollectionNameGuidString: 6c17ac11060944d4cb3d02e947f31723
+  m_Entries:
+  - m_Id: 33333194752
+    m_Key: WelcomeDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 203567411200
+    m_Key: GoodbyeDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464511840256
+    m_Key: DisplayOptionsDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 798005145600
+    m_Key: GoToLocalizationScanner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1242576203776
+    m_Key: LocalizationScannerBack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1822417760256
+    m_Key: SelectDestinationDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2093894086656
+    m_Key: SelectDestinationFromDropdown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2321116311552
+    m_Key: GoToDestinationDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5562155675648
+    m_Key: DestinationReachedDialog
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5977735818464460830
+  references:
+    version: 2
+    RefIds:
+    - rid: 5977735818464460830
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1717366263268

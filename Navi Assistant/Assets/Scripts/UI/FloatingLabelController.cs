@@ -56,7 +56,7 @@ public class FloatingLabelController : MonoBehaviour
             // Hide the label if the user is in the target room
             if (_currentRoom == _labelText.key) _isLabelVisible = false;
 
-            else if (_distance < 0.7f)
+            else if (_distance < 0.5f)
             {   // Show the label if the user is close to the target
                 _labelAnimator.Play("Pop", 0);
                 Invoke("HideLabel", 0.10f);

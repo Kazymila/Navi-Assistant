@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: AssistantDialogs_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 6c17ac11060944d4cb3d02e947f31723, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 33333194752
+    m_Localized: "Hi! I'm Navi and I'll be your guide for \u201Cinsert building name\u201D/nHow
+      can I help you?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 203567411200
+    m_Localized: It has been a pleasure to help you/nSee you later!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464511840256
+    m_Localized: How can I help you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 798005145600
+    m_Localized: Ok!/nFirst, I need to know where you are/nTo know your current location,
+      please scan the QR code nearest you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1242576203776
+    m_Localized: Please scan the nearest QR code to locate you in the building/n(The
+      one with the same marker icon that appears on the top of the scanner)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1822417760256
+    m_Localized: Very good! Now we can continue/nWhere would you like to go?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2093894086656
+    m_Localized: Select which one you are looking for in the bar above
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2321116311552
+    m_Localized: Good Choice!/nFollow the arrows to reach your destination/nYou can
+      call me whenever you want with the button on your right/nSee you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5562155675648
+    m_Localized: You have arrived at your destination!/nDo you need anything else?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

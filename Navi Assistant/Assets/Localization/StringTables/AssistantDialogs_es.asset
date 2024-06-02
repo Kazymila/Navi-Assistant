@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: AssistantDialogs_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 6c17ac11060944d4cb3d02e947f31723, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 33333194752
+    m_Localized: "\xA1Hola! Soy Navi y ser\xE9 tu gu\xEDa por \"inserte nombre de
+      edificio\"/n\xBFEn que puedo ayudarte?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 203567411200
+    m_Localized: "A sido un gusto ayudarte/n\xA1Nos vemos luego!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464511840256
+    m_Localized: "\xBFEn que puedo ayudarte?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 798005145600
+    m_Localized: "\xA1Entendido!/nPara comenzar, primero necesito saber donde est\xE1s/nPara
+      conocer tu ubicaci\xF3n actual, porfavor escanea el c\xF3digo QR m\xE1s cercano"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1242576203776
+    m_Localized: "Porfavor escanea el c\xF3digo QR m\xE1s cercano para localizarte
+      en el edificio/n(Tiene el mismo icono de marcador que aparece arriba del lector) "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1822417760256
+    m_Localized: "\xA1Muy bien! Ahora podemos continuar/n\xBFA que lugar deseas ir?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2093894086656
+    m_Localized: "Selecciona cu\xE1l buscas en la barra de arriba"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2321116311552
+    m_Localized: "\xA1Buena elecci\xF3n!/nSigue las flechas para llegar a tu destino/nPuedes
+      llamarme cuando quieras con el bot\xF3n a tu derecha/n\xA1Nos vemos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5562155675648
+    m_Localized: "\xA1Has llegado a tu destino!/n\xBFNecesitas algo m\xE1s?"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

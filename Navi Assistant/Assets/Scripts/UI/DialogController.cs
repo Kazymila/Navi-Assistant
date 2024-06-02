@@ -1,16 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using UnityEngine;
-using MapDataModel;
 using TMPro;
 
 public class DialogController : MonoBehaviour
 {
     [Header("Dialog Settings")]
-    [SerializeField] private float typeTime;
+    [SerializeField] private float _typeTime;
+    [SerializeField] private string _splitChar = "\n";
     private string[] _sentencesToDisplay;
     private int _sentenceIndex = -1;
     private int _charIndex = 0;
@@ -62,15 +61,10 @@ public class DialogController : MonoBehaviour
         StartDialogue();
     }
 
-    public void SetDialogueToDisplay(TranslatedText[] _dialog, UnityEvent _onEndEvent = null, bool _keepLastSentence = false)
+    public void SetDialogueToDisplay(LocalizedString _dialog, UnityEvent _onEndEvent = null, bool _keepLastSentence = false)
     {   // Set the dialogue to display
-        string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
-        _sentencesToDisplay = new string[_dialog.Length];
+        _sentencesToDisplay = _dialog.GetLocalizedString().Split(_splitChar);
 
-        for (int i = 0; i < _dialog.Length; i++)
-        {   // Get the sentences to display in the current language
-            _sentencesToDisplay[i] = _dialog[i].GetTranslationByCode(_languageCode);
-        }
         // Set the event to invoke when the dialogue ends
         if (_onEndEvent != null) _onDialogueEnd = _onEndEvent;
         else _onDialogueEnd = new UnityEvent();
@@ -79,7 +73,7 @@ public class DialogController : MonoBehaviour
         {   // Keep the last sentence displayed
             _onDialogueEnd.AddListener(() =>
             {
-                _dialogueTextDisplay.text = _sentencesToDisplay[_dialog.Length - 1];
+                _dialogueTextDisplay.text = _sentencesToDisplay[_sentencesToDisplay.Length - 1];
                 _dialoguePanel.SetActive(true);
             });
         }
@@ -139,7 +133,7 @@ public class DialogController : MonoBehaviour
         {
             _dialogueTextDisplay.text += letter;
             _charIndex += 1;
-            yield return new WaitForSeconds(typeTime);
+            yield return new WaitForSeconds(_typeTime);
         }
     }
 }

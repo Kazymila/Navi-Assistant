@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.InputSystem;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine;
 using MapDataModel;
-using UnityEngine.UI;
-using UnityEngine.Localization.Settings;
 
 public class AssistantManager : MonoBehaviour
 {
@@ -30,6 +28,8 @@ public class AssistantManager : MonoBehaviour
     #region --- Assistant Settings ---
     [Header("Assistant Settings")]
     [SerializeField] private float _assistantDistance = 1.0f;
+
+    [Header("Assistant Options")]
     [SerializeField] private TranslatedText[] _assistantOptions;
     [SerializeField] private TranslatedText[] _navigationOptions;
     [SerializeField] private TranslatedText[] _problemSolvingOptions;
@@ -37,19 +37,21 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private TranslatedText[] _continueOptions;
 
     [Header("General Dialogues")]
-    [SerializeField] private TranslatedText[] _introDialog;
-    [SerializeField] private TranslatedText[] _assistantOptionsDialog;
-    [SerializeField] private TranslatedText[] _destinationReachedDialog;
-    [SerializeField] private TranslatedText[] _goodbyeDialog;
+    [SerializeField] private LocalizedString _welcomeDialog;
+    [SerializeField] private LocalizedString _displayOptionsDialog;
+    [SerializeField] private LocalizedString _goodbyeDialog;
+
+    [Header("Navigation Dialogues")]
+    [SerializeField] private LocalizedString _destinationReachedDialog;
+
     [Header(" Localization Dialogues")]
-    [SerializeField] private TranslatedText[] _goQRScannerDialog;
-    [SerializeField] private TranslatedText[] _scannerBackDialog;
-    [SerializeField] private TranslatedText[] _localizedDialog;
+    [SerializeField] private LocalizedString _goLocalizationScannerDialog;
+    [SerializeField] private LocalizedString _localizationScannerBackDialog;
 
     [Header("Destination Selection Dialogues")]
-    [SerializeField] private TranslatedText[] _selectDestinationDialog;
-    [SerializeField] private TranslatedText[] _selectFromDropdownDialog;
-    [SerializeField] private TranslatedText[] _goToDestinationDialog;
+    [SerializeField] private LocalizedString _selectDestinationDialog;
+    [SerializeField] private LocalizedString _selectFromDropdownDialog;
+    [SerializeField] private LocalizedString _goToDestinationDialog;
     #endregion
 
     private GameObject _assistantModel;
@@ -62,6 +64,7 @@ public class AssistantManager : MonoBehaviour
         _assistantAnimator = _assistantModel.GetComponent<Animator>();
         _dialogPanel = _assistantUI.GetComponentInChildren<DialogController>();
         _destinationDropdown = _assistantUI.GetComponentInChildren<SearchableDropdownController>();
+
         _assistantOptionsButtons = _assistantUI.transform.GetChild(2).GetComponent<OptionsButtonsController>();
         _onNavigationOptions = _assistantUI.transform.GetChild(3).GetComponent<OptionsButtonsController>();
         _problemSolvingButtons = _assistantUI.transform.GetChild(4).GetComponent<OptionsButtonsController>();
@@ -75,6 +78,7 @@ public class AssistantManager : MonoBehaviour
     {   // Start the assistant when the scene starts
         _destinationDropdown.gameObject.SetActive(false);
         _assistantModel.SetActive(true);
+
         SetAssitantOptionsButtons();
         SetLanguageOptonsButtons();
         SetContinueOptionsButtons();
@@ -140,7 +144,7 @@ public class AssistantManager : MonoBehaviour
     {   // Welcome the assistant when the scene starts
         UnityEvent _onDialogEnd = new UnityEvent();
         _onDialogEnd.AddListener(ShowInitialAssistantOptions);
-        _dialogPanel.SetDialogueToDisplay(_introDialog, _onDialogEnd);
+        _dialogPanel.SetDialogueToDisplay(_welcomeDialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
 
         _assistantAnimator.Play("Hello", 0);
@@ -161,30 +165,6 @@ public class AssistantManager : MonoBehaviour
         _destinationDropdown.gameObject.SetActive(true);
         _onNavigationOptions.HideOptionsButtons();
         _navManager.StartNavigation();
-    }
-
-    private void ShowInitialAssistantOptions()
-    {   // Show the assistant options
-        _dialogPanel.SetDialogueToDisplay(_assistantOptionsDialog, null, true);
-        _dialogPanel.PlayDialogue();
-
-        _assistantOptionsButtons.ShowOptionsButtons();
-    }
-
-    private void ShowNavigationAssistantOptions()
-    {   // Show the assistant options for navigation
-        _dialogPanel.SetDialogueToDisplay(_assistantOptionsDialog, null, true);
-        _dialogPanel.PlayDialogue();
-
-        _onNavigationOptions.ShowOptionsButtons();
-    }
-
-    private void ShowProblemSolvingOptions()
-    {   // Show the problem solving options
-        _dialogPanel.SetDialogueToDisplay(_assistantOptionsDialog, null, true);
-        _dialogPanel.PlayDialogue();
-
-        _problemSolvingButtons.ShowOptionsButtons();
     }
 
     public void DestinationReached()
@@ -209,10 +189,34 @@ public class AssistantManager : MonoBehaviour
     #endregion
 
     #region --- Assistant Options Methods ---
+    private void ShowInitialAssistantOptions()
+    {   // Show the assistant options
+        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, null, true);
+        _dialogPanel.PlayDialogue();
+
+        _assistantOptionsButtons.ShowOptionsButtons();
+    }
+
+    private void ShowNavigationAssistantOptions()
+    {   // Show the assistant options for navigation
+        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, null, true);
+        _dialogPanel.PlayDialogue();
+
+        _onNavigationOptions.ShowOptionsButtons();
+    }
+
+    private void ShowProblemSolvingOptions()
+    {   // Show the problem solving options
+        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, null, true);
+        _dialogPanel.PlayDialogue();
+
+        _problemSolvingButtons.ShowOptionsButtons();
+    }
+
     public void StartNavigation()
     {   // Start the navigation process
         _assistantOptionsButtons.HideOptionsButtons();
-        _dialogPanel.SetDialogueToDisplay(_goQRScannerDialog, GoLocalizationScanner());
+        _dialogPanel.SetDialogueToDisplay(_goLocalizationScannerDialog, GoLocalizationScanner());
         _dialogPanel.PlayDialogue();
     }
 
@@ -257,7 +261,7 @@ public class AssistantManager : MonoBehaviour
             _assistantModel.SetActive(true);
             _qrLocalization.gameObject.SetActive(false);
 
-            _dialogPanel.SetDialogueToDisplay(_scannerBackDialog, GoLocalizationScanner());
+            _dialogPanel.SetDialogueToDisplay(_localizationScannerBackDialog, GoLocalizationScanner());
             _dialogPanel.PlayDialogue();
         });
 
