@@ -14,7 +14,7 @@ public class DestinationManager : MonoBehaviour
 
     [Header("Destination Settings")]
     [SerializeField] private GameObject _destinationPrefab;
-    [SerializeField] private GameObject _navTarget;
+    [SerializeField] private TargetIndicatorController _navTarget;
 
     [Header("External References")]
     [SerializeField] private MapLoader _mapLoader;
@@ -30,11 +30,11 @@ public class DestinationManager : MonoBehaviour
     [SerializeField] private List<TranslatedText> _destinationFilterOptions;
     [SerializeField] private List<Transform>[] _destinationRoomsByType;
 
-    private List<TargetLabelController> _floatingLabels;
+    private List<FloatingLabelController> _floatingLabels;
 
     public void StartDestinationManager()
     {   // Start destination manager
-        _floatingLabels = new List<TargetLabelController>();
+        _floatingLabels = new List<FloatingLabelController>();
         _destinationFilterOptions = new List<TranslatedText>();
         _destinationRoomsByType = new List<Transform>[_mapLoader.mapData.roomTypes.Length];
 
@@ -128,9 +128,7 @@ public class DestinationManager : MonoBehaviour
         Vector3 _startPos = _navManager.transform.position;
         Transform _destination = GetNeareastEntrancePoint(_roomName, _floorLevel, _startPos);
         _navManager.destinationPoint = _destination;
-        _navTarget.transform.position = _destination.position;
-
-        _floatingLabels.Find(_label => _label.transform.position == _destination.position).SetAsNavigationTarget(true);
+        _navTarget.SetTargetPosition(_destination.position);
     }
 
     private string SetNearestRoomAsDestination(List<Transform> _rooms)
@@ -191,7 +189,7 @@ public class DestinationManager : MonoBehaviour
     }
     #endregion
 
-    #region --- Destination Data ---
+    #region --- Load Destination Data ---
     public void LoadDestinationPoints()
     {   // Generate destination points from map data
         foreach (FloorData _floor in _mapLoader.mapData.floors)
@@ -255,10 +253,8 @@ public class DestinationManager : MonoBehaviour
         _label.name = "TargetLabel " + _label.transform.GetSiblingIndex() + ": " + _roomName.key;
 
         // Set the room name in the label in the current language
-        string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
-        _label.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = _roomName.GetTranslationByCode(_languageCode);
-        _label.GetComponent<TargetLabelController>()._targetLabelName = _roomName;
-        _floatingLabels.Add(_label.GetComponent<TargetLabelController>());
+        _label.GetComponent<FloatingLabelController>().SetLabelText(_roomName);
+        _floatingLabels.Add(_label.GetComponent<FloatingLabelController>());
         _label.SetActive(true);
     }
 

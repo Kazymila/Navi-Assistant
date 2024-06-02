@@ -18,7 +18,6 @@ public class AssistantManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private GameObject _assistantUI;
-    [SerializeField] private GameObject _navigationUI;
     private DialogController _dialogPanel;
     private SearchableDropdownController _destinationDropdown;
     private OptionsButtonsController _assistantOptionsButtons;
@@ -69,7 +68,6 @@ public class AssistantManager : MonoBehaviour
         _changeLanguageButtons = _assistantUI.transform.GetChild(5).GetComponent<OptionsButtonsController>();
         _continueOptionsButtons = _assistantUI.transform.GetChild(6).GetComponent<OptionsButtonsController>();
 
-        _navigationUI.SetActive(false);
         InitializeSystemLanguage();
     }
 
@@ -151,7 +149,7 @@ public class AssistantManager : MonoBehaviour
     {   // Call the assistant when the user presses the assistant button
         _destinationDropdown.gameObject.SetActive(false);
         _assistantModel.SetActive(true);
-        _navigationUI.SetActive(false);
+        _navManager.StopNavigation();
 
         ShowNavigationAssistantOptions();
     }
@@ -159,10 +157,10 @@ public class AssistantManager : MonoBehaviour
     private void AssistantGoAway()
     {   // Hide the assistant
         _dialogPanel.EndDialogDisplay();
-        _navigationUI.SetActive(true);
         _assistantModel.SetActive(false);
         _destinationDropdown.gameObject.SetActive(true);
         _onNavigationOptions.HideOptionsButtons();
+        _navManager.StartNavigation();
     }
 
     private void ShowInitialAssistantOptions()
@@ -189,6 +187,28 @@ public class AssistantManager : MonoBehaviour
         _problemSolvingButtons.ShowOptionsButtons();
     }
 
+    public void DestinationReached()
+    {   // When the user reaches the destination
+        _destinationDropdown.gameObject.SetActive(false);
+        _navManager.EndNavigation();
+        _isOnNavigation = false;
+
+        _assistantModel.SetActive(true);
+
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() =>
+        {
+            _continueOptionsButtons.ShowOptionsButtons();
+        });
+        _dialogPanel.SetDialogueToDisplay(_destinationReachedDialog, _onDialogEnd, true);
+        _dialogPanel.PlayDialogue();
+
+        // TODO: Celebrate the user reaching the destination
+        //_assistantAnimator.Play("Happy", 0);
+    }
+    #endregion
+
+    #region --- Assistant Options Methods ---
     public void StartNavigation()
     {   // Start the navigation process
         _assistantOptionsButtons.HideOptionsButtons();
@@ -222,27 +242,6 @@ public class AssistantManager : MonoBehaviour
         });
         _dialogPanel.SetDialogueToDisplay(_goodbyeDialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
-    }
-
-    public void DestinationReached()
-    {   // When the user reaches the destination
-        _destinationDropdown.gameObject.SetActive(false);
-        _navigationUI.SetActive(false);
-        _navManager.EndNavigation();
-        _isOnNavigation = false;
-
-        _assistantModel.SetActive(true);
-
-        UnityEvent _onDialogEnd = new UnityEvent();
-        _onDialogEnd.AddListener(() =>
-        {
-            _continueOptionsButtons.ShowOptionsButtons();
-        });
-        _dialogPanel.SetDialogueToDisplay(_destinationReachedDialog, _onDialogEnd, true);
-        _dialogPanel.PlayDialogue();
-
-        // TODO: Celebrate the user reaching the destination
-        //_assistantAnimator.Play("Happy", 0);
     }
     #endregion
 
@@ -296,7 +295,7 @@ public class AssistantManager : MonoBehaviour
         _destinationsManager.SetAllDestinationsOnDropdown();
         _destinationDropdown.ChangeSelectedItem(_destinationName);
         _qrLocalization.ResetScannerButtonsActions();
-        _navigationUI.SetActive(true);
+        _navManager.StartNavigation();
         _isOnNavigation = true;
 
         UnityEvent _onDialogEnd = new UnityEvent();

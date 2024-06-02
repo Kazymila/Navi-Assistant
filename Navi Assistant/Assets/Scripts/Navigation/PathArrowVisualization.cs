@@ -47,7 +47,7 @@ public class PathArrowVisualization : MonoBehaviour
             }
             else
             {
-                for (int j = 2; j < _arrowCount + 2; j++)
+                for (int j = 1; j < _arrowCount + 1; j++)
                 {   // Draw arrows between path corners
                     Vector3 _pos = _start + _dir.normalized * _pathArrowSpacing * j;
                     InstantiateArrow(_pos, _dir);

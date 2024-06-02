@@ -1,60 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Localization.Settings;
 using UnityEngine;
 using MapDataModel;
+using TMPro;
 
-public class TargetLabelController : MonoBehaviour
+public class FloatingLabelController : MonoBehaviour
 {
     [Header("Target Label Settings")]
-    public bool isNavigationTarget;
-    public TranslatedText _targetLabelName;
+    [SerializeField] private TranslatedText _labelText;
 
     [Header("External References")]
     [SerializeField] private NavigationManager _navigationManager;
-    [SerializeField] private AssistantManager _assistantManager;
 
     private GameObject _floatingLabel;
+    private TextMeshProUGUI _labelTextComponent;
     private Animator _labelAnimator;
     private bool _isLabelVisible = false;
 
     void Awake()
     {
         _floatingLabel = this.transform.GetChild(0).gameObject;
+        _labelTextComponent = _floatingLabel.GetComponentInChildren<TextMeshProUGUI>();
         _labelAnimator = this.GetComponent<Animator>();
     }
 
     void Update()
-    {   // Show the target label when the user is looking at the path
+    {   // Show the label when the user is looking at the path
         if (_isLabelVisible) _floatingLabel.SetActive(true);
         else _floatingLabel.SetActive(false);
     }
 
+    public void SetLabelText(TranslatedText _text)
+    {   // Set the label text based on the selected language
+        string _languageCode = LocalizationSettings.SelectedLocale.name.Split("(")[1].Split(")")[0];
+
+        if (_labelTextComponent == null)
+        {   // Initialize the label text component
+            _floatingLabel = this.transform.GetChild(0).gameObject;
+            _labelTextComponent = _floatingLabel.GetComponentInChildren<TextMeshProUGUI>();
+        }
+        _labelTextComponent.text = _text.GetTranslationByCode(_languageCode);
+        _labelText = _text;
+    }
+
     private void HideLabel() => _isLabelVisible = false;
 
-    public void SetAsNavigationTarget(bool _isTarget) => isNavigationTarget = _isTarget;
-
     private void OnTriggerStay(Collider other)
-    {   // Show the target when the user is looking at the path
+    {   // Show the label when the user is looking at the path
         if (other.CompareTag("Player"))
         {
             string _currentRoom = _navigationManager.GetCurrentRoom();
             float _distance = Vector3.Distance(this.transform.position, other.transform.position);
 
-            if (_currentRoom == _targetLabelName.key)
-            {   // Hide the label if the user is in the target room
-                _isLabelVisible = false;
-            }
-            else if (_distance < 0.5f)
+            // Hide the label if the user is in the target room
+            if (_currentRoom == _labelText.key) _isLabelVisible = false;
+
+            else if (_distance < 0.7f)
             {   // Show the label if the user is close to the target
                 _labelAnimator.Play("Pop", 0);
                 Invoke("HideLabel", 0.10f);
-
-                if (isNavigationTarget)
-                {   // Notify the assistant manager when the destination is reached
-                    _assistantManager.DestinationReached();
-                    isNavigationTarget = false;
-                    Debug.Log("Destination Reached");
-                }
             }
             else
             {   // Show the label if it is hidden

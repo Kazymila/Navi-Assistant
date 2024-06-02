@@ -16,9 +16,9 @@ public class QRCodeLocalization : MonoBehaviour
     [SerializeField] private XROrigin _sessionOrigin;
     [SerializeField] private ARCameraManager _cameraManager;
 
-    [Header("UI References")]
+    [Header("External References")]
     [SerializeField] private GameObject _assistantUI;
-    [SerializeField] private GameObject _navigationUI;
+    [SerializeField] private NavigationManager _navManager;
     [SerializeField] private PopUpAlertController _alertPanel;
 
     [Header("Scanner Components")]
@@ -31,12 +31,10 @@ public class QRCodeLocalization : MonoBehaviour
     [SerializeField] private LocalizedString _invalidQrCodeMessage;
     [SerializeField] private LocalizedString _localizedAlertMessage;
 
-    [Header("Actions")]
-    [SerializeField] private UnityEvent _onCodeLocalized;
-
     private IBarcodeReader _reader = new BarcodeReader();
     private Texture2D _cameraImageTexture;
     private bool _scanningEnabled = true;
+    private UnityEvent _onCodeLocalized;
 
     private void OnEnable()
     {
@@ -144,7 +142,7 @@ public class QRCodeLocalization : MonoBehaviour
 
     public void ChangeLocalizedAction(UnityEvent _newAction)
     {   // Change the action when the QR code is localized
-        _onCodeLocalized.RemoveAllListeners();
+        _onCodeLocalized = new UnityEvent();
         _onCodeLocalized = _newAction;
     }
 
@@ -162,16 +160,16 @@ public class QRCodeLocalization : MonoBehaviour
         _onLocalized.AddListener(() =>
         {
             _assistantUI.SetActive(true);
-            _navigationUI.SetActive(true);
+            _navManager.StartNavigation();
             _alertPanel.ShowTimingAlert(_localizedAlertMessage.GetLocalizedString(), 1f);
             this.gameObject.SetActive(false);
         });
 
         _onBack.AddListener(() =>
         {
-            _assistantUI.SetActive(false);
-            _navigationUI.SetActive(false);
-            this.gameObject.SetActive(true);
+            _assistantUI.SetActive(true);
+            _navManager.StartNavigation();
+            this.gameObject.SetActive(false);
         });
 
         ChangeLocalizedAction(_onLocalized);
