@@ -58,6 +58,16 @@ MonoBehaviour:
     m_Localized: "\xA1Has llegado a tu destino!/n\xBFNecesitas algo m\xE1s?"
     m_Metadata:
       m_Items: []
+  - m_Id: 12121640284160
+    m_Localized: "Esta aplicaci\xF3n es un prototipo, por lo que esta caracter\xEDstica
+      a\xFAn no esta disponible/n\xA1Gracias por su comprensi\xF3n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16136222552064
+    m_Localized: "Espera.../n \xA1Ya est\xE1s en el lugar indicado!/n\xBFQuieres
+      que te lleve a otro sitio?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

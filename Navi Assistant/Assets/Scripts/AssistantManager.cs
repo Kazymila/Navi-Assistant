@@ -38,11 +38,13 @@ public class AssistantManager : MonoBehaviour
 
     [Header("General Dialogues")]
     [SerializeField] private LocalizedString _welcomeDialog;
-    [SerializeField] private LocalizedString _displayOptionsDialog;
     [SerializeField] private LocalizedString _goodbyeDialog;
+    [SerializeField] private LocalizedString _displayOptionsDialog;
+    [SerializeField] private LocalizedString _noAvailableDialog;
 
     [Header("Navigation Dialogues")]
     [SerializeField] private LocalizedString _destinationReachedDialog;
+    [SerializeField] private LocalizedString _isAlreadyInDestinationDialog;
 
     [Header(" Localization Dialogues")]
     [SerializeField] private LocalizedString _goLocalizationScannerDialog;
@@ -121,7 +123,7 @@ public class AssistantManager : MonoBehaviour
 
     private void SetProblemSolvingOptions()
     {   // Set the problem solving options
-        //_problemSolvingButtons.AddOptionButton(_problemSolvingOptions[0], null);
+        _problemSolvingButtons.AddOptionButton(_problemSolvingOptions[0], () => Debug.Log("Option clicked"));
         //_problemSolvingButtons.AddOptionButton(_problemSolvingOptions[1], null);
         //_problemSolvingButtons.AddOptionButton(_problemSolvingOptions[2], null);
     }
@@ -183,8 +185,7 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.SetDialogueToDisplay(_destinationReachedDialog, _onDialogEnd, true);
         _dialogPanel.PlayDialogue();
 
-        // TODO: Celebrate the user reaching the destination
-        //_assistantAnimator.Play("Happy", 0);
+        _assistantAnimator.Play("Happy", 0);
     }
     #endregion
 
@@ -211,6 +212,7 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.PlayDialogue();
 
         _problemSolvingButtons.ShowOptionsButtons();
+        _assistantAnimator.Play("Thinking", 0);
     }
 
     public void StartNavigation()
@@ -222,8 +224,12 @@ public class AssistantManager : MonoBehaviour
 
     public void StartTour()
     {   // Start the building tour
-        Debug.Log("Starting the tour");
-        // TODO: Start the tour
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(ShowInitialAssistantOptions);
+        _dialogPanel.SetDialogueToDisplay(_noAvailableDialog, _onDialogEnd);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("No", 0);
     }
 
     public void ChangeLanguage(string _languageCode)
@@ -263,6 +269,8 @@ public class AssistantManager : MonoBehaviour
 
             _dialogPanel.SetDialogueToDisplay(_localizationScannerBackDialog, GoLocalizationScanner());
             _dialogPanel.PlayDialogue();
+
+            _assistantAnimator.Play("No", 0);
         });
 
         _event.AddListener(() =>
@@ -285,6 +293,8 @@ public class AssistantManager : MonoBehaviour
             _assistantModel.SetActive(true);
             SelectDestinationInteraction();
             _qrLocalization.gameObject.SetActive(false);
+
+            _assistantAnimator.Play("Affirm", 0);
         });
         return _event;
     }
@@ -294,21 +304,38 @@ public class AssistantManager : MonoBehaviour
     #region --- Choose Destination Events ---
     public void GoToDestination(string _destinationName)
     {   // Go to the selected destination
-        _assistantModel.SetActive(true);
-        _destinationDropdown.gameObject.SetActive(true);
-        _destinationsManager.SetAllDestinationsOnDropdown();
-        _destinationDropdown.ChangeSelectedItem(_destinationName);
-        _qrLocalization.ResetScannerButtonsActions();
-        _navManager.StartNavigation();
-        _isOnNavigation = true;
+        if (_destinationName == _navManager.GetCurrentRoom())
+        {   // If the destination is the current room, show a message
+            UnityEvent _onDialogEnd = new UnityEvent();
+            _onDialogEnd.AddListener(() =>
+            {   // When the dialogue ends, show the destination options
+                _destinationsManager.ShowDestinationOptionsButtons();
+            });
+            _dialogPanel.SetDialogueToDisplay(_isAlreadyInDestinationDialog, _onDialogEnd, true);
+            _dialogPanel.PlayDialogue();
 
-        UnityEvent _onDialogEnd = new UnityEvent();
-        _onDialogEnd.AddListener(() =>
-        {
-            _assistantModel.SetActive(false);
-        });
-        _dialogPanel.SetDialogueToDisplay(_goToDestinationDialog, _onDialogEnd);
-        _dialogPanel.PlayDialogue();
+            _assistantAnimator.Play("Thinking", 0);
+        }
+        else
+        {   // Go to the selected destination
+            _assistantModel.SetActive(true);
+            _destinationDropdown.gameObject.SetActive(true);
+            _destinationsManager.SetAllDestinationsOnDropdown();
+            _destinationDropdown.ChangeSelectedItem(_destinationName);
+            _qrLocalization.ResetScannerButtonsActions();
+            _navManager.StartNavigation();
+            _isOnNavigation = true;
+
+            UnityEvent _onDialogEnd = new UnityEvent();
+            _onDialogEnd.AddListener(() =>
+            {
+                _assistantModel.SetActive(false);
+            });
+            _dialogPanel.SetDialogueToDisplay(_goToDestinationDialog, _onDialogEnd);
+            _dialogPanel.PlayDialogue();
+
+            _assistantAnimator.Play("Yeah", 0);
+        }
     }
 
     public void SelectDestinationFromDropdown()
@@ -318,6 +345,8 @@ public class AssistantManager : MonoBehaviour
 
         _destinationDropdown.gameObject.SetActive(true);
         _destinationDropdown.ShowDropdown();
+
+        _assistantAnimator.Play("Thinking", 0);
     }
 
     private void SelectDestinationInteraction()

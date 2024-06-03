@@ -51,6 +51,14 @@ MonoBehaviour:
     m_Key: DestinationReachedDialog
     m_Metadata:
       m_Items: []
+  - m_Id: 12121640284160
+    m_Key: NoAvailableFeatureDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16136222552064
+    m_Key: IsAlreadyInDestinationDialog
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

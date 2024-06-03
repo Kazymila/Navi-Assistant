@@ -58,6 +58,16 @@ MonoBehaviour:
     m_Localized: You have arrived at your destination!/nDo you need anything else?
     m_Metadata:
       m_Items: []
+  - m_Id: 12121640284160
+    m_Localized: This application is a prototype, so this feature is not yet available/nThank
+      you for understanding!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16136222552064
+    m_Localized: Wait.../nYou're already in the right place!/nDo you want a ride
+      somewhere else?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
