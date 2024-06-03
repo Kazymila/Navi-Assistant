@@ -19,8 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 33333194752
-    m_Localized: "Hi! I'm Navi and I'll be your guide for \u201Cinsert building name\u201D/nHow
-      can I help you?"
+    m_Localized: "Hi! I'm Navi and I'll be your guide for \u201Cinsert building name\u201D"
     m_Metadata:
       m_Items: []
   - m_Id: 203567411200
@@ -33,7 +32,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 798005145600
     m_Localized: Ok!/nFirst, I need to know where you are/nTo know your current location,
-      please scan the QR code nearest you
+      please scan the nearest QR code
     m_Metadata:
       m_Items: []
   - m_Id: 1242576203776
@@ -64,7 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16136222552064
-    m_Localized: Wait.../nYou're already in the right place!/nDo you want a ride
+    m_Localized: Wait.../nYou're already in the selected place!/nDo you want a ride
       somewhere else?
     m_Metadata:
       m_Items: []

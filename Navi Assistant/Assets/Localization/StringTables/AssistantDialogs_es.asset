@@ -19,43 +19,44 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 33333194752
-    m_Localized: "\xA1Hola! Soy Navi y ser\xE9 tu gu\xEDa por \"inserte nombre de
-      edificio\"/n\xBFEn que puedo ayudarte?"
+    m_Localized: "\xA1Hola! Soy Navi y ser\xE9 su gu\xEDa por \"inserte nombre de
+      edificio\""
     m_Metadata:
       m_Items: []
   - m_Id: 203567411200
-    m_Localized: "A sido un gusto ayudarte/n\xA1Nos vemos luego!"
+    m_Localized: "A sido un gusto ayudarle/n\xA1Nos vemos luego!"
     m_Metadata:
       m_Items: []
   - m_Id: 464511840256
-    m_Localized: "\xBFEn que puedo ayudarte?"
+    m_Localized: "\xBFEn que puedo ayudarle?"
     m_Metadata:
       m_Items: []
   - m_Id: 798005145600
-    m_Localized: "\xA1Entendido!/nPara comenzar, primero necesito saber donde est\xE1s/nPara
-      conocer tu ubicaci\xF3n actual, porfavor escanea el c\xF3digo QR m\xE1s cercano"
+    m_Localized: "\xA1Entendido!/nPara comenzar, primero necesito saber donde se
+      encuentra/nPara conocer su ubicaci\xF3n actual, porfavor escanee el c\xF3digo
+      QR m\xE1s cercano"
     m_Metadata:
       m_Items: []
   - m_Id: 1242576203776
-    m_Localized: "Porfavor escanea el c\xF3digo QR m\xE1s cercano para localizarte
-      en el edificio/n(Tiene el mismo icono de marcador que aparece arriba del lector) "
+    m_Localized: "Porfavor escanee el c\xF3digo QR m\xE1s cercano para ubicarse en
+      el edificio/n(Tiene el mismo icono de marcador que aparece arriba del lector) "
     m_Metadata:
       m_Items: []
   - m_Id: 1822417760256
-    m_Localized: "\xA1Muy bien! Ahora podemos continuar/n\xBFA que lugar deseas ir?"
+    m_Localized: "\xA1Muy bien! Ahora podemos continuar/n\xBFA que lugar desea ir?"
     m_Metadata:
       m_Items: []
   - m_Id: 2093894086656
-    m_Localized: "Selecciona cu\xE1l buscas en la barra de arriba"
+    m_Localized: "Seleccione cu\xE1l destino busca en la barra de arriba"
     m_Metadata:
       m_Items: []
   - m_Id: 2321116311552
-    m_Localized: "\xA1Buena elecci\xF3n!/nSigue las flechas para llegar a tu destino/nPuedes
-      llamarme cuando quieras con el bot\xF3n a tu derecha/n\xA1Nos vemos!"
+    m_Localized: "\xA1Buena elecci\xF3n!/nSiga las flechas para llegar a su destino/nPuede
+      llamarme cuando quiera con el bot\xF3n a su derecha/n\xA1Nos vemos!"
     m_Metadata:
       m_Items: []
   - m_Id: 5562155675648
-    m_Localized: "\xA1Has llegado a tu destino!/n\xBFNecesitas algo m\xE1s?"
+    m_Localized: "\xA1Ha llegado a su destino!/n\xBFNecesita algo m\xE1s?"
     m_Metadata:
       m_Items: []
   - m_Id: 12121640284160
@@ -64,8 +65,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16136222552064
-    m_Localized: "Espera.../n \xA1Ya est\xE1s en el lugar indicado!/n\xBFQuieres
-      que te lleve a otro sitio?"
+    m_Localized: "Espere.../n \xA1Ya est\xE1 en el lugar seleccionado!/n\xBFQuiere
+      ir a otro sitio?"
     m_Metadata:
       m_Items: []
   references:
