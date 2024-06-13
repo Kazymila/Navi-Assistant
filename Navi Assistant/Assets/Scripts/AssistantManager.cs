@@ -109,7 +109,7 @@ public class AssistantManager : MonoBehaviour
     private void SetAssitantOptionsButtons()
     {   // Set the assistant options buttons
         _assistantOptionsButtons.AddOptionButton(_assistantOptions[0], StartNavigation);
-        _assistantOptionsButtons.AddOptionButton(_assistantOptions[1], StartTour);
+        //_assistantOptionsButtons.AddOptionButton(_assistantOptions[1], StartTour);
         _assistantOptionsButtons.AddOptionButton(_assistantOptions[2], _changeLanguageButtons.ShowOptionsButtons);
     }
 

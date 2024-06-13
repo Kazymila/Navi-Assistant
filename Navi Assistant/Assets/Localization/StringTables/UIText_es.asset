@@ -43,11 +43,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1863760265359360
-    m_Localized: "Escanea un c\xF3digo QR\nPara reiniciar tu posici\xF3n"
+    m_Localized: "Escanee un c\xF3digo QR\nPara reiniciar su posici\xF3n"
     m_Metadata:
       m_Items: []
   - m_Id: 1863919023960064
-    m_Localized: "Posiciona el c\xF3digo QR dentro del recuadro"
+    m_Localized: "Posicione el c\xF3digo QR dentro del recuadro"
     m_Metadata:
       m_Items: []
   - m_Id: 1905948529537024

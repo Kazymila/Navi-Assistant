@@ -39,7 +39,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1242576203776
     m_Localized: "Porfavor escanee el c\xF3digo QR m\xE1s cercano para ubicarse en
-      el edificio/n(Tiene el mismo icono de marcador que aparece arriba del lector) "
+      el edificio/n(En el centro tiene el mismo icono de marcador que aparece arriba
+      del lector) "
     m_Metadata:
       m_Items: []
   - m_Id: 1822417760256
