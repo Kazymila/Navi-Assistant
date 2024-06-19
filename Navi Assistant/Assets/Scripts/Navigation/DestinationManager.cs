@@ -5,12 +5,18 @@ using UnityEngine;
 using MapDataModel;
 using UnityEngine.Localization.Settings;
 using TMPro;
+using System;
+using Unity.XR.CoreUtils;
 
 public class DestinationManager : MonoBehaviour
 {
     [Header("Test Destination")]
     [SerializeField] private string _roomDestination;
     [SerializeField] private string _floorDestination;
+
+    [Header("Teleport Settings (Extra points)")]
+    [SerializeField] private GameObject _teleportPoints;
+    [SerializeField] private OptionsButtonsController _teleportOptionsButtons;
 
     [Header("Destination Settings")]
     [SerializeField] private GameObject _destinationPrefab;
@@ -41,19 +47,20 @@ public class DestinationManager : MonoBehaviour
         GetDestinationClasses();
         LoadDestinationPoints();
         SetDestinationOptionsButtons();
+        SetTeleportOptionsButtons();
     }
 
     #region --- UI Managment ---
     public void SetAllDestinationsOnDropdown()
     {   // Set dropdown options from destination points
-        List<TranslatedText> _dropdownOptions = new List<TranslatedText>();
+        List<string> _dropdownOptions = new List<string>();
 
-        foreach (FloorData _floor in _mapLoader.mapData.floors)
-            foreach (RoomData _room in _floor.rooms)
+        foreach (Transform _floor in this.transform)
+            foreach (Transform _room in _floor)
             {   // Add room name to dropdown options
-                _dropdownOptions.Add(_room.roomName);
+                _dropdownOptions.Add(_room.name);
             }
-        _dropdownController.SetDropdownOptions(_dropdownOptions);
+        SetDestinationsOnDropdown(_dropdownOptions);
     }
 
     private void SetDestinationsOnDropdown(List<string> _destionations)
@@ -84,15 +91,90 @@ public class DestinationManager : MonoBehaviour
         {   // Create a button for each destination class
             _destinationOptionsButtons.AddOptionButton(_option, () => SetNavigationOption(_option.key));
         }
+        // Add teleport option to destination options
+        _destinationOptionsButtons.AddOptionButton(new TranslatedText()
+        {
+            key = "Teleport",
+            englishTranslation = "Another place",
+            spanishTranslation = "Otro lugar"
+        }, () => _assistantManager.SelectAnotherDestination());
     }
 
     public void ShowDestinationOptionsButtons()
     {   // Show destination options buttons
         _destinationOptionsButtons.ShowOptionsButtons();
     }
+
+    public void ShowTeleportOptionsButtons()
+    {   // Show teleport options buttons
+        _teleportOptionsButtons.ShowOptionsButtons();
+    }
+
+    public void SetTeleportOptionsButtons()
+    {   // Set teleport options from teleport points
+        List<Transform> _upFloorPoints = new List<Transform>();
+        List<Transform> _downFloorPoints = new List<Transform>();
+
+        foreach (Transform _point in _teleportPoints.transform.GetChild(0))
+        {
+            _upFloorPoints.Add(_point);
+            _downFloorPoints.Add(_point);
+        }
+        foreach (Transform _point in _teleportPoints.transform.GetChild(1)) _upFloorPoints.Add(_point);
+        foreach (Transform _point in _teleportPoints.transform.GetChild(2)) _downFloorPoints.Add(_point);
+
+        _teleportOptionsButtons.AddOptionButton(
+            new TranslatedText()
+            {
+                key = "GoToSecondFloor",
+                englishTranslation = "Up to another floor",
+                spanishTranslation = "A otro piso"
+            },
+            () => SetExtraPointAsDestination(_upFloorPoints)
+        );
+        _teleportOptionsButtons.AddOptionButton(
+            new TranslatedText()
+            {
+                key = "GoToBasement",
+                englishTranslation = "Go to basement",
+                spanishTranslation = "Al subterraneo"
+            },
+            () => SetExtraPointAsDestination(_downFloorPoints)
+        );
+        _teleportOptionsButtons.AddOptionButton(
+            new TranslatedText()
+            {
+                key = "GoOutside",
+                englishTranslation = "Go outside",
+                spanishTranslation = "Hacia fuera"
+            },
+            () => SetExtraPointAsDestination(new List<Transform>() {
+                    _teleportPoints.transform.GetChild(3).GetChild(0)})
+        );
+    }
     #endregion
 
     #region --- Set Navigation Destination ---
+    public void SetExtraPointAsDestination(List<Transform> _points)
+    {   // Set an extra point as destination point
+        Vector3 _startPos = _navManager.transform.position;
+        Transform _selectedPoint = _points[0];
+
+        float _minDistance = Vector3.Distance(_startPos, _selectedPoint.position);
+
+        foreach (Transform _point in _points)
+        {   // Get the most nearest point to the user
+            if (Vector3.Distance(_startPos, _point.position) < _minDistance)
+            {
+                _selectedPoint = _point;
+                _minDistance = Vector3.Distance(_startPos, _point.position);
+            }
+        }
+        _navTarget.SetTargetPosition(_selectedPoint.position);
+        _navManager.destinationPoint = _selectedPoint;
+        _assistantManager.GoToAnotherPlace();
+    }
+
     public void SetNavigationOption(string _optionName)
     {   // Set navigation destination from option name
         _destinationOptionsButtons.HideOptionsButtons();
@@ -199,13 +281,18 @@ public class DestinationManager : MonoBehaviour
 
             foreach (RoomData _room in _floor.rooms)
             {   // Generate a object for each room in the floor
+                if (_room.roomType == 1) continue;
                 GameObject _roomObj = new GameObject(_room.roomName.key);
                 _roomObj.transform.SetParent(_floorObj.transform);
                 CreateEntrancesFromRoom(_room, _roomObj);
 
-                // If room type is unique, add to destination filter options
-                if (_room.roomType == 0) _destinationFilterOptions.Add(_room.roomName);
-                else _destinationRoomsByType[_room.roomType].Add(_roomObj.transform);
+                // Discard room if it has no entrances
+                if (_roomObj.transform.childCount == 0) Destroy(_roomObj);
+                else
+                {   // If room type is unique, add to destination filter options
+                    if (_room.roomType == 0) _destinationFilterOptions.Add(_room.roomName);
+                    else _destinationRoomsByType[_room.roomType].Add(_roomObj.transform);
+                }
             }
         }
     }
@@ -214,7 +301,7 @@ public class DestinationManager : MonoBehaviour
     {   // Get destination classes from map data
         foreach (RoomTypeData _roomType in _mapLoader.mapData.roomTypes)
         {   // Add room type name to destination classes
-            if (_roomType.typeName.key != "Unique")
+            if (_roomType.typeName.key != "Unique" && _roomType.typeName.key != "Space")
             {
                 _destinationRoomsByType[_roomType.typeID] = new List<Transform>();
                 _destinationFilterOptions.Add(_roomType.typeName);

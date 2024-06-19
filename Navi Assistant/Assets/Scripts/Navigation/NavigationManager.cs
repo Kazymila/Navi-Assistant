@@ -16,6 +16,7 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] private GameObject _navigationUI;
     [SerializeField] private GameObject _miniMapCanvas;
     [SerializeField] private GameObject _floatingLabels;
+    [SerializeField] private GameObject _teleportLabels;
     [SerializeField] private ErrorMessagePanelController _errorPanel;
 
     [Header("Path Visualization")]
@@ -36,6 +37,7 @@ public class NavigationManager : MonoBehaviour
         _navPath = new NavMeshPath();
         _navigationUI.SetActive(false);
         _floatingLabels.SetActive(false);
+        _teleportLabels.SetActive(false);
     }
 
     void Update()
@@ -65,13 +67,13 @@ public class NavigationManager : MonoBehaviour
 
         if (_navPath.status == NavMeshPathStatus.PathComplete)
         {   // Show the path and navigation arrow if reachable
-            _floatingLabels.SetActive(true);
             _errorPanel.gameObject.SetActive(false);
             _pathArrowVisualizer.DrawPath(_navPath);
             _pathLineVisualizer.DrawPathLine(_navPath);
             _miniMapLineVisualizer.DrawPathLine(_navPath);
             _navArrowController.UpdateNavArrow(_navPath);
             _floatingLabels.SetActive(true);
+            _teleportLabels.SetActive(true);
         }
         else
         {   // Clear path if not reachable
@@ -94,6 +96,7 @@ public class NavigationManager : MonoBehaviour
         _miniMapLineVisualizer.ClearPathLine();
         _navArrowController.EnableNavArrow(false);
         _floatingLabels.SetActive(false);
+        _teleportLabels.SetActive(false);
         _navigationUI.SetActive(false);
     }
 

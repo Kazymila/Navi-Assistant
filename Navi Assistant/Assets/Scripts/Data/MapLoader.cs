@@ -44,6 +44,8 @@ public class MapLoader : MonoBehaviour
                 string jsonData = snapshot.ToDictionary()["MapData"].ToString();
                 mapData = JsonUtility.FromJson<MapData>(jsonData);
 
+                print("Map Data: " + mapData.mapName + " loaded!");
+
                 GenerateMapRender();
                 _destinationManager.StartDestinationManager();
             }
@@ -92,11 +94,14 @@ public class MapLoader : MonoBehaviour
     private void GenerateShapeRender(ShapeData _shapeData)
     {   // Generate shape render from data
         GameObject _shapeRender = Instantiate(shapeRenderPrefab, this.transform.GetChild(2));
+        _shapeRender.transform.position = new Vector3(_shapeData.shapePosition.x, 0, _shapeData.shapePosition.y);
         Vector3[] vertices = SerializableVector3.GetVector3Array(_shapeData.renderData.vertices);
         int[] triangles = _shapeData.renderData.triangles;
 
         _shapeRender.GetComponent<MeshFilter>().mesh.vertices = vertices;
         _shapeRender.GetComponent<MeshFilter>().mesh.triangles = triangles;
+        _shapeRender.GetComponent<MeshRenderer>().material.SetColor(
+            "_Color1", _shapeData.polygonData.materialColor.GetColor);
         _shapeRender.name = "Shape_" + _shapeData.shapeID.ToString();
     }
     #endregion

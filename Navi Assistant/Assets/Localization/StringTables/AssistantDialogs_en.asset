@@ -67,6 +67,26 @@ MonoBehaviour:
       somewhere else?
     m_Metadata:
       m_Items: []
+  - m_Id: 5932409577881600
+    m_Localized: "Oh.../nIf you need to go somewhere else/nYou may find it on an
+      upper floor/nOn the second floor is the library/nOn the third floor is from
+      classroom A301 to A312/nOn the fourth floor is from classroom 401 to A412,
+      and so on upwards/nOn the other hand/nYou may find more facilities in the subway/nAnd
+      towards the left side outside the main building/nWhere there are several feeding
+      points and more classrooms/nFrom there you can also access to more facilities,
+      such as B, C and following buildings/nWhere do you want to go?\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5939483640676352
+    m_Localized: Ok!/nI will take you to the nearest point towards your destination/
+      However, I will not be able to accompany you afterwards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5947461760532480
+    m_Localized: ' I do not yet know the exterior of this floor/ Thank you for your
+      understanding!/nLet''s go!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -42,10 +42,11 @@ public class QRCodeLocalization : MonoBehaviour
         _qrCodeScannerPanel.SetActive(true);
         _cameraManager.frameReceived += OnCameraFrameReceived;
         _qrCodeTextDisplay.text = "";
-        //Invoke("TestLocalization", 1f);
+        Invoke("UOHTestLocalization", 1f);
     }
 
-    private void TestLocalization() => GetQrCodeLocalization("(-1.47,0,-3.66)pos:dir(1.00,0.00,0.00)");
+    private void HouseTestLocalization() => GetQrCodeLocalization("(-1.47,0,-3.66)pos:dir(1.00,0.00,0.00)");
+    private void UOHTestLocalization() => GetQrCodeLocalization("(16.52,0,0.54)pos:dir(0.00,0.00,0.00)");
 
     private void OnDisable()
     {

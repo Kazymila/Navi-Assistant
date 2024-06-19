@@ -23,6 +23,7 @@ public class FloatingLabelController : MonoBehaviour
         _floatingLabel = this.transform.GetChild(0).gameObject;
         _labelTextComponent = _floatingLabel.GetComponentInChildren<TextMeshProUGUI>();
         _labelAnimator = this.GetComponent<Animator>();
+        SetLabelText(_labelText);
     }
 
     void Update()

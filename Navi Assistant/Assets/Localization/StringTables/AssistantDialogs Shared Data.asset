@@ -59,6 +59,18 @@ MonoBehaviour:
     m_Key: IsAlreadyInDestinationDialog
     m_Metadata:
       m_Items: []
+  - m_Id: 5932409577881600
+    m_Key: SelectAnotherDestinationDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5939483640676352
+    m_Key: GoToAnotherDestinationDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5947461760532480
+    m_Key: UnknowOutsideDialog
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

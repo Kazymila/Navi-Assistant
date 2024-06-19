@@ -54,6 +54,9 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private LocalizedString _selectDestinationDialog;
     [SerializeField] private LocalizedString _selectFromDropdownDialog;
     [SerializeField] private LocalizedString _goToDestinationDialog;
+    [SerializeField] private LocalizedString _anotherDestinationDialog;
+    [SerializeField] private LocalizedString _goToAnotherPlaceDialog;
+    [SerializeField] private LocalizedString _unknownOutsideDialog;
     #endregion
 
     private GameObject _assistantModel;
@@ -229,7 +232,7 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.SetDialogueToDisplay(_noAvailableDialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
 
-        _assistantAnimator.Play("No", 0);
+        _assistantAnimator.Play("Nope", 0);
     }
 
     public void ChangeLanguage(string _languageCode)
@@ -302,6 +305,47 @@ public class AssistantManager : MonoBehaviour
     #endregion
 
     #region --- Choose Destination Events ---
+    public void SelectAnotherDestination()
+    {   // Select a teleport point (stairs, elevators or exits)
+        UnityEvent _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(() =>
+        {   // When the dialogue ends, show the destination options
+            _destinationsManager.ShowTeleportOptionsButtons();
+        });
+        _dialogPanel.SetDialogueToDisplay(_anotherDestinationDialog, _onDialogueEnd, true);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Thinking", 0);
+    }
+
+    public void GoToAnotherPlace()
+    {   // Go to another place in the building (by stairs, elevators or exits)
+        _assistantModel.SetActive(true);
+        _destinationDropdown.gameObject.SetActive(true);
+        _qrLocalization.ResetScannerButtonsActions();
+        _destinationsManager.SetAllDestinationsOnDropdown();
+        _destinationDropdown.ClearInputText();
+        _navManager.StartNavigation();
+        _isOnNavigation = true;
+
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() => UnknownOutside());
+        _dialogPanel.SetDialogueToDisplay(_goToAnotherPlaceDialog, _onDialogEnd);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Yeah", 0);
+    }
+
+    private void UnknownOutside()
+    {   // Show interaction when the user is outside the building
+        UnityEvent _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(() => _assistantModel.SetActive(false));
+        _dialogPanel.SetDialogueToDisplay(_unknownOutsideDialog, _onDialogueEnd);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Nope", 0);
+    }
+
     public void GoToDestination(string _destinationName)
     {   // Go to the selected destination
         if (_destinationName == _navManager.GetCurrentRoom())
@@ -327,10 +371,7 @@ public class AssistantManager : MonoBehaviour
             _isOnNavigation = true;
 
             UnityEvent _onDialogEnd = new UnityEvent();
-            _onDialogEnd.AddListener(() =>
-            {
-                _assistantModel.SetActive(false);
-            });
+            _onDialogEnd.AddListener(() => _assistantModel.SetActive(false));
             _dialogPanel.SetDialogueToDisplay(_goToDestinationDialog, _onDialogEnd);
             _dialogPanel.PlayDialogue();
 

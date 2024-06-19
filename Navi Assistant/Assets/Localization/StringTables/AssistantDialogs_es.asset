@@ -70,6 +70,27 @@ MonoBehaviour:
       ir a otro sitio?"
     m_Metadata:
       m_Items: []
+  - m_Id: 5932409577881600
+    m_Localized: "Oh.../nSi necesita ir a otro lugar/n Puede que se encuentre en
+      una planta superior/nEn la segunda planta se encuentra la biblioteca/nEn la
+      tercera planta se encuentra desde la sala A301 hasta A312/nEn la cuarta desde
+      la sala 401 hasta A412/nY as\xED sucesivamente en las plantas superiores/n
+      Por otro lado,/nPuede encontrar m\xE1s instalaciones en el subterraneo/nY hacia
+      la izquierda, fuera del edificio principal/nDonde hay varios puntos de alimentaci\xF3n
+      y m\xE1s salas/nDesde donde tambi\xE9n puede acceder a m\xE1s instalaciones,
+      como los edificios B, C y siguientes/n\xBFHacia donde desea ir?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5939483640676352
+    m_Localized: "\xA1Entendido!/nLe acercare al punto m\xE1s cercano hacia su destino/nSin
+      embargo, no podr\xE9 acompa\xF1arlo luego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5947461760532480
+    m_Localized: "A\xFAn no conozco el exterior de esta planta/n\xA1Gracias su compresi\xF3n!/n\xA1Vamos
+      all\xE1!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
