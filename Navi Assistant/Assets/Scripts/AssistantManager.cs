@@ -43,6 +43,9 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private LocalizedString _displayOptionsDialog;
     [SerializeField] private LocalizedString _noAvailableDialog;
     [SerializeField] private LocalizedString _congratsForContinueDialog;
+    [SerializeField] private LocalizedString _assistantContinueDialog;
+    [SerializeField] private LocalizedString _goToSurveyDialog;
+    [SerializeField] private LocalizedString _waitForSurveyDialog;
 
     [Header("Navigation Dialogues")]
     [SerializeField] private LocalizedString _destinationReachedDialog;
@@ -99,11 +102,6 @@ public class AssistantManager : MonoBehaviour
     private void Update()
     {   // Update the assistant position to face the camera
         this.transform.position = Camera.main.transform.position + Camera.main.transform.forward * _assistantDistance;
-    }
-
-    public void GoToSurvey()
-    {   // Open the survey link in the browser
-        Application.OpenURL("https://forms.gle/4hvjAAx1RuZRUee47");
     }
 
     #region --- Initialization Methods ---
@@ -185,24 +183,42 @@ public class AssistantManager : MonoBehaviour
         _destinationDropdown.gameObject.SetActive(false);
         _navManager.EndNavigation();
         _isOnNavigation = false;
-
         _assistantModel.SetActive(true);
 
-        // TODO: show the button to go to the survey
-
         UnityEvent _onDialogEnd = new UnityEvent();
-        _onDialogEnd.AddListener(() =>
-        {
-            _continueOptionsButtons.ShowOptionsButtons();
-        });
-        _dialogPanel.SetDialogueToDisplay(_destinationReachedDialog, _onDialogEnd, true);
+        _onDialogEnd.AddListener(GoToSurveyInteraction);
+        _dialogPanel.SetDialogueToDisplay(_destinationReachedDialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
 
         _assistantAnimator.Play("Happy", 0);
     }
+
+    private void GoToSurveyInteraction()
+    {   // Show the button to go to the survey
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() => _GoToSurveyButton.gameObject.SetActive(true));
+        _dialogPanel.SetDialogueToDisplay(_goToSurveyDialog, _onDialogEnd, true);
+        _dialogPanel.PlayDialogue();
+    }
     #endregion
 
     #region --- Assistant Options Methods ---
+    public void GoToSurvey()
+    {   // Open the survey link in the browser
+        _GoToSurveyButton.gameObject.SetActive(false);
+
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() =>
+        {   // When the survey is completed, show the continue options
+            _assistantAnimator.Play("Happy", 0);
+            Invoke("ShowContinueOptions", 2.0f);
+        });
+        _dialogPanel.SetDialogueToDisplay(_waitForSurveyDialog, _onDialogEnd, true);
+        _dialogPanel.PlayDialogue();
+
+        Application.OpenURL("https://forms.gle/4hvjAAx1RuZRUee47");
+    }
+
     private void ShowInitialAssistantOptions()
     {   // Show the assistant options
         UnityEvent _onDialogEnd = new UnityEvent();
@@ -216,6 +232,14 @@ public class AssistantManager : MonoBehaviour
         UnityEvent _onDialogEnd = new UnityEvent();
         _onDialogEnd.AddListener(() => _onNavigationOptions.ShowOptionsButtons());
         _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, _onDialogEnd, true);
+        _dialogPanel.PlayDialogue();
+    }
+
+    private void ShowContinueOptions()
+    {   // Show the continue options after reaching the destination
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() => _continueOptionsButtons.ShowOptionsButtons());
+        _dialogPanel.SetDialogueToDisplay(_assistantContinueDialog, _onDialogEnd, true);
         _dialogPanel.PlayDialogue();
     }
 

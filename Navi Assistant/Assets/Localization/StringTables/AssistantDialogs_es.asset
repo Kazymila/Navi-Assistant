@@ -57,7 +57,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5562155675648
-    m_Localized: "\xA1Ha llegado a su destino!/n\xBFNecesita algo m\xE1s?"
+    m_Localized: "\xA1Ha llegado a su destino!/n\xBFComo estuvo el trayecto?"
     m_Metadata:
       m_Items: []
   - m_Id: 12121640284160
@@ -97,6 +97,19 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 6187325131145216
     m_Localized: "\xA1Destino actualizado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6280858060013568
+    m_Localized: "Puedes contestar una encuesta para saber tu opini\xF3n, \xA1Ser\xE1
+      de mucha ayuda!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6289520572841984
+    m_Localized: "\xBFNecesita algo m\xE1s?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6294788085989376
+    m_Localized: "\xA1Aqu\xED estare esperando!/n\xA1Muchas gracias!"
     m_Metadata:
       m_Items: []
   references:

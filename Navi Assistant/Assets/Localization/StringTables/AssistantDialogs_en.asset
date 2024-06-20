@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5562155675648
-    m_Localized: You have arrived at your destination!/nDo you need anything else?
+    m_Localized: You have arrived at your destination!/nHow was the trip?
     m_Metadata:
       m_Items: []
   - m_Id: 12121640284160
@@ -93,6 +93,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 6187325131145216
     m_Localized: "\xA1Destination updated!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6280858060013568
+    m_Localized: You can take a survey to know your opinion, It will be very helpful!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6289520572841984
+    m_Localized: Do you need anything else?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6294788085989376
+    m_Localized: I'll be waiting for you!/nThank you so much!
     m_Metadata:
       m_Items: []
   references:

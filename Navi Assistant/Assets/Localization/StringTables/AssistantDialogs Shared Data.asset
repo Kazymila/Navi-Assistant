@@ -79,6 +79,18 @@ MonoBehaviour:
     m_Key: ChangeDestinationDialog
     m_Metadata:
       m_Items: []
+  - m_Id: 6280858060013568
+    m_Key: GoToSurveyDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6289520572841984
+    m_Key: AssitantContinue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6294788085989376
+    m_Key: waitForSurveyDialog
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
