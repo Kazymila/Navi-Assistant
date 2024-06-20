@@ -41,7 +41,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1822417760256
-    m_Localized: Very good! Now we can continue/nWhere would you like to go?
+    m_Localized: Where would you like to go?
     m_Metadata:
       m_Items: []
   - m_Id: 2093894086656
@@ -85,6 +85,14 @@ MonoBehaviour:
   - m_Id: 5947461760532480
     m_Localized: ' I do not yet know the exterior of this floor/ Thank you for your
       understanding!/nLet''s go!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6183895264215040
+    m_Localized: Very good! Now we can continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6187325131145216
+    m_Localized: "\xA1Destination updated!"
     m_Metadata:
       m_Items: []
   references:

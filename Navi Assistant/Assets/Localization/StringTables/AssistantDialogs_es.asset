@@ -44,7 +44,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1822417760256
-    m_Localized: "\xA1Muy bien! Ahora podemos continuar/n\xBFA que lugar desea ir?"
+    m_Localized: "\xBFA que lugar desea ir?"
     m_Metadata:
       m_Items: []
   - m_Id: 2093894086656
@@ -89,6 +89,14 @@ MonoBehaviour:
   - m_Id: 5947461760532480
     m_Localized: "A\xFAn no conozco el exterior de esta planta/n\xA1Gracias su compresi\xF3n!/n\xA1Vamos
       all\xE1!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6183895264215040
+    m_Localized: "\xA1Muy bien! Ahora podemos continuar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6187325131145216
+    m_Localized: "\xA1Destino actualizado!"
     m_Metadata:
       m_Items: []
   references:

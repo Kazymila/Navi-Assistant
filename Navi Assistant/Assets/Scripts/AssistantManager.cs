@@ -16,6 +16,7 @@ public class AssistantManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private GameObject _assistantUI;
+    [SerializeField] private Button _GoToSurveyButton;
     private DialogController _dialogPanel;
     private SearchableDropdownController _destinationDropdown;
     private OptionsButtonsController _assistantOptionsButtons;
@@ -41,6 +42,7 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private LocalizedString _goodbyeDialog;
     [SerializeField] private LocalizedString _displayOptionsDialog;
     [SerializeField] private LocalizedString _noAvailableDialog;
+    [SerializeField] private LocalizedString _congratsForContinueDialog;
 
     [Header("Navigation Dialogues")]
     [SerializeField] private LocalizedString _destinationReachedDialog;
@@ -54,6 +56,7 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private LocalizedString _selectDestinationDialog;
     [SerializeField] private LocalizedString _selectFromDropdownDialog;
     [SerializeField] private LocalizedString _goToDestinationDialog;
+    [SerializeField] private LocalizedString _changeDestinationDialog;
     [SerializeField] private LocalizedString _anotherDestinationDialog;
     [SerializeField] private LocalizedString _goToAnotherPlaceDialog;
     [SerializeField] private LocalizedString _unknownOutsideDialog;
@@ -96,6 +99,11 @@ public class AssistantManager : MonoBehaviour
     private void Update()
     {   // Update the assistant position to face the camera
         this.transform.position = Camera.main.transform.position + Camera.main.transform.forward * _assistantDistance;
+    }
+
+    public void GoToSurvey()
+    {   // Open the survey link in the browser
+        Application.OpenURL("https://forms.gle/4hvjAAx1RuZRUee47");
     }
 
     #region --- Initialization Methods ---
@@ -180,6 +188,8 @@ public class AssistantManager : MonoBehaviour
 
         _assistantModel.SetActive(true);
 
+        // TODO: show the button to go to the survey
+
         UnityEvent _onDialogEnd = new UnityEvent();
         _onDialogEnd.AddListener(() =>
         {
@@ -195,26 +205,27 @@ public class AssistantManager : MonoBehaviour
     #region --- Assistant Options Methods ---
     private void ShowInitialAssistantOptions()
     {   // Show the assistant options
-        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, null, true);
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() => _assistantOptionsButtons.ShowOptionsButtons());
+        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, _onDialogEnd, true);
         _dialogPanel.PlayDialogue();
-
-        _assistantOptionsButtons.ShowOptionsButtons();
     }
 
     private void ShowNavigationAssistantOptions()
     {   // Show the assistant options for navigation
-        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, null, true);
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() => _onNavigationOptions.ShowOptionsButtons());
+        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, _onDialogEnd, true);
         _dialogPanel.PlayDialogue();
-
-        _onNavigationOptions.ShowOptionsButtons();
     }
 
     private void ShowProblemSolvingOptions()
     {   // Show the problem solving options
-        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, null, true);
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() => _problemSolvingButtons.ShowOptionsButtons());
+        _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, _onDialogEnd, true);
         _dialogPanel.PlayDialogue();
 
-        _problemSolvingButtons.ShowOptionsButtons();
         _assistantAnimator.Play("Thinking", 0);
     }
 
@@ -289,13 +300,18 @@ public class AssistantManager : MonoBehaviour
 
     private UnityEvent OnLocalizedEvent()
     {   // When the user is localized, show the destination options
+        UnityEvent _selectDestinationEvent = new UnityEvent();
+        _selectDestinationEvent.AddListener(SelectDestinationInteraction);
+
         UnityEvent _event = new UnityEvent();
         _event.AddListener(() =>
         {
             _assistantUI.SetActive(true);
             _assistantModel.SetActive(true);
-            SelectDestinationInteraction();
             _qrLocalization.gameObject.SetActive(false);
+
+            _dialogPanel.SetDialogueToDisplay(_congratsForContinueDialog, _selectDestinationEvent);
+            _dialogPanel.PlayDialogue();
 
             _assistantAnimator.Play("Affirm", 0);
         });
@@ -360,6 +376,22 @@ public class AssistantManager : MonoBehaviour
 
             _assistantAnimator.Play("Thinking", 0);
         }
+        else if (_isOnNavigation)
+        {   // If the assistant is already navigating, change the destination
+            _assistantModel.SetActive(true);
+            _destinationDropdown.gameObject.SetActive(true);
+            _destinationsManager.SetAllDestinationsOnDropdown();
+            _destinationDropdown.ChangeSelectedItem(_destinationName);
+            _navManager.StartNavigation();
+            _isOnNavigation = true;
+
+            UnityEvent _onDialogEnd = new UnityEvent();
+            _onDialogEnd.AddListener(() => _assistantModel.SetActive(false));
+            _dialogPanel.SetDialogueToDisplay(_changeDestinationDialog, _onDialogEnd);
+            _dialogPanel.PlayDialogue();
+
+            _assistantAnimator.Play("Yeah", 0);
+        }
         else
         {   // Go to the selected destination
             _assistantModel.SetActive(true);
@@ -381,7 +413,7 @@ public class AssistantManager : MonoBehaviour
 
     public void SelectDestinationFromDropdown()
     {   // Select the destination alternative
-        _dialogPanel.SetDialogueToDisplay(_selectFromDropdownDialog);
+        _dialogPanel.SetDialogueToDisplay(_selectFromDropdownDialog, null, true);
         _dialogPanel.PlayDialogue();
 
         _destinationDropdown.gameObject.SetActive(true);

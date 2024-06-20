@@ -51,6 +51,10 @@ MonoBehaviour:
     m_Key: QRScanner_LocalizedAlert
     m_Metadata:
       m_Items: []
+  - m_Id: 8727897293275136
+    m_Key: GoToSurvey
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

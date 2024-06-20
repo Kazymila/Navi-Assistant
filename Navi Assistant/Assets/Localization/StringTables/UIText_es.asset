@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: "Localizado con \xE9xito"
     m_Metadata:
       m_Items: []
+  - m_Id: 8727897293275136
+    m_Localized: Hacer encuesta
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

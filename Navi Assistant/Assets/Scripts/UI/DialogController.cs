@@ -114,11 +114,8 @@ public class DialogController : MonoBehaviour
         StopAllCoroutines();
         HideDialogPanel();
 
-        if (_onDialogueEnd != null)
-        {   // Invoke the event when the dialogue ends
-            _onDialogueEnd.Invoke();
-            _onDialogueEnd.RemoveAllListeners();
-        }
+        // Invoke the event when the dialogue ends
+        if (_onDialogueEnd != null) _onDialogueEnd.Invoke();
     }
 
     public void HideDialogPanel()

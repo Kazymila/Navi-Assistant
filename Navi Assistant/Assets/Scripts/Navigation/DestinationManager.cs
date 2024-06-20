@@ -128,7 +128,7 @@ public class DestinationManager : MonoBehaviour
             {
                 key = "GoToSecondFloor",
                 englishTranslation = "Up to another floor",
-                spanishTranslation = "A otro piso"
+                spanishTranslation = "Subir a otro piso"
             },
             () => SetExtraPointAsDestination(_upFloorPoints)
         );

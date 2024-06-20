@@ -71,6 +71,14 @@ MonoBehaviour:
     m_Key: UnknowOutsideDialog
     m_Metadata:
       m_Items: []
+  - m_Id: 6183895264215040
+    m_Key: CongratsForContinue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6187325131145216
+    m_Key: ChangeDestinationDialog
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
