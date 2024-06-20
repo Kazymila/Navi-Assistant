@@ -92,7 +92,6 @@
     <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-firestore-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Firestore.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />

@@ -19,8 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 33333194752
-    m_Localized: "\xA1Hola! Soy Navi y ser\xE9 su gu\xEDa por \"inserte nombre de
-      edificio\""
+    m_Localized: "\xA1Hola! Soy Navi y ser\xE9 su gu\xEDa por la Universidad de O'Higgins"
     m_Metadata:
       m_Items: []
   - m_Id: 203567411200
@@ -33,7 +32,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 798005145600
     m_Localized: "\xA1Entendido!/nPara comenzar, primero necesito saber donde se
-      encuentra/nPara conocer su ubicaci\xF3n actual, porfavor escanee el c\xF3digo
+      encuentra/nPara conocer su ubicaci\xF3n actual/nPorfavor escanee el c\xF3digo
       QR m\xE1s cercano"
     m_Metadata:
       m_Items: []
@@ -71,14 +70,14 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5932409577881600
-    m_Localized: "Oh.../nSi necesita ir a otro lugar/n Puede que se encuentre en
-      una planta superior/nEn la segunda planta se encuentra la biblioteca/nEn la
-      tercera planta se encuentra desde la sala A301 hasta A312/nEn la cuarta desde
-      la sala 401 hasta A412/nY as\xED sucesivamente en las plantas superiores/n
-      Por otro lado,/nPuede encontrar m\xE1s instalaciones en el subterraneo/nY hacia
-      la izquierda, fuera del edificio principal/nDonde hay varios puntos de alimentaci\xF3n
-      y m\xE1s salas/nDesde donde tambi\xE9n puede acceder a m\xE1s instalaciones,
-      como los edificios B, C y siguientes/n\xBFHacia donde desea ir?"
+    m_Localized: "Oh.../nSi necesita ir a otro lugar/nPuede que se encuentre en una
+      planta superior/nEn la segunda planta se encuentra la biblioteca/nEn la tercera
+      planta se encuentra desde la sala A301 hasta A312/nEn la cuarta desde la sala
+      401 hasta A412/nY as\xED sucesivamente en las plantas superiores/n Por otro
+      lado,/nPuede encontrar m\xE1s instalaciones en el subterraneo y hacia la izquierda/nFuera
+      del edificio principal/nDonde hay varios puntos de alimentaci\xF3n, m\xE1s
+      salas, y puede acceder a m\xE1s instalaciones/nComo los edificios B, C, D y
+      siguientes/n\xBFHacia donde desea ir?"
     m_Metadata:
       m_Items: []
   - m_Id: 5939483640676352
@@ -100,8 +99,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6280858060013568
-    m_Localized: "Puedes contestar una encuesta para saber tu opini\xF3n, \xA1Ser\xE1
-      de mucha ayuda!"
+    m_Localized: "Para conocer tu opini\xF3n, puedes contestar una breve encuesta,
+      \xA1Ser\xE1 de mucha ayuda!"
     m_Metadata:
       m_Items: []
   - m_Id: 6289520572841984

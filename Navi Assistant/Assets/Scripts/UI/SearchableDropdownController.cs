@@ -83,6 +83,7 @@ public class SearchableDropdownController : MonoBehaviour
         _arrowAnimator.Play("ShowDropdown", 0, 0);
         _itemsDisplay.SetActive(true);
     }
+
     public void HideDropdown()
     {   // Hide dropdown items
         if (_filteredOptions.Count == 0) return;
@@ -94,6 +95,14 @@ public class SearchableDropdownController : MonoBehaviour
     {   // Toggle dropdown visibility on click
         if (_itemsDisplay.activeSelf) HideDropdown();
         else ShowDropdown();
+    }
+
+    public void ShowAllDropdownItems()
+    {   // Show all dropdown items
+        foreach (Transform _child in _itemsContainer.transform)
+            if (_child != _itemTemplate.transform)
+                _child.gameObject.SetActive(true);
+        ShowDropdown();
     }
 
     public void AdjustItemDisplaySize()
@@ -151,7 +160,7 @@ public class SearchableDropdownController : MonoBehaviour
         UpdateDropdownOptions();
     }
 
-    private void UpdateDropdownOptions()
+    public void UpdateDropdownOptions()
     {   // Update dropdown options based on filtered options
         foreach (Transform _child in _itemsContainer.transform)
             _child.gameObject.SetActive(false); // Hide all items

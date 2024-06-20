@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 33333194752
-    m_Localized: "Hi! I'm Navi and I'll be your guide for \u201Cinsert building name\u201D"
+    m_Localized: Hi! I'm Navi and I'll be your guide for University of O'Higgins
     m_Metadata:
       m_Items: []
   - m_Id: 203567411200
@@ -31,8 +31,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 798005145600
-    m_Localized: Ok!/nFirst, I need to know where you are/nTo know your current location,
-      please scan the nearest QR code
+    m_Localized: Ok!/nFirst, I need to know where you are/nTo know your current location/nPlease
+      scan the nearest QR code
     m_Metadata:
       m_Items: []
   - m_Id: 1242576203776
@@ -68,13 +68,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5932409577881600
-    m_Localized: "Oh.../nIf you need to go somewhere else/nYou may find it on an
+    m_Localized: Oh... /nIf you need to go somewhere else/nYou may find it on an
       upper floor/nOn the second floor is the library/nOn the third floor is from
-      classroom A301 to A312/nOn the fourth floor is from classroom 401 to A412,
-      and so on upwards/nOn the other hand/nYou may find more facilities in the subway/nAnd
-      towards the left side outside the main building/nWhere there are several feeding
-      points and more classrooms/nFrom there you can also access to more facilities,
-      such as B, C and following buildings/nWhere do you want to go?\r"
+      classroom A301 to A312/nOn the fourth floor is from classroom 401 to A412/nAnd
+      so on and so forth on the upper floors/nOn the other hand,/nYou can find more
+      facilities in the subway and to the left/nOutside the main building/nWhere
+      there are several feeding points, more classrooms, and you can access more
+      facilities/nSuch as buildings B, C, D and following/nWhere do you want to go?
     m_Metadata:
       m_Items: []
   - m_Id: 5939483640676352
@@ -96,7 +96,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6280858060013568
-    m_Localized: You can take a survey to know your opinion, It will be very helpful!
+    m_Localized: To know your opinion, you can answer a short survey, it will be
+      very helpful!
     m_Metadata:
       m_Items: []
   - m_Id: 6289520572841984

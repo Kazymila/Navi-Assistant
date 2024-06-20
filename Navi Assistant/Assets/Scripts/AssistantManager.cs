@@ -369,7 +369,7 @@ public class AssistantManager : MonoBehaviour
         _isOnNavigation = true;
 
         UnityEvent _onDialogEnd = new UnityEvent();
-        _onDialogEnd.AddListener(() => UnknownOutside());
+        _onDialogEnd.AddListener(UnknownOutside);
         _dialogPanel.SetDialogueToDisplay(_goToAnotherPlaceDialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
 
@@ -384,6 +384,28 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.PlayDialogue();
 
         _assistantAnimator.Play("Nope", 0);
+    }
+
+    public void SelectDestinationFromDropdown()
+    {   // Select the destination alternative
+        _dialogPanel.SetDialogueToDisplay(_selectFromDropdownDialog, null, true);
+        _dialogPanel.PlayDialogue();
+
+        _destinationDropdown.gameObject.SetActive(true);
+        _destinationDropdown.ShowAllDropdownItems();
+
+        _assistantAnimator.Play("Thinking", 0);
+    }
+
+    private void SelectDestinationInteraction()
+    {   // Show interaction to select a destination
+        UnityEvent _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(() =>
+        {   // When the dialogue ends, show the destination options
+            _destinationsManager.ShowDestinationOptionsButtons();
+        });
+        _dialogPanel.SetDialogueToDisplay(_selectDestinationDialog, _onDialogueEnd, true);
+        _dialogPanel.PlayDialogue();
     }
 
     public void GoToDestination(string _destinationName)
@@ -433,28 +455,6 @@ public class AssistantManager : MonoBehaviour
 
             _assistantAnimator.Play("Yeah", 0);
         }
-    }
-
-    public void SelectDestinationFromDropdown()
-    {   // Select the destination alternative
-        _dialogPanel.SetDialogueToDisplay(_selectFromDropdownDialog, null, true);
-        _dialogPanel.PlayDialogue();
-
-        _destinationDropdown.gameObject.SetActive(true);
-        _destinationDropdown.ShowDropdown();
-
-        _assistantAnimator.Play("Thinking", 0);
-    }
-
-    private void SelectDestinationInteraction()
-    {   // Show interaction to select a destination
-        UnityEvent _onDialogueEnd = new UnityEvent();
-        _onDialogueEnd.AddListener(() =>
-        {   // When the dialogue ends, show the destination options
-            _destinationsManager.ShowDestinationOptionsButtons();
-        });
-        _dialogPanel.SetDialogueToDisplay(_selectDestinationDialog, _onDialogueEnd, true);
-        _dialogPanel.PlayDialogue();
     }
     #endregion
 
