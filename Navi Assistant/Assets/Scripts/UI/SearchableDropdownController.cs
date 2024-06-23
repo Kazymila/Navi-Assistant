@@ -94,7 +94,7 @@ public class SearchableDropdownController : MonoBehaviour
     public void ToogleDropdown()
     {   // Toggle dropdown visibility on click
         if (_itemsDisplay.activeSelf) HideDropdown();
-        else ShowDropdown();
+        else FilterDropdown(_inputText);
     }
 
     public void ShowAllDropdownItems()
@@ -176,6 +176,8 @@ public class SearchableDropdownController : MonoBehaviour
     public void ClearInputText()
     {   // Clear input field text
         _inputField.text = "";
+        _inputText = "";
+        _itemsDisplay.SetActive(false);
     }
 
     #region --- Dropdown Items ---

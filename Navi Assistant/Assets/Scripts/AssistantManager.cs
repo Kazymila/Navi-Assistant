@@ -9,6 +9,7 @@ public class AssistantManager : MonoBehaviour
 {
     #region --- External References ---
     [Header("External References")]
+    [SerializeField] private string _surveyURL = "https://forms.gle/6nVvfgeqdTaYr894A";
     [SerializeField] private MapLoader _mapLoader;
     [SerializeField] private NavigationManager _navManager;
     [SerializeField] private QRCodeLocalization _qrLocalization;
@@ -171,8 +172,8 @@ public class AssistantManager : MonoBehaviour
 
     private void AssistantGoAway()
     {   // Hide the assistant
-        _dialogPanel.EndDialogDisplay();
         _assistantModel.SetActive(false);
+        _dialogPanel.EndDialogDisplay(false);
         _destinationDropdown.gameObject.SetActive(true);
         _onNavigationOptions.HideOptionsButtons();
         _navManager.StartNavigation();
@@ -216,7 +217,7 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.SetDialogueToDisplay(_waitForSurveyDialog, _onDialogEnd, true);
         _dialogPanel.PlayDialogue();
 
-        Application.OpenURL("https://forms.gle/4hvjAAx1RuZRUee47");
+        Application.OpenURL(_surveyURL);
     }
 
     private void ShowInitialAssistantOptions()

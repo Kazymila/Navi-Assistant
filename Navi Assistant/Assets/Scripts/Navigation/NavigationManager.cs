@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NavigationManager : MonoBehaviour
 {
-    public Transform destinationPoint;
+    [SerializeField] private Transform destinationPoint;
 
     [Header("External References")]
     [SerializeField] private Camera _topDownCamera;
@@ -31,6 +31,7 @@ public class NavigationManager : MonoBehaviour
 
     private NavMeshPath _navPath;
     private bool _isNavigating = false;
+    private bool _pathCalculated = false;
 
     void Start()
     {
@@ -48,6 +49,12 @@ public class NavigationManager : MonoBehaviour
         else HideNavigation();
     }
 
+    public void SetDestinationPoint(Transform destination)
+    {   // Set the destination point for navigation
+        destinationPoint = destination;
+        _pathCalculated = false;
+    }
+
     public void StartNavigation()
     {   // Start navigation to the destination point
         _isNavigating = true;
@@ -58,12 +65,23 @@ public class NavigationManager : MonoBehaviour
     public void EndNavigation()
     {   // End navigation and clear path
         destinationPoint = null;
+        _pathCalculated = false;
         HideNavigation();
     }
 
     private void GenerateNavigationPath()
     {   // Calculate path from agent to target and visualize it
-        NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
+        if (!_pathCalculated)
+        {   // Calculate time to generate path for analytics
+            _pathCalculated = true;
+            System.DateTime startTime = System.DateTime.Now;
+
+            NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
+
+            System.TimeSpan timeToCalculatePath = System.DateTime.Now - startTime;
+            Debug.Log("Nav path generated in " + timeToCalculatePath.TotalMilliseconds + "ms");
+        }
+        else NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
 
         if (_navPath.status == NavMeshPathStatus.PathComplete)
         {   // Show the path and navigation arrow if reachable

@@ -105,7 +105,7 @@ public class DialogController : MonoBehaviour
         }
     }
 
-    public void EndDialogDisplay()
+    public void EndDialogDisplay(bool _eventInvoke = true)
     {   // Clean the text display and ends the dialogue
         _charIndex = 0;
         _sentenceIndex = -1;
@@ -115,7 +115,8 @@ public class DialogController : MonoBehaviour
         HideDialogPanel();
 
         // Invoke the event when the dialogue ends
-        if (_onDialogueEnd != null) _onDialogueEnd.Invoke();
+        if (_onDialogueEnd != null && _eventInvoke)
+            _onDialogueEnd.Invoke();
     }
 
     public void HideDialogPanel()

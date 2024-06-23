@@ -36,6 +36,9 @@ public class MapLoader : MonoBehaviour
     {   // Load map data from Firestore database
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
         DocumentReference docRef = db.Collection("MapData").Document(mapFileName);
+
+        // Take time to load map data from Firestore
+        System.DateTime startTime = System.DateTime.Now;
         docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
         {
             DocumentSnapshot snapshot = task.Result;
@@ -44,7 +47,8 @@ public class MapLoader : MonoBehaviour
                 string jsonData = snapshot.ToDictionary()["MapData"].ToString();
                 mapData = JsonUtility.FromJson<MapData>(jsonData);
 
-                print("Map Data: " + mapData.mapName + " loaded!");
+                System.TimeSpan duration = System.DateTime.Now - startTime;
+                Debug.Log("Map Data loaded in " + duration.TotalMilliseconds + "ms");
 
                 GenerateMapRender();
                 _destinationManager.StartDestinationManager();
@@ -58,9 +62,14 @@ public class MapLoader : MonoBehaviour
     private void GenerateMapRender()
     {   // Generate Map Render from data
         FloorData _floor = mapData.floors[0];
+        System.DateTime startTime = System.DateTime.Now;
+
         foreach (WallData _wall in _floor.walls) GenerateWallRender(_wall);
         foreach (RoomData _room in _floor.rooms) GenerateRoomRender(_room);
         foreach (ShapeData _shape in _floor.shapes) GenerateShapeRender(_shape);
+
+        System.TimeSpan duration = System.DateTime.Now - startTime;
+        Debug.Log("Map Render generated in " + duration.TotalMilliseconds + "ms");
         GenerateNavMesh();
     }
 

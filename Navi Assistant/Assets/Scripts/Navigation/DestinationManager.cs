@@ -171,7 +171,7 @@ public class DestinationManager : MonoBehaviour
             }
         }
         _navTarget.SetTargetPosition(_selectedPoint.position);
-        _navManager.destinationPoint = _selectedPoint;
+        _navManager.SetDestinationPoint(_selectedPoint);
         _assistantManager.GoToAnotherPlace();
     }
 
@@ -209,7 +209,7 @@ public class DestinationManager : MonoBehaviour
     {   // Set destination point to navigation manager
         Vector3 _startPos = _navManager.transform.position;
         Transform _destination = GetNeareastEntrancePoint(_roomName, _floorLevel, _startPos);
-        _navManager.destinationPoint = _destination;
+        _navManager.SetDestinationPoint(_destination);
         _navTarget.SetTargetPosition(_destination.position);
     }
 
