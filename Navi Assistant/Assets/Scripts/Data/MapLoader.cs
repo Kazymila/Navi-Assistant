@@ -8,6 +8,9 @@ using Firebase.Extensions;
 
 public class MapLoader : MonoBehaviour
 {
+    [SerializeField] private AnalyticsDataManager _analyticsManager;
+    [SerializeField] private PopUpAlertController _popUpAlertController;
+
     [Header("Map Data")]
     [SerializeField] private string mapFileName = "ExampleMap";
     [SerializeField] private DestinationManager _destinationManager;
@@ -49,6 +52,8 @@ public class MapLoader : MonoBehaviour
 
                 System.TimeSpan duration = System.DateTime.Now - startTime;
                 Debug.Log("Map Data loaded in " + duration.TotalMilliseconds + "ms");
+                _analyticsManager.analyticsData.timeToLoadJSONMap = duration.TotalMilliseconds.ToString().Replace(".", ",");
+                _popUpAlertController.ShowTimingAlert("Map Data loaded in " + duration.TotalMilliseconds + "ms", 2f);
 
                 GenerateMapRender();
                 _destinationManager.StartDestinationManager();
@@ -70,6 +75,8 @@ public class MapLoader : MonoBehaviour
 
         System.TimeSpan duration = System.DateTime.Now - startTime;
         Debug.Log("Map Render generated in " + duration.TotalMilliseconds + "ms");
+        _analyticsManager.analyticsData.timeToGenerateMapRender = duration.TotalMilliseconds.ToString().Replace(".", ",");
+        _popUpAlertController.ShowTimingAlert("Map Render generated in " + duration.TotalMilliseconds + "ms", 2f);
         GenerateNavMesh();
     }
 

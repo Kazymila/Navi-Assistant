@@ -413,6 +413,7 @@ public class AssistantManager : MonoBehaviour
     {   // Go to the selected destination
         if (_destinationName == _navManager.GetCurrentRoom())
         {   // If the destination is the current room, show a message
+            _assistantModel.SetActive(true);
             UnityEvent _onDialogEnd = new UnityEvent();
             _onDialogEnd.AddListener(() =>
             {   // When the dialogue ends, show the destination options

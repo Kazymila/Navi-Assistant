@@ -17,6 +17,7 @@ public class QRCodeLocalization : MonoBehaviour
     [SerializeField] private ARCameraManager _cameraManager;
 
     [Header("External References")]
+    [SerializeField] private AnalyticsDataManager _analyticsManager;
     [SerializeField] private GameObject _assistantUI;
     [SerializeField] private NavigationManager _navManager;
     [SerializeField] private PopUpAlertController _alertPanel;
@@ -163,6 +164,7 @@ public class QRCodeLocalization : MonoBehaviour
             _assistantUI.SetActive(true);
             _navManager.StartNavigation();
             _alertPanel.ShowTimingAlert(_localizedAlertMessage.GetLocalizedString(), 1f);
+            _analyticsManager.analyticsData.QRrelocalizationCounts++;
             this.gameObject.SetActive(false);
         });
 

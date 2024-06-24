@@ -9,6 +9,7 @@ public class NavigationManager : MonoBehaviour
     [SerializeField] private Transform destinationPoint;
 
     [Header("External References")]
+    [SerializeField] private AnalyticsDataManager _analyticsManager;
     [SerializeField] private Camera _topDownCamera;
     [SerializeField] private Camera _ARCamera;
 
@@ -79,7 +80,8 @@ public class NavigationManager : MonoBehaviour
             NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
 
             System.TimeSpan timeToCalculatePath = System.DateTime.Now - startTime;
-            Debug.Log("Nav path generated in " + timeToCalculatePath.TotalMilliseconds + "ms");
+            Debug.Log("Nav path to " + destinationPoint.parent.name + " generated in " + timeToCalculatePath.TotalMilliseconds + "ms");
+            _analyticsManager.analyticsData.timeToCalculatePath = timeToCalculatePath.TotalMilliseconds.ToString().Replace(".", ",");
         }
         else NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
 

@@ -23,7 +23,7 @@ public class SearchableDropdownController : MonoBehaviour
     [SerializeField] private List<TranslatedText> _dropdownOptions;
     [SerializeField] private List<string> _filteredOptions;
     [SerializeField] private UnityEvent _onOptionSelected;
-
+    private bool _inputFieldSelected = false;
     private PlayerInput _input;
 
     private void Awake()
@@ -52,7 +52,7 @@ public class SearchableDropdownController : MonoBehaviour
 
     private void Update()
     {   // If dropdown is closed, show selected item on input field
-        if (!_itemsDisplay.activeSelf && _dropdownOptions.Count > 0 && _selectedOptionIndex >= 0)
+        if (!_itemsDisplay.activeSelf && !_inputFieldSelected && _dropdownOptions.Count > 0 && _selectedOptionIndex >= 0)
             ChangeSelectedItem(_dropdownOptions[_selectedOptionIndex].key);
     }
 
@@ -171,6 +171,19 @@ public class SearchableDropdownController : MonoBehaviour
             _itemsContainer.transform.GetChild(_itemIndex).gameObject.SetActive(true);
         }
         ShowDropdown();
+    }
+
+    public void OnInputFieldSelected()
+    {   // Set input field selected state
+        _inputFieldSelected = true;
+        _inputField.text = "";
+        _inputText = "";
+        ShowAllDropdownItems();
+    }
+
+    public void OnInputFieldDeselected()
+    {   // Set input field deselected state
+        _inputFieldSelected = false;
     }
 
     public void ClearInputText()
