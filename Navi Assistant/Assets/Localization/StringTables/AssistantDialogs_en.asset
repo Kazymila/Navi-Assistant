@@ -78,12 +78,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5939483640676352
-    m_Localized: Ok!/nI will take you to the nearest point towards your destination/
-      However, I will not be able to accompany you afterwards
+    m_Localized: Ok!/nI will take you to the nearest point towards your destination/nHowever,
+      I will not be able to accompany you afterwards
     m_Metadata:
       m_Items: []
   - m_Id: 5947461760532480
-    m_Localized: ' I do not yet know the exterior of this floor/ Thank you for your
+    m_Localized: ' I do not yet know the exterior of this floor/nThank you for your
       understanding! Let''s go!'
     m_Metadata:
       m_Items: []
@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Localized: When it is not possible to calculate the path,/nIt is because your
       location is detected outside the walkable path/nYou can verify your position
       on the minimap to your left/nYou are probably too close to a wall/nTry moving
-      away from the walls/nIf the problem persists,/n reset your location by scanning
+      away from the walls/nIf the problem persists,/n Reset your location by scanning
       the nearest QR code
     m_Metadata:
       m_Items: []

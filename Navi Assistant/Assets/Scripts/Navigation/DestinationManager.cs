@@ -155,8 +155,8 @@ public class DestinationManager : MonoBehaviour
             new TranslatedText()
             {
                 key = "Back",
-                englishTranslation = "Go back",
-                spanishTranslation = "Volver"
+                englishTranslation = "Choose another destination",
+                spanishTranslation = "Elegir otro destino"
             },
             () =>
             {   // Hide teleport options and select destination interaction
