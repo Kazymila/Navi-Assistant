@@ -77,7 +77,7 @@ MonoBehaviour:
       lado,/nPuede encontrar m\xE1s instalaciones en el subterraneo y hacia la izquierda/nFuera
       del edificio principal/nDonde hay varios puntos de alimentaci\xF3n, m\xE1s
       salas, y puede acceder a m\xE1s instalaciones/nComo los edificios B, C, D y
-      siguientes/n\xBFHacia donde desea ir?"
+      siguientes"
     m_Metadata:
       m_Items: []
   - m_Id: 5939483640676352
@@ -109,6 +109,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 6294788085989376
     m_Localized: "\xA1Muchas gracias!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7994059386601472
+    m_Localized: "\xBFHacia donde desea ir?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999125623488512
+    m_Localized: "Si no es posible calcular el camino,/nPuede ser debido a que se
+      detecta su ubicaci\xF3n fuera del camino transitable/nPuede verificar su posici\xF3n
+      en el minimapa de su izquierda/nEs probable que est\xE9 muy cerca de una pared/nPruebe
+      alejarse de los muros/nSi el problema persiste,/nReinicie su ubicaci\xF3n escaneando
+      el c\xF3digo QR m\xE1s cercano"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004192258834432
+    m_Localized: (por escribir...)
     m_Metadata:
       m_Items: []
   references:

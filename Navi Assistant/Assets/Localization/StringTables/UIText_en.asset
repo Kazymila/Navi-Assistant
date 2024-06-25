@@ -60,6 +60,14 @@ MonoBehaviour:
     m_Localized: Take survey
     m_Metadata:
       m_Items: []
+  - m_Id: 10597615063089152
+    m_Localized: Respond later
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10609609656844288
+    m_Localized: Skip explanation
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1816289174630400
-    m_Localized: Unable to reach the destination
+    m_Localized: Unable to calculate the path
     m_Metadata:
       m_Items: []
   - m_Id: 1816362969214976

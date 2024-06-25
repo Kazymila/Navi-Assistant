@@ -74,7 +74,7 @@ MonoBehaviour:
       so on and so forth on the upper floors/nOn the other hand,/nYou can find more
       facilities in the subway and to the left/nOutside the main building/nWhere
       there are several feeding points, more classrooms, and you can access more
-      facilities/nSuch as buildings B, C, D and following/nWhere do you want to go?
+      facilities/nSuch as buildings B, C, D and following
     m_Metadata:
       m_Items: []
   - m_Id: 5939483640676352
@@ -106,6 +106,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 6294788085989376
     m_Localized: Thank you so much!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7994059386601472
+    m_Localized: Where do you want to go?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999125623488512
+    m_Localized: When it is not possible to calculate the path,/nIt is because your
+      location is detected outside the walkable path/nYou can verify your position
+      on the minimap to your left/nYou are probably too close to a wall/nTry moving
+      away from the walls/nIf the problem persists,/n reset your location by scanning
+      the nearest QR code
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004192258834432
+    m_Localized: (por escribir...)
     m_Metadata:
       m_Items: []
   references:

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Localization;
 using UnityEngine.AI;
 using UnityEngine;
+using System;
 
 public class NavigationManager : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class NavigationManager : MonoBehaviour
     private NavMeshPath _navPath;
     private bool _isNavigating = false;
     private bool _pathCalculated = false;
+    private DateTime _startPathTime;
 
     void Start()
     {
@@ -68,12 +70,16 @@ public class NavigationManager : MonoBehaviour
         destinationPoint = null;
         _pathCalculated = false;
         HideNavigation();
+
+        // Update analytics data with time taken to complete the path
+        _analyticsManager.analyticsData.timeTakenToCompletePath =
+            (System.DateTime.Now - _startPathTime).TotalMilliseconds.ToString().Replace(".", ",");
     }
 
     private void GenerateNavigationPath()
     {   // Calculate path from agent to target and visualize it
         if (!_pathCalculated)
-        {   // Calculate time to generate path for analytics
+        {   // Calculate time to generate path
             _pathCalculated = true;
             System.DateTime startTime = System.DateTime.Now;
 
@@ -81,7 +87,13 @@ public class NavigationManager : MonoBehaviour
 
             System.TimeSpan timeToCalculatePath = System.DateTime.Now - startTime;
             Debug.Log("Nav path to " + destinationPoint.parent.name + " generated in " + timeToCalculatePath.TotalMilliseconds + "ms");
+
+            // Update analytics data
             _analyticsManager.analyticsData.timeToCalculatePath = timeToCalculatePath.TotalMilliseconds.ToString().Replace(".", ",");
+            _analyticsManager.analyticsData.pathDistance = GetPathLength(_navPath).ToString().Replace(".", ",");
+            _analyticsManager.analyticsData.startPosition = this.transform.position.ToString();
+            _analyticsManager.analyticsData.destinationPoint = destinationPoint.parent.name;
+            _startPathTime = System.DateTime.Now;
         }
         else NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
 
@@ -97,6 +109,9 @@ public class NavigationManager : MonoBehaviour
         }
         else
         {   // Clear path if not reachable
+            if (!_errorPanel.gameObject.activeSelf)
+                _analyticsManager.analyticsData.cannotCalculatePathErrorCount++;
+
             _pathArrowVisualizer.ClearPath();
             _pathLineVisualizer.ClearPathLine();
             _miniMapLineVisualizer.ClearPathLine();
@@ -132,5 +147,17 @@ public class NavigationManager : MonoBehaviour
             }
         }
         return "";
+    }
+
+    public static float GetPathLength(NavMeshPath path)
+    {   // Calculate the length of the path
+        float _pathLenght = 0.0f;
+
+        if ((path.status != NavMeshPathStatus.PathInvalid) && (path.corners.Length > 1))
+        {   // Calculate the distance between each corner of the path
+            for (int i = 1; i < path.corners.Length; ++i)
+                _pathLenght += Vector3.Distance(path.corners[i - 1], path.corners[i]);
+        }
+        return _pathLenght;
     }
 }

@@ -60,7 +60,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5932409577881600
-    m_Key: SelectAnotherDestinationDialog
+    m_Key: AnotherDestinationDescriptionDialog
     m_Metadata:
       m_Items: []
   - m_Id: 5939483640676352
@@ -89,6 +89,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 6294788085989376
     m_Key: waitForSurveyDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7994059386601472
+    m_Key: AnotherDestinationsOptionsDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999125623488512
+    m_Key: problemSolvingCannotCalculatePathDialog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004192258834432
+    m_Key: problemSolvingShakeDialog
     m_Metadata:
       m_Items: []
   m_Metadata:

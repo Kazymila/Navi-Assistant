@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1816289174630400
-    m_Localized: No es posible llegar al destino
+    m_Localized: No es posible calcular la ruta
     m_Metadata:
       m_Items: []
   - m_Id: 1866605291122688

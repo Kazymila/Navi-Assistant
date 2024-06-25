@@ -10,6 +10,7 @@ public class AssistantManager : MonoBehaviour
     #region --- External References ---
     [Header("External References")]
     [SerializeField] private string _surveyURL = "https://forms.gle/6nVvfgeqdTaYr894A";
+    [SerializeField] private AnalyticsDataManager _analyticsManager;
     [SerializeField] private MapLoader _mapLoader;
     [SerializeField] private NavigationManager _navManager;
     [SerializeField] private QRCodeLocalization _qrLocalization;
@@ -17,7 +18,8 @@ public class AssistantManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private GameObject _assistantUI;
-    [SerializeField] private Button _GoToSurveyButton;
+    [SerializeField] private GameObject _GoToSurveyButtons;
+    [SerializeField] private GameObject _skipDialogButton;
     private DialogController _dialogPanel;
     private SearchableDropdownController _destinationDropdown;
     private OptionsButtonsController _assistantOptionsButtons;
@@ -61,14 +63,22 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private LocalizedString _selectFromDropdownDialog;
     [SerializeField] private LocalizedString _goToDestinationDialog;
     [SerializeField] private LocalizedString _changeDestinationDialog;
-    [SerializeField] private LocalizedString _anotherDestinationDialog;
+    [SerializeField] private LocalizedString _anotherDestinationDescriptionDialog;
+    [SerializeField] private LocalizedString _anotherDestinationOptionsDialog;
     [SerializeField] private LocalizedString _goToAnotherPlaceDialog;
     [SerializeField] private LocalizedString _unknownOutsideDialog;
+
+    [Header("Problem Solving Dialogues")]
+    [SerializeField] private LocalizedString _cannotCalculatePathDialog;
+    [SerializeField] private LocalizedString _shakeProblemDialog;
     #endregion
 
     private GameObject _assistantModel;
     private Animator _assistantAnimator;
     private bool _isOnNavigation = false;
+
+    public void SkipDialog() => _dialogPanel.EndDialogDisplay(true);
+    private void ShowSkipButton() => _skipDialogButton.SetActive(true);
 
     void Awake()
     {
@@ -125,7 +135,11 @@ public class AssistantManager : MonoBehaviour
 
     private void SetNavigationAssistantOptions()
     {   // Set the assistant options for navigation
-        _onNavigationOptions.AddOptionButton(_navigationOptions[0], SelectDestinationInteraction);
+        _onNavigationOptions.AddOptionButton(_navigationOptions[0], () =>
+        {
+            _analyticsManager.analyticsData.changeDestinationCount++;
+            SelectDestinationInteraction();
+        });
         _onNavigationOptions.AddOptionButton(_navigationOptions[1], ShowProblemSolvingOptions);
         _onNavigationOptions.AddOptionButton(_navigationOptions[2], _changeLanguageButtons.ShowOptionsButtons);
         _onNavigationOptions.AddOptionButton(_navigationOptions[3], AssistantGoAway);
@@ -133,9 +147,9 @@ public class AssistantManager : MonoBehaviour
 
     private void SetProblemSolvingOptions()
     {   // Set the problem solving options
-        _problemSolvingButtons.AddOptionButton(_problemSolvingOptions[0], () => Debug.Log("Option clicked"));
-        //_problemSolvingButtons.AddOptionButton(_problemSolvingOptions[1], null);
-        //_problemSolvingButtons.AddOptionButton(_problemSolvingOptions[2], null);
+        _problemSolvingButtons.AddOptionButton(_problemSolvingOptions[0], () => PlayProblemSolvingDialog(_cannotCalculatePathDialog));
+        _problemSolvingButtons.AddOptionButton(_problemSolvingOptions[1], () => PlayProblemSolvingDialog(_shakeProblemDialog));
+        _problemSolvingButtons.AddOptionButton(_problemSolvingOptions[2], ShowNavigationAssistantOptions);
     }
 
     private void SetLanguageOptonsButtons()
@@ -163,6 +177,7 @@ public class AssistantManager : MonoBehaviour
     }
     public void CallAssistant()
     {   // Call the assistant when the user presses the assistant button
+        _analyticsManager.analyticsData.assistantCalledCount++;
         _destinationDropdown.gameObject.SetActive(false);
         _assistantModel.SetActive(true);
         _navManager.StopNavigation();
@@ -185,6 +200,11 @@ public class AssistantManager : MonoBehaviour
         _navManager.EndNavigation();
         _isOnNavigation = false;
         _assistantModel.SetActive(true);
+        _analyticsManager.SubmitFeedback();
+        _analyticsManager.analyticsData.changeDestinationCount = 0;
+        _analyticsManager.analyticsData.QRrelocalizationCount = 0;
+        _analyticsManager.analyticsData.assistantCalledCount = 0;
+        _analyticsManager.analyticsData.problemSolvingCount = 0;
 
         UnityEvent _onDialogEnd = new UnityEvent();
         _onDialogEnd.AddListener(GoToSurveyInteraction);
@@ -197,16 +217,16 @@ public class AssistantManager : MonoBehaviour
     private void GoToSurveyInteraction()
     {   // Show the button to go to the survey
         UnityEvent _onDialogEnd = new UnityEvent();
-        _onDialogEnd.AddListener(() => _GoToSurveyButton.gameObject.SetActive(true));
+        _onDialogEnd.AddListener(() => _GoToSurveyButtons.SetActive(true));
         _dialogPanel.SetDialogueToDisplay(_goToSurveyDialog, _onDialogEnd, true);
         _dialogPanel.PlayDialogue();
     }
     #endregion
 
-    #region --- Assistant Options Methods ---
+    #region --- Assistant Options ---
     public void GoToSurvey()
     {   // Open the survey link in the browser
-        _GoToSurveyButton.gameObject.SetActive(false);
+        _GoToSurveyButtons.SetActive(false);
 
         UnityEvent _onDialogEnd = new UnityEvent();
         _onDialogEnd.AddListener(() =>
@@ -218,6 +238,14 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.PlayDialogue();
 
         Application.OpenURL(_surveyURL);
+    }
+    public void ShowContinueOptions()
+    {   // Show the continue options after reaching the destination
+        _GoToSurveyButtons.SetActive(false);
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() => _continueOptionsButtons.ShowOptionsButtons());
+        _dialogPanel.SetDialogueToDisplay(_assistantContinueDialog, _onDialogEnd, true);
+        _dialogPanel.PlayDialogue();
     }
 
     private void ShowInitialAssistantOptions()
@@ -236,19 +264,22 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.PlayDialogue();
     }
 
-    private void ShowContinueOptions()
-    {   // Show the continue options after reaching the destination
-        UnityEvent _onDialogEnd = new UnityEvent();
-        _onDialogEnd.AddListener(() => _continueOptionsButtons.ShowOptionsButtons());
-        _dialogPanel.SetDialogueToDisplay(_assistantContinueDialog, _onDialogEnd, true);
-        _dialogPanel.PlayDialogue();
-    }
-
     private void ShowProblemSolvingOptions()
     {   // Show the problem solving options
+        _analyticsManager.analyticsData.problemSolvingCount++;
         UnityEvent _onDialogEnd = new UnityEvent();
         _onDialogEnd.AddListener(() => _problemSolvingButtons.ShowOptionsButtons());
         _dialogPanel.SetDialogueToDisplay(_displayOptionsDialog, _onDialogEnd, true);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Thinking", 0);
+    }
+
+    private void PlayProblemSolvingDialog(LocalizedString _dialog)
+    {   // Play the problem solving dialog
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(() => ShowProblemSolvingOptions());
+        _dialogPanel.SetDialogueToDisplay(_dialog, _onDialogEnd);
         _dialogPanel.PlayDialogue();
 
         _assistantAnimator.Play("Thinking", 0);
@@ -349,14 +380,24 @@ public class AssistantManager : MonoBehaviour
     public void SelectAnotherDestination()
     {   // Select a teleport point (stairs, elevators or exits)
         UnityEvent _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(ShowTeleportOptions);
+        _dialogPanel.SetDialogueToDisplay(_anotherDestinationDescriptionDialog, _onDialogueEnd);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Thinking", 0);
+        Invoke("ShowSkipButton", 3.0f);
+    }
+
+    public void ShowTeleportOptions()
+    {   // Show the teleport options
+        _skipDialogButton.SetActive(false);
+        UnityEvent _onDialogueEnd = new UnityEvent();
         _onDialogueEnd.AddListener(() =>
         {   // When the dialogue ends, show the destination options
             _destinationsManager.ShowTeleportOptionsButtons();
         });
-        _dialogPanel.SetDialogueToDisplay(_anotherDestinationDialog, _onDialogueEnd, true);
+        _dialogPanel.SetDialogueToDisplay(_anotherDestinationOptionsDialog, _onDialogueEnd, true);
         _dialogPanel.PlayDialogue();
-
-        _assistantAnimator.Play("Thinking", 0);
     }
 
     public void GoToAnotherPlace()

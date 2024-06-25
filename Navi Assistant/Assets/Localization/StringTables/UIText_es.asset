@@ -58,6 +58,14 @@ MonoBehaviour:
     m_Localized: Hacer encuesta
     m_Metadata:
       m_Items: []
+  - m_Id: 10597615063089152
+    m_Localized: "M\xE1s tarde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10609609656844288
+    m_Localized: "Omitir explicaci\xF3n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

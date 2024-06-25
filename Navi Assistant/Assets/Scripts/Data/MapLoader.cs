@@ -53,7 +53,7 @@ public class MapLoader : MonoBehaviour
                 System.TimeSpan duration = System.DateTime.Now - startTime;
                 Debug.Log("Map Data loaded in " + duration.TotalMilliseconds + "ms");
                 _analyticsManager.analyticsData.timeToLoadJSONMap = duration.TotalMilliseconds.ToString().Replace(".", ",");
-                _popUpAlertController.ShowTimingAlert("Map Data loaded in " + duration.TotalMilliseconds + "ms", 2f);
+                //_popUpAlertController.ShowTimingAlert("Map Data loaded in " + duration.TotalMilliseconds + "ms", 2f);
 
                 GenerateMapRender();
                 _destinationManager.StartDestinationManager();
@@ -76,7 +76,7 @@ public class MapLoader : MonoBehaviour
         System.TimeSpan duration = System.DateTime.Now - startTime;
         Debug.Log("Map Render generated in " + duration.TotalMilliseconds + "ms");
         _analyticsManager.analyticsData.timeToGenerateMapRender = duration.TotalMilliseconds.ToString().Replace(".", ",");
-        _popUpAlertController.ShowTimingAlert("Map Render generated in " + duration.TotalMilliseconds + "ms", 2f);
+        //_popUpAlertController.ShowTimingAlert("Map Render generated in " + duration.TotalMilliseconds + "ms", 2f);
         GenerateNavMesh();
     }
 

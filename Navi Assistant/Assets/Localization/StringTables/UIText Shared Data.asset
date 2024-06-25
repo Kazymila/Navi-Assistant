@@ -55,6 +55,14 @@ MonoBehaviour:
     m_Key: GoToSurvey
     m_Metadata:
       m_Items: []
+  - m_Id: 10597615063089152
+    m_Key: RespondSurveyLater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10609609656844288
+    m_Key: SkipDialog
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

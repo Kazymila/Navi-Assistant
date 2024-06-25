@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using ZXing;
 using TMPro;
+using System.Collections.Generic;
 
 public class QRCodeLocalization : MonoBehaviour
 {
@@ -36,6 +37,11 @@ public class QRCodeLocalization : MonoBehaviour
     private Texture2D _cameraImageTexture;
     private bool _scanningEnabled = true;
     private UnityEvent _onCodeLocalized;
+    private Dictionary<string, string> _qrCodesTest = new Dictionary<string, string>(){
+        {"LeftEntry", "(-12.55,0,3.74)pos:dir(0.00,0.00,-1.00)"},
+        {"LeftRestroom", "(-7.67,0,16.39)pos:dir(1.00,0.00,0.00)"},
+        {"A103", "(41.05,0,-2.96)pos:dir(-0.54,0.00,-0.84)"}
+    };
 
     private void OnEnable()
     {
@@ -164,7 +170,7 @@ public class QRCodeLocalization : MonoBehaviour
             _assistantUI.SetActive(true);
             _navManager.StartNavigation();
             _alertPanel.ShowTimingAlert(_localizedAlertMessage.GetLocalizedString(), 1f);
-            _analyticsManager.analyticsData.QRrelocalizationCounts++;
+            _analyticsManager.analyticsData.QRrelocalizationCount++;
             this.gameObject.SetActive(false);
         });
 
