@@ -66,6 +66,10 @@ MonoBehaviour:
     m_Localized: "Omitir explicaci\xF3n"
     m_Metadata:
       m_Items: []
+  - m_Id: 10651616735477760
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -92,7 +92,7 @@ public class NavigationManager : MonoBehaviour
             _analyticsManager.analyticsData.timeToCalculatePath = timeToCalculatePath.TotalMilliseconds.ToString().Replace(".", ",");
             _analyticsManager.analyticsData.pathDistance = GetPathLength(_navPath).ToString().Replace(".", ",");
             _analyticsManager.analyticsData.startPosition = this.transform.position.ToString();
-            _analyticsManager.analyticsData.destinationPoint = destinationPoint.parent.name;
+            _analyticsManager.analyticsData.destinationPoint = destinationPoint.parent.name + " (" + destinationPoint.name + ")";
             _startPathTime = System.DateTime.Now;
         }
         else NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);

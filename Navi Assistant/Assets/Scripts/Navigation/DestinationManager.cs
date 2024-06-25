@@ -151,6 +151,19 @@ public class DestinationManager : MonoBehaviour
             () => SetExtraPointAsDestination(new List<Transform>() {
                     _teleportPoints.transform.GetChild(3).GetChild(0)})
         );
+        _teleportOptionsButtons.AddOptionButton(
+            new TranslatedText()
+            {
+                key = "Back",
+                englishTranslation = "Go back",
+                spanishTranslation = "Volver"
+            },
+            () =>
+            {   // Hide teleport options and select destination interaction
+                _teleportOptionsButtons.HideOptionsButtons();
+                _assistantManager.SelectDestinationInteraction();
+            }
+        );
     }
     #endregion
 

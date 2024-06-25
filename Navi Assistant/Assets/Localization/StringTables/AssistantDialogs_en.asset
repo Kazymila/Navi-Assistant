@@ -84,7 +84,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 5947461760532480
     m_Localized: ' I do not yet know the exterior of this floor/ Thank you for your
-      understanding!/nLet''s go!'
+      understanding! Let''s go!'
     m_Metadata:
       m_Items: []
   - m_Id: 6183895264215040
@@ -121,7 +121,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8004192258834432
-    m_Localized: (por escribir...)
+    m_Localized: If you see that I am shaking or the arrows on the road,/nIt may
+      be because you are moving your smartphone too fast/nThis makes it complex to
+      estimate your position/nSo the system goes crazy!/nThe same can happen if there
+      are sudden changes in lighting/nMake sure not to cover your device's camera
     m_Metadata:
       m_Items: []
   references:

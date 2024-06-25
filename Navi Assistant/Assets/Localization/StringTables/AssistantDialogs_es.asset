@@ -86,8 +86,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5947461760532480
-    m_Localized: "A\xFAn no conozco el exterior de esta planta/n\xA1Gracias su compresi\xF3n!/n\xA1Vamos
-      all\xE1!"
+    m_Localized: "A\xFAn no conozco el exterior de esta planta/n\xA1Gracias su compresi\xF3n!
+      \xA1Vamos all\xE1!"
     m_Metadata:
       m_Items: []
   - m_Id: 6183895264215040
@@ -124,7 +124,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8004192258834432
-    m_Localized: (por escribir...)
+    m_Localized: "Si ve que estoy temblando o las flechas del camino,/nPuede ser
+      debido a que esta moviendo su celular muy r\xE1pido/nEsto hace que sea complejo
+      estimar su posici\xF3n/nPor lo que el sistema \xA1Se vuelve loco!/nLo mismo
+      puede ocurrir si hay cambios bruzcos de iluminaci\xF3n/nAsegurese de no cubrir
+      la camara de su dispositivo"
     m_Metadata:
       m_Items: []
   references:

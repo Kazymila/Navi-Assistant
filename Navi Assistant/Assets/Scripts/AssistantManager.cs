@@ -20,6 +20,7 @@ public class AssistantManager : MonoBehaviour
     [SerializeField] private GameObject _assistantUI;
     [SerializeField] private GameObject _GoToSurveyButtons;
     [SerializeField] private GameObject _skipDialogButton;
+    [SerializeField] private Button _goBackButton;
     private DialogController _dialogPanel;
     private SearchableDropdownController _destinationDropdown;
     private OptionsButtonsController _assistantOptionsButtons;
@@ -385,7 +386,7 @@ public class AssistantManager : MonoBehaviour
         _dialogPanel.PlayDialogue();
 
         _assistantAnimator.Play("Thinking", 0);
-        Invoke("ShowSkipButton", 3.0f);
+        Invoke("ShowSkipButton", 1.0f);
     }
 
     public void ShowTeleportOptions()
@@ -436,10 +437,20 @@ public class AssistantManager : MonoBehaviour
         _destinationDropdown.gameObject.SetActive(true);
         _destinationDropdown.ShowAllDropdownItems();
 
+        _goBackButton.onClick.RemoveAllListeners();
+        _goBackButton.onClick.AddListener(() =>
+        {   // When the user goes back from the dropdown
+            _destinationDropdown.gameObject.SetActive(false);
+            _goBackButton.gameObject.SetActive(false);
+            _assistantModel.SetActive(true);
+            SelectDestinationInteraction();
+        });
+        _goBackButton.gameObject.SetActive(true);
+
         _assistantAnimator.Play("Thinking", 0);
     }
 
-    private void SelectDestinationInteraction()
+    public void SelectDestinationInteraction()
     {   // Show interaction to select a destination
         UnityEvent _onDialogueEnd = new UnityEvent();
         _onDialogueEnd.AddListener(() =>
@@ -452,6 +463,7 @@ public class AssistantManager : MonoBehaviour
 
     public void GoToDestination(string _destinationName)
     {   // Go to the selected destination
+        _goBackButton.gameObject.SetActive(false);
         if (_destinationName == _navManager.GetCurrentRoom())
         {   // If the destination is the current room, show a message
             _assistantModel.SetActive(true);

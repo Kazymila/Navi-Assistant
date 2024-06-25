@@ -63,6 +63,10 @@ MonoBehaviour:
     m_Key: SkipDialog
     m_Metadata:
       m_Items: []
+  - m_Id: 10651616735477760
+    m_Key: BackButton
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
