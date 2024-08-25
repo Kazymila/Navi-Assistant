@@ -378,59 +378,8 @@ public class AssistantManager : MonoBehaviour
     #endregion
 
     #region --- Choose Destination Events ---
-    public void SelectAnotherDestination()
-    {   // Select a teleport point (stairs, elevators or exits)
-        UnityEvent _onDialogueEnd = new UnityEvent();
-        _onDialogueEnd.AddListener(ShowTeleportOptions);
-        _dialogPanel.SetDialogueToDisplay(_anotherDestinationDescriptionDialog, _onDialogueEnd);
-        _dialogPanel.PlayDialogue();
-
-        _assistantAnimator.Play("Thinking", 0);
-        Invoke("ShowSkipButton", 1.0f);
-    }
-
-    public void ShowTeleportOptions()
-    {   // Show the teleport options
-        _skipDialogButton.SetActive(false);
-        UnityEvent _onDialogueEnd = new UnityEvent();
-        _onDialogueEnd.AddListener(() =>
-        {   // When the dialogue ends, show the destination options
-            _destinationsManager.ShowTeleportOptionsButtons();
-        });
-        _dialogPanel.SetDialogueToDisplay(_anotherDestinationOptionsDialog, _onDialogueEnd, true);
-        _dialogPanel.PlayDialogue();
-    }
-
-    public void GoToAnotherPlace()
-    {   // Go to another place in the building (by stairs, elevators or exits)
-        _assistantModel.SetActive(true);
-        _destinationDropdown.gameObject.SetActive(true);
-        _qrLocalization.ResetScannerButtonsActions();
-        _destinationsManager.SetAllDestinationsOnDropdown();
-        _destinationDropdown.ClearInputText();
-        _navManager.StartNavigation();
-        _isOnNavigation = true;
-
-        UnityEvent _onDialogEnd = new UnityEvent();
-        _onDialogEnd.AddListener(UnknownOutside);
-        _dialogPanel.SetDialogueToDisplay(_goToAnotherPlaceDialog, _onDialogEnd);
-        _dialogPanel.PlayDialogue();
-
-        _assistantAnimator.Play("Yeah", 0);
-    }
-
-    private void UnknownOutside()
-    {   // Show interaction when the user is outside the building
-        UnityEvent _onDialogueEnd = new UnityEvent();
-        _onDialogueEnd.AddListener(() => _assistantModel.SetActive(false));
-        _dialogPanel.SetDialogueToDisplay(_unknownOutsideDialog, _onDialogueEnd);
-        _dialogPanel.PlayDialogue();
-
-        _assistantAnimator.Play("Nope", 0);
-    }
-
     public void SelectDestinationFromDropdown()
-    {   // Select the destination alternative
+    {   // Select the destination from the dropdown
         _dialogPanel.SetDialogueToDisplay(_selectFromDropdownDialog, null, true);
         _dialogPanel.PlayDialogue();
 
@@ -510,6 +459,59 @@ public class AssistantManager : MonoBehaviour
 
             _assistantAnimator.Play("Yeah", 0);
         }
+    }
+    #endregion
+
+    #region --- UOH Extra Destination Events ---
+    public void SelectAnotherDestination()
+    {   // Select a UOH extra teleport point (stairs, elevators or exits)
+        UnityEvent _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(ShowTeleportOptions);
+        _dialogPanel.SetDialogueToDisplay(_anotherDestinationDescriptionDialog, _onDialogueEnd);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Thinking", 0);
+        Invoke("ShowSkipButton", 1.0f);
+    }
+
+    public void ShowTeleportOptions()
+    {   // Show the UOH extra teleport options
+        _skipDialogButton.SetActive(false);
+        UnityEvent _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(() =>
+        {   // When the dialogue ends, show the destination options
+            _destinationsManager.ShowExtraUOHOptionsButtons();
+        });
+        _dialogPanel.SetDialogueToDisplay(_anotherDestinationOptionsDialog, _onDialogueEnd, true);
+        _dialogPanel.PlayDialogue();
+    }
+
+    public void GoToAnotherPlace()
+    {   // Go to another place in the UOH building (by stairs, elevators or exits)
+        _assistantModel.SetActive(true);
+        _destinationDropdown.gameObject.SetActive(true);
+        _qrLocalization.ResetScannerButtonsActions();
+        _destinationsManager.SetAllDestinationsOnDropdown();
+        _destinationDropdown.ClearInputText();
+        _navManager.StartNavigation();
+        _isOnNavigation = true;
+
+        UnityEvent _onDialogEnd = new UnityEvent();
+        _onDialogEnd.AddListener(UnknownOutside);
+        _dialogPanel.SetDialogueToDisplay(_goToAnotherPlaceDialog, _onDialogEnd);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Yeah", 0);
+    }
+
+    private void UnknownOutside()
+    {   // Show interaction when the user is going outside the UOH building
+        UnityEvent _onDialogueEnd = new UnityEvent();
+        _onDialogueEnd.AddListener(() => _assistantModel.SetActive(false));
+        _dialogPanel.SetDialogueToDisplay(_unknownOutsideDialog, _onDialogueEnd);
+        _dialogPanel.PlayDialogue();
+
+        _assistantAnimator.Play("Nope", 0);
     }
     #endregion
 

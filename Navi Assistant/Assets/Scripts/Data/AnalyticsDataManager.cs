@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -22,7 +20,7 @@ public class AnalyticsDataManager : MonoBehaviour
 
     public void SubmitFeedback()
     {   // Submit feedback data to Google Form
-        Debug.Log("Submitting feedback data...");
+        Debug.Log("[Analytics Manager] Submitting feedback data...");
         StartCoroutine(PostAnalyticsData(analyticsData));
     }
 
@@ -57,11 +55,11 @@ public class AnalyticsDataManager : MonoBehaviour
 
             if (www.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("Feedback submitted successfully.");
+                Debug.Log("[Analytics Manager] Feedback submitted successfully.");
             }
             else
             {
-                Debug.LogError("Error in feedback submission: " + www.error);
+                Debug.LogError("[Analytics Manager] Error in feedback submission: " + www.error);
             }
         }
     }

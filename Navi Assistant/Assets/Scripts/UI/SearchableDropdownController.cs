@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.Localization.Settings;
-using UnityEngine.InputSystem;
 using MapDataModel;
 using TMPro;
 
@@ -24,12 +22,9 @@ public class SearchableDropdownController : MonoBehaviour
     [SerializeField] private List<string> _filteredOptions;
     [SerializeField] private UnityEvent _onOptionSelected;
     private bool _inputFieldSelected = false;
-    private PlayerInput _input;
 
     private void Awake()
-    {
-        _input = this.GetComponent<PlayerInput>();
-        //_input.actions["Click"].performed += _ => HandleOutsideClick();
+    {   // Initialize dropdown settings
         _dropdownOptions = new List<TranslatedText>();
         _filteredOptions = new List<string>();
         _itemTemplate.SetActive(false);
@@ -54,19 +49,6 @@ public class SearchableDropdownController : MonoBehaviour
     {   // If dropdown is closed, show selected item on input field
         if (!_itemsDisplay.activeSelf && !_inputFieldSelected && _dropdownOptions.Count > 0 && _selectedOptionIndex >= 0)
             ChangeSelectedItem(_dropdownOptions[_selectedOptionIndex].key);
-    }
-
-    private void HandleOutsideClick()
-    {   // Hide dropdown if click is outside dropdown area
-        Vector2 _cursorPos = _input.actions["CursorPosition"].ReadValue<Vector2>();
-
-        bool _isCursorOverItems = RectTransformUtility.RectangleContainsScreenPoint(
-            _itemsDisplay.GetComponent<RectTransform>(), _cursorPos, Camera.main);
-        bool _isCursorOverBar = RectTransformUtility.RectangleContainsScreenPoint(
-                this.GetComponent<RectTransform>(), _cursorPos, Camera.main);
-
-        if (_itemsDisplay.activeSelf && !_isCursorOverItems && !_isCursorOverBar)
-            HideDropdown();
     }
 
     private string GetLanguageCode()

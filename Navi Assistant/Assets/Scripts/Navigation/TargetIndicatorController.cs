@@ -35,8 +35,6 @@ public class TargetIndicatorController : MonoBehaviour
             {   // Notify the assistant manager when the destination is reached
                 _assistantManager.DestinationReached();
                 _targetMarker.SetActive(false);
-
-                Debug.Log("Destination Reached");
             }
         }
     }

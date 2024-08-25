@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
 using MapDataModel;
-using UnityEngine.Localization.Settings;
-using TMPro;
-using System;
-using Unity.XR.CoreUtils;
 
 public class DestinationManager : MonoBehaviour
 {
@@ -14,7 +10,7 @@ public class DestinationManager : MonoBehaviour
     [SerializeField] private string _roomDestination;
     [SerializeField] private string _floorDestination;
 
-    [Header("Teleport Settings (Extra points)")]
+    [Header("UOH Extra Teleport Points")]
     [SerializeField] private GameObject _teleportPoints;
     [SerializeField] private OptionsButtonsController _teleportOptionsButtons;
 
@@ -47,7 +43,9 @@ public class DestinationManager : MonoBehaviour
         GetDestinationClasses();
         LoadDestinationPoints();
         SetDestinationOptionsButtons();
-        SetTeleportOptionsButtons();
+
+        if (_mapLoader.mapData.mapName == "UOHHallMap")
+            SetExtraUOHOptionsButtons(); // Set extra teleport options for UOH Map
     }
 
     #region --- UI Managment ---
@@ -91,27 +89,34 @@ public class DestinationManager : MonoBehaviour
         {   // Create a button for each destination class
             _destinationOptionsButtons.AddOptionButton(_option, () => SetNavigationOption(_option.key));
         }
-        // Add teleport option to destination options
-        _destinationOptionsButtons.AddOptionButton(new TranslatedText()
+        // Add extra option to destination options (only for UOH Hall Map)
+        if (_mapLoader.mapData.mapName == "UOHHallMap")
         {
-            key = "Teleport",
-            englishTranslation = "Another place",
-            spanishTranslation = "Otro lugar"
-        }, () => _assistantManager.SelectAnotherDestination());
+            _destinationOptionsButtons.AddOptionButton(new TranslatedText()
+            {
+                key = "Teleport",
+                englishTranslation = "Another place",
+                spanishTranslation = "Otro lugar"
+            }, () => _assistantManager.SelectAnotherDestination());
+        }
     }
 
-    public void ShowDestinationOptionsButtons()
-    {   // Show destination options buttons
-        _destinationOptionsButtons.ShowOptionsButtons();
-    }
+    public void ShowDestinationOptionsButtons() => _destinationOptionsButtons.ShowOptionsButtons();
+    #endregion
 
-    public void ShowTeleportOptionsButtons()
-    {   // Show teleport options buttons
-        _teleportOptionsButtons.ShowOptionsButtons();
-    }
+    #region --- Extra UOH destination options ---
+    /* 
+        --- Extra destination options -----------------------------------
+        Points added especially for UOH Map to teleport to other places:
+        - Go to another floor by elevators or stairs
+        - Go to basement
+        - Go outside
+        -----------------------------------------------------------------
+    */
+    public void ShowExtraUOHOptionsButtons() => _teleportOptionsButtons.ShowOptionsButtons();
 
-    public void SetTeleportOptionsButtons()
-    {   // Set teleport options from teleport points
+    public void SetExtraUOHOptionsButtons()
+    {   // Set extra options from teleport points for UOH Map
         List<Transform> _upFloorPoints = new List<Transform>();
         List<Transform> _downFloorPoints = new List<Transform>();
 

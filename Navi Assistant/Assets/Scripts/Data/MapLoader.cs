@@ -1,17 +1,18 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 using Unity.AI.Navigation;
-using MapDataModel;
 using Firebase.Firestore;
 using Firebase.Extensions;
+using MapDataModel;
 
 public class MapLoader : MonoBehaviour
 {
-    [SerializeField] private AnalyticsDataManager _analyticsManager;
-
     [Header("Map Data")]
-    [SerializeField] private string mapFileName = "ExampleMap";
+    [SerializeField] private bool _loadLocalFile = true;
+    [SerializeField] private string _mapLocalFileName = "UOHMap"; // Local file name
+    [SerializeField] private string _mapDocumentName = "ExampleMap"; // Firestore document name
+
+    [Header("Managers")]
+    [SerializeField] private AnalyticsDataManager _analyticsManager;
     [SerializeField] private DestinationManager _destinationManager;
 
     [Header("Map Render")]
@@ -19,44 +20,56 @@ public class MapLoader : MonoBehaviour
     [SerializeField] private GameObject roomRenderPrefab;
     [SerializeField] private GameObject shapeRenderPrefab;
     private NavMeshSurface _navMeshSurface;
+
+    [Header("Loaded Data")]
     public MapData mapData;
 
-    private void Awake()
-    {   // Load map data and generate floor map render
+    private void Start()
+    {   // Load data and generate floor map render
         _navMeshSurface = this.GetComponent<NavMeshSurface>();
-        LoadMapData();
+
+#if UNITY_EDITOR
+        if (_loadLocalFile) LoadDataFromLocalFile(); // Load map data from local file
+        else LoadDataFromFirestore();
+#else
+            LoadDataFromFirestore(); // Load map data from Firestore
+#endif
     }
 
-    public void LoadLocalMapData()
-    {   // Load map data from local file
-        string _path = Application.streamingAssetsPath + "/" + mapFileName + ".json";
+    public void LoadDataFromLocalFile()
+    {   // Load data from local file
+        string _path = Application.dataPath + "/MapTests/" + _mapLocalFileName + ".json";
         string jsonData = System.IO.File.ReadAllText(_path);
         mapData = JsonUtility.FromJson<MapData>(jsonData);
+        Debug.Log("[Map Loader] Data loaded from local file");
+
+        GenerateMapRender();
+        _destinationManager.StartDestinationManager();
     }
 
-    public void LoadMapData()
-    {   // Load map data from Firestore database
+    public void LoadDataFromFirestore()
+    {   // Load data from Firestore database
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
-        DocumentReference docRef = db.Collection("MapData").Document(mapFileName);
+        DocumentReference docRef = db.Collection("MapData").Document(_mapLocalFileName);
 
-        // Take time to load map data from Firestore
+        // Take time to load data from Firestore
         System.DateTime startTime = System.DateTime.Now;
         docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
         {
             DocumentSnapshot snapshot = task.Result;
             if (snapshot.Exists)
-            {   // Load map data and generate map render
+            {   // Load data and generate map render
                 string jsonData = snapshot.ToDictionary()["MapData"].ToString();
                 mapData = JsonUtility.FromJson<MapData>(jsonData);
 
                 System.TimeSpan duration = System.DateTime.Now - startTime;
-                Debug.Log("Map Data loaded in " + duration.TotalMilliseconds + "ms");
+                Debug.Log("[Map Loader] Data loaded in " + duration.TotalMilliseconds + "ms from server");
                 _analyticsManager.analyticsData.timeToLoadJSONMap = duration.TotalMilliseconds.ToString().Replace(".", ",");
 
                 GenerateMapRender();
                 _destinationManager.StartDestinationManager();
             }
-            else Debug.LogError("Document does not exist!");
+            else Debug.LogError("[Map Loader] Document does not exist!");
         });
     }
 
@@ -72,7 +85,7 @@ public class MapLoader : MonoBehaviour
         foreach (ShapeData _shape in _floor.shapes) GenerateShapeRender(_shape);
 
         System.TimeSpan duration = System.DateTime.Now - startTime;
-        Debug.Log("Map Render generated in " + duration.TotalMilliseconds + "ms");
+        Debug.Log("[Map Loader] Map Render generated in " + duration.TotalMilliseconds + "ms");
         _analyticsManager.analyticsData.timeToGenerateMapRender = duration.TotalMilliseconds.ToString().Replace(".", ",");
         GenerateNavMesh();
     }
@@ -105,7 +118,7 @@ public class MapLoader : MonoBehaviour
     }
 
     private void GenerateShapeRender(ShapeData _shapeData)
-    {   // Generate shape render from data
+    {   // Generate shape/obstacles render from data
         GameObject _shapeRender = Instantiate(shapeRenderPrefab, this.transform.GetChild(2));
         _shapeRender.transform.position = new Vector3(_shapeData.shapePosition.x, 0, _shapeData.shapePosition.y);
         Vector3[] vertices = SerializableVector3.GetVector3Array(_shapeData.renderData.vertices);

@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Localization;
-using UnityEngine.AI;
-using UnityEngine;
 using System;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Localization;
 
 public class NavigationManager : MonoBehaviour
 {
+    [Header("Current Destination")]
     [SerializeField] private Transform destinationPoint;
 
     [Header("External References")]
@@ -73,7 +72,7 @@ public class NavigationManager : MonoBehaviour
 
         // Update analytics data with time taken to complete the path
         _analyticsManager.analyticsData.timeTakenToCompletePath =
-            (System.DateTime.Now - _startPathTime).TotalMilliseconds.ToString().Replace(".", ",");
+            (DateTime.Now - _startPathTime).TotalMilliseconds.ToString().Replace(".", ",");
     }
 
     private void GenerateNavigationPath()
@@ -81,19 +80,20 @@ public class NavigationManager : MonoBehaviour
         if (!_pathCalculated)
         {   // Calculate time to generate path
             _pathCalculated = true;
-            System.DateTime startTime = System.DateTime.Now;
+            DateTime startTime = DateTime.Now;
 
             NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
 
-            System.TimeSpan timeToCalculatePath = System.DateTime.Now - startTime;
-            Debug.Log("Nav path to " + destinationPoint.parent.name + " generated in " + timeToCalculatePath.TotalMilliseconds + "ms");
+            TimeSpan timeToCalculatePath = DateTime.Now - startTime;
+            Debug.Log("[Nav Manager] Nav path to " + destinationPoint.parent.name
+                + " generated in " + timeToCalculatePath.TotalMilliseconds + "ms");
 
             // Update analytics data
             _analyticsManager.analyticsData.timeToCalculatePath = timeToCalculatePath.TotalMilliseconds.ToString().Replace(".", ",");
             _analyticsManager.analyticsData.pathDistance = GetPathLength(_navPath).ToString().Replace(".", ",");
             _analyticsManager.analyticsData.startPosition = this.transform.position.ToString();
             _analyticsManager.analyticsData.destinationPoint = destinationPoint.parent.name + " (" + destinationPoint.name + ")";
-            _startPathTime = System.DateTime.Now;
+            _startPathTime = DateTime.Now;
         }
         else NavMesh.CalculatePath(transform.position, destinationPoint.position, NavMesh.AllAreas, _navPath);
 
@@ -116,7 +116,7 @@ public class NavigationManager : MonoBehaviour
             _pathLineVisualizer.ClearPathLine();
             _miniMapLineVisualizer.ClearPathLine();
             _navArrowController.EnableNavArrow(false);
-            Debug.Log("Path is not reachable");
+            Debug.Log("[Nav Manager] Path is not reachable");
 
             // Show an alert message to the user
             _errorPanel.SetErrorMessage(_destinationErrorTitle.GetLocalizedString(), _destinationErrorMessage.GetLocalizedString(), 0);
@@ -142,7 +142,7 @@ public class NavigationManager : MonoBehaviour
         {   // Check if the user is over a room
             if (hit.collider.CompareTag("Room"))
             {   // Return the current room name
-                print("Current Room: " + hit.collider.name);
+                print("[Nav Manager] Current Room: " + hit.collider.name);
                 return hit.collider.name;
             }
         }
