@@ -1,6 +1,11 @@
-> <img src="https://github.com/user-attachments/assets/4063f705-e670-441b-822b-5392f1f51b68" align="right" width=70/>
+> <img src="https://github.com/user-attachments/assets/4063f705-e670-441b-822b-5392f1f51b68" align="right" width=65/>
 # Navi Assistant
  Augmented Reality (AR) Virtual Assistant for Indoor Navigation
+
+ ![navi](https://github.com/user-attachments/assets/5e8400ca-f126-4b81-9ee2-3106d41dd119)
+
+## About
+This is a prototype of a mobile application for indoor navigation in augmented reality using a virtual assistant.
 
 https://github.com/user-attachments/assets/51d1cf65-b99f-44e6-ba6c-fac31ec82f8a
 
