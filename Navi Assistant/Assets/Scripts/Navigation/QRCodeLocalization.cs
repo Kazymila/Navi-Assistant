@@ -45,13 +45,14 @@ public class QRCodeLocalization : MonoBehaviour
         _qrCodeTextDisplay.text = "";
 
 #if UNITY_EDITOR
-        Invoke("UOHTestLocalization", 1f); // Set user position for testing purposes
+        Invoke("TestLocalization", 1f); // Test localization in the editor
 #endif
     }
 
-    // Test locations (change the coordinates to test different locations)
-    private void UOHTestLocalization() => GetQrCodeLocalization("(16.00,0,0.55)pos:dir(0.00,0.00,0.00)");
-    private void HouseTestLocalization() => GetQrCodeLocalization("(-1.47,0,-3.66)pos:dir(1.00,0.00,0.00)");
+    private void TestLocalization()
+    {   // Test location on the XROrigin position (change the XROrigin position to test different locations)
+        GetQrCodeLocalization($"{_sessionOrigin.transform.position}pos:dir{_sessionOrigin.transform.forward}");
+    }
 
     private void OnDisable()
     {
