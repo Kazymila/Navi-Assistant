@@ -7,9 +7,11 @@
 Made in Unity 2022.3.1f1, using Google ARCore and Firebase services
 
 ## :notebook: About
-This is a prototype of a mobile application for indoor navigation in augmented reality using a virtual assistant. 
+This is a prototype of a mobile application for indoor navigation in augmented reality using a virtual assistant. This navigation system uses QR codes to locate the user in the indoor environment. For this purpose, this system relies on the [Navi Admin](https://github.com/Kazymila/Navi-Admin) management platform, where you can model an indoor environment, configure its spaces and generate the QR codes.
 
-The application was tested in two indoor environments, inside a house and at the University of O'Higgins, Rancagua, Chile. In the following demo videos you can see how the application works in both cases.
+*The mobile application and the management platform are prototypes developed as an undergraduate thesis project to obtain the degree of Civil Engineering in Computer Science at the Universidad de O'Higgins, Rancagua, Chile*
+
+The application was tested in two indoor environments, inside a house and at the University of O'Higgins. In the following demo videos you can see how the application works in both cases.
 
 <div align="center">
     <table >
@@ -27,20 +29,28 @@ The application was tested in two indoor environments, inside a house and at the
 ## :clipboard: Instructions
 When you open the project Unity will install all the dependencies, but you will see a error because need some extra Firebase packages. You can open the project on save mode and install the packages how is shown on the [Firebase docs](https://firebase.google.com/docs/unity/setup).
 
-> [!IMPORTANT]
+> [!NOTE]
 > You only need the Firestore package from the SDK. Also, you need to generate Firebase credentials for an Android app and save the `google-services.json` file in a folder called `StreamingAssets` inside the Assets folder.
 
-However, you can directly open the project to test the aplication with local map files. This files are JSON format and can be generated in the administration software: [Navi Assistant](https://github.com/Kazymila/Navi-Admin), where you can create an indoor map that can use in this app!
+However, you can directly open the project to test the aplication with local map files. This files are JSON format and can be generated in [Navi Admin](https://github.com/Kazymila/Navi-Admin), where you can create an indoor map that can use in this app!
 
-The [Assets/MapTests](Navi%20Assistant/Assets/MapTests) folder have two map files examples that you can test on the editor. To test a local file, you need to:
+The [Assets/MapTests](Navi%20Assistant/Assets/MapTests) folder have two map files examples that you can test on the editor. To test a local file you need to:
+<img src="https://github.com/user-attachments/assets/519aa174-705b-4254-99ca-a4002d37a3ba" align="right"/>
 * Save the file on the [MapTests](Navi%20Assistant/Assets/MapTests) folder in the project
-* Go to the `MapLoader` Gameobject in hierarchy to change the local map file name on the inspector
-* Also you need to check the "load local file" checkbox
+* Go to the `MapLoader` Gameobject in hierarchy to change the map local file name on the inspector
+* Also you need to check the "Load Local File" checkbox
 
 > [!IMPORTANT]
-> If you uncheck the "load local file" option, the app will try to load the map from Firestore. If you have installed it and have credentials, you can upload the map file from Navi Admin to the server and then will load in the app.
+> If you uncheck the "Load Local File" option, the app will try to load the map from Firestore. If you have installed it and have credentials, you can upload the map file from Navi Admin to the server and then will load in the app.
 >
-> *This is only necessary to export the application to Smartphones.*
+> *(The map document name field corresponds to the name of the document where is saved the data on the Firestore database)*
+>
+> ***This is only necessary to export the application to Smartphones.***
+
+<img src="https://github.com/user-attachments/assets/f2faa9b9-add6-4775-894b-b2023d48d91c" align="right"/>
+Before testing the application in the Unity editor it is also necessary to position where the navigation starts or where the user will scan the QR code. For this you can move the object called XROrigin that represents the user in the virtual space to test different locations or move the object to see how the application will behave as the user moves through the environment.
+
+---
 
 Then press play in the Unity editor and the app will work with the loaded map. As shown here:
 
